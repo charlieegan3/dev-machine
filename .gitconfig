@@ -3,5 +3,6 @@
 	email = charlieegan3@googlemail.com
 [core]
 	editor = vi
+	excludesfile = /Users/charlieegan3/.gitignore_global
 [alias]
 	lg = log --pretty=format:'%Cred%H %Creset %s - %Cblue%an (%ae) %Creset(%Cgreen%ar%Creset)'

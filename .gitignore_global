@@ -1,0 +1,7 @@
+# vim temp files
+*.swp
+*.swo
+
+# thumbnails
+.DS_Store
+
