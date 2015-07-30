@@ -1,0 +1,7 @@
+[user]
+	name = Charlie Egan
+	email = charlieegan3@googlemail.com
+[core]
+	editor = vi -n -w
+[alias]
+	lg = log --pretty=format:'%Cred%H %Creset %s - %Cblue%an (%ae) %Creset(%Cgreen%ar%Creset)'
