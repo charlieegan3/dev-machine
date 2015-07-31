@@ -1,7 +1,7 @@
 # set paths
 export PATH=/usr/local/bin:/usr/local/sbin/:/usr/bin:/usr/sbin:/bin:/sbin
 
-# set prompt format 
+# set prompt format
 export PS1="\W|"
 
 # use vim as the system editor
