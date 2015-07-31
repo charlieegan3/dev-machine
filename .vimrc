@@ -25,4 +25,5 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'https://github.com/mhinz/vim-startify'
 call plug#end()
