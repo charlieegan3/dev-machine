@@ -4,6 +4,8 @@ syntax on
 set tabstop=2
 set shiftwidth=2
 
+command! EE :edit $MYVIMRC
+
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.rabl} set ft=ruby
 
 " Strip Trailing Whitespace {{{1
