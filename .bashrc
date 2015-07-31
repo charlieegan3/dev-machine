@@ -8,8 +8,10 @@ export PS1="\W|"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# ls coloring
+# aliases
+alias vi="vim"
 alias ls="ls -GF"
+alias gits="git status -sb"
 
 # rvm config
 export PATH="$PATH:$HOME/.rvm/bin"
