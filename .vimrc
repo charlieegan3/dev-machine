@@ -4,6 +4,7 @@ syntax on
 set tabstop=2
 set shiftwidth=2
 
+command! F :FZF
 command! EE :edit $MYVIMRC
 
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.rabl} set ft=ruby
@@ -22,3 +23,6 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+call plug#begin()
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+call plug#end()

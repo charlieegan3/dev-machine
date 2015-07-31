@@ -23,3 +23,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # welcome commander
 echo "hello."
 
+#fzf search
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
