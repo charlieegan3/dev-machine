@@ -2,6 +2,9 @@ set path=$PWD/**
 syntax on
 set tabstop=2
 set shiftwidth=2
+
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.rabl} set ft=ruby
+
 " Strip Trailing Whitespace {{{1
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
