@@ -1,4 +1,5 @@
 set path=$PWD/**
+set backspace=indent,eol,start
 syntax on
 set tabstop=2
 set shiftwidth=2
