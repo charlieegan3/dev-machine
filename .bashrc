@@ -1,5 +1,5 @@
 # set paths
-export PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/bin:/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin/:/usr/bin:/usr/sbin:/bin:/sbin
 
 # set prompt format 
 export PS1="\W|"
@@ -12,7 +12,7 @@ export EDITOR="$VISUAL"
 alias ls="ls -GF"
 
 # rvm config
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # added by travis gem
