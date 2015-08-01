@@ -37,6 +37,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'terryma/vim-expand-region'
+Plug 'ervandew/supertab'
 call plug#end()
 
 " read these other files as Ruby
@@ -62,3 +63,6 @@ set number
 set relativenumber
 set numberwidth=3
 highlight LineNr ctermfg=Black ctermbg=LightGrey
+
+" g:* settings
+let g:SuperTabCompleteCase = 'ignore'
