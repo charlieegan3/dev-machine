@@ -6,6 +6,7 @@ syntax on
 " tabs and space settings
 set tabstop=2
 set shiftwidth=2
+set expandtab
 
 " set the space key as the leader (mapleader didn't seem to work)
 map <SPACE> <leader>
