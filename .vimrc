@@ -26,6 +26,9 @@ map <leader>d Yp
 map <leader>b ^
 map <leader>w $
 
+vmap v <Plug>(expand_region_expand)
+vmap V <Plug>(expand_region_shrink)
+
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'https://github.com/mhinz/vim-startify'
@@ -33,6 +36,7 @@ Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
+Plug 'terryma/vim-expand-region'
 call plug#end()
 
 " read these other files as Ruby
