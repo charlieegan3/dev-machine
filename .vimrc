@@ -13,8 +13,7 @@ map <SPACE> <leader>
 
 " leader commands
 map <leader>q :wq<cr>
-map <leader>s :w<cr>
-map <leader>w :bd<cr>
+map <leader>w :w<cr>
 map <leader>v :edit $MYVIMRC<cr>
 map <leader>vs :source %<cr>
 
