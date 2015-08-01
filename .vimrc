@@ -29,6 +29,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'https://github.com/mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " statusline
@@ -39,4 +40,4 @@ set laststatus=2
 set number
 set relativenumber
 set numberwidth=3
-highlight LineNr ctermfg=Black ctermbg=Grey
+highlight LineNr ctermfg=Black ctermbg=LightGrey
