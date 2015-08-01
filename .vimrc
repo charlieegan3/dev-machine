@@ -26,4 +26,15 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'https://github.com/mhinz/vim-startify'
+Plug 'mileszs/ack.vim'
 call plug#end()
+
+" statusline
+set statusline=%t%m\ %=%v\ %-6Y
+set laststatus=2
+
+" line number settings
+set number
+set relativenumber
+set numberwidth=3
+highlight LineNr ctermfg=Black ctermbg=Grey
