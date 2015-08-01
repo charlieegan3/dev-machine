@@ -6,6 +6,7 @@ set shiftwidth=2
 
 command! F :FZF
 command! EE :edit $MYVIMRC
+command! NN :NERDTreeToggle
 
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.rabl} set ft=ruby
 
@@ -27,6 +28,7 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'https://github.com/mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " statusline
