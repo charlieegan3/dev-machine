@@ -41,3 +41,6 @@ set number
 set relativenumber
 set numberwidth=3
 highlight LineNr ctermfg=Black ctermbg=LightGrey
+
+" set leader
+let mapleader = "\<Space>"
