@@ -38,6 +38,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'terryma/vim-expand-region'
 Plug 'ervandew/supertab'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
