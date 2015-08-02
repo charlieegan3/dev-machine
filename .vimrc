@@ -40,6 +40,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'itchyny/lightline.vim'
+Plug 'https://github.com/FriedSock/smeargle'
 call plug#end()
 
 " read these other files as Ruby
@@ -67,3 +68,4 @@ highlight LineNr ctermfg=Black ctermbg=LightGrey
 
 " g:* settings
 let g:SuperTabCompleteCase = 'ignore'
+let g:smeargle_colouring_scheme = ''
