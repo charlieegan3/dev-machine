@@ -12,6 +12,7 @@ export EDITOR="$VISUAL"
 alias vi="vim"
 alias ls="ls -GF"
 alias gits="git status -sb"
+alias gitd="git diff -U0 | grep \"^\W\w\""
 
 # rvm config
 export PATH="$PATH:$HOME/.rvm/bin"
