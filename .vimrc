@@ -47,6 +47,7 @@ Plug 'tpope/vim-endwise'
 Plug 'Townk/vim-autoclose'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 " read these other files as Ruby
