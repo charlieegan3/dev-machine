@@ -41,6 +41,12 @@ Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'itchyny/lightline.vim'
 Plug 'https://github.com/FriedSock/smeargle'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'tpope/vim-endwise'
+Plug 'Townk/vim-autoclose'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " read these other files as Ruby
@@ -48,12 +54,12 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rak
 
 " strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    let @/=_s
-    call cursor(l, c)
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  let @/=_s
+  call cursor(l, c)
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
