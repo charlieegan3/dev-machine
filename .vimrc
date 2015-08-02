@@ -38,6 +38,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'terryma/vim-expand-region'
 Plug 'ervandew/supertab'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " read these other files as Ruby
@@ -55,7 +56,6 @@ endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " statusline
-set statusline=%t%m\ %=%v\ %-6Y
 set laststatus=2
 
 " line number & gutter settings
