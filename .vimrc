@@ -2,6 +2,7 @@
 set path=$PWD/**
 set backspace=indent,eol,start
 syntax on
+set mouse=a
 
 " tabs and space settings
 set tabstop=2
