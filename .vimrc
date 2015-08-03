@@ -8,8 +8,6 @@ set mouse=a
 " basic visual settings
 set cursorline
 set colorcolumn=80
-set list
-set listchars=tab:▸\ ,eol:¬
 
 " tabs and space settings
 set tabstop=2
@@ -32,7 +30,8 @@ map <leader>o :NERDTreeToggle<cr>
 
 map <leader>[ :bp<cr>
 map <leader>] :bn<cr>
-nmap <tab> :bp<cr>
+nmap <tab> :bn<cr>
+nmap <leader><tab> :bp<cr>
 
 map <leader>d Yp
 map <leader>b ^
@@ -90,4 +89,4 @@ let g:SuperTabCompleteCase = 'ignore'
 let g:smeargle_colouring_scheme = ''
 
 " save on lost focus
-au FocusLost * :wa
+set autowrite
