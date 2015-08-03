@@ -1,8 +1,15 @@
 " 'just the essentials'
 set path=$PWD/**
-set backspace=indent,eol,start
 syntax on
+set nocompatible
+set backspace=indent,eol,start
 set mouse=a
+
+" basic visual settings
+set cursorline
+set colorcolumn=80
+set list
+set listchars=tab:▸\ ,eol:¬
 
 " tabs and space settings
 set tabstop=2
@@ -77,3 +84,6 @@ highlight LineNr ctermfg=Black ctermbg=LightGrey
 " g:* settings
 let g:SuperTabCompleteCase = 'ignore'
 let g:smeargle_colouring_scheme = ''
+
+" save on lost focus
+au FocusLost * :wa
