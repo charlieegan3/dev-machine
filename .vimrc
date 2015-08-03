@@ -30,6 +30,10 @@ map <leader>F :Ack
 map <leader>c :TComment<cr>
 map <leader>o :NERDTreeToggle<cr>
 
+map <leader>[ :bp<cr>
+map <leader>] :bn<cr>
+nmap <tab> :bp<cr>
+
 map <leader>d Yp
 map <leader>b ^
 map <leader>w $
