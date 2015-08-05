@@ -59,6 +59,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'wakatime/vim-wakatime'
 Plug 'itspriddle/vim-stripper'
+Plug 'https://github.com/slim-template/vim-slim'
 call plug#end()
 
 " read these other files as Ruby
