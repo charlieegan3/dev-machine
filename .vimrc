@@ -3,7 +3,6 @@ set path=$PWD/**
 syntax on
 set nocompatible
 set backspace=indent,eol,start
-set mouse=a
 
 " basic visual settings
 set cursorline
