@@ -58,21 +58,11 @@ Plug 'Townk/vim-autoclose'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'wakatime/vim-wakatime'
+Plug 'itspriddle/vim-stripper'
 call plug#end()
 
 " read these other files as Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
-
-" strip trailing whitespace
-function! <SID>StripTrailingWhitespaces()
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  %s/\s\+$//e
-  let @/=_s
-  call cursor(l, c)
-endfunction
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " statusline
 set laststatus=2
