@@ -77,6 +77,3 @@ highlight LineNr ctermfg=Black ctermbg=LightGrey
 " g:* settings
 let g:SuperTabCompleteCase = 'ignore'
 let g:smeargle_colouring_scheme = ''
-
-" save on lost focus
-set autowrite
