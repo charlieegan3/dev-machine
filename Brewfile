@@ -1,0 +1,17 @@
+tap 'caskroom/cask'
+tap 'Originate/gittown'
+
+brew 'caskroom/cask/brew-cask'
+brew 'tree'
+brew 'git'
+brew 'vim'
+brew 'openssl'
+brew 'libxml2'
+brew 'libyaml'
+brew 'postgresql'
+brew 'imagemagick'
+brew 'git-town'
+
+cask 'firefox'
+cask 'sublime-text'
+cask 'subl'
