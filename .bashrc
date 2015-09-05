@@ -13,7 +13,7 @@ alias vi="vim"
 alias ls="ls -GF"
 alias gits="git status -sb"
 alias gitd="git diff -U0 | grep \"^\W\w\""
-alias gitb="git branch | grep '^\*' | cut -d' ' -f2| pbcopy"
+alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n' | pbcopy"
 
 # rvm config
 export PATH="$PATH:$HOME/.rvm/bin"
