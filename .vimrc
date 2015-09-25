@@ -5,7 +5,6 @@ set nocompatible
 set backspace=indent,eol,start
 
 " basic visual settings
-set cursorline
 set colorcolumn=80
 
 " tabs and space settings
