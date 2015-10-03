@@ -1,5 +1,7 @@
 # set paths
-export PATH=/usr/local/bin:/usr/local/sbin/:/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=/Users/charlieegan3/Code/gocode/bin:/usr/local/bin:/usr/local/sbin/:/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
+export GOPATH=/Users/charlieegan3/Code/gocode/
 
 # set prompt format
 export PS1="\W|"
