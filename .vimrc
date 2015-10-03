@@ -29,10 +29,10 @@ map <c-j> :m .+1<CR>==
 map <c-l> >>
 map <c-h> <<
 
-map <Up> gg
-map <Down> G
-map <Left> <<
-map <Right> >>
+noremap <Left>  <NOP>
+noremap <Right> <NOP>
+noremap <Up>    <NOP>
+noremap <Down>  <NOP>
 
 vmap v <Plug>(expand_region_expand)
 vmap V <Plug>(expand_region_shrink)
@@ -51,6 +51,8 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'tpope/vim-endwise'
 Plug 'https://github.com/slim-template/vim-slim'
+Plug 'mattn/emmet-vim'
+Plug 'lervag/vimtex'
 
 Plug 'wakatime/vim-wakatime'
 call plug#end()
