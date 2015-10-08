@@ -21,7 +21,7 @@ map <tab> :bn<cr>
 map <cr> :w<cr>
 
 map J 5j
-map K 5k
+nmap K 5k
 map H ^
 map L $
 map <c-k> :m .-2<CR>==
@@ -53,6 +53,7 @@ Plug 'tpope/vim-endwise'
 Plug 'https://github.com/slim-template/vim-slim'
 Plug 'mattn/emmet-vim'
 Plug 'lervag/vimtex'
+Plug 'fatih/vim-go'
 
 Plug 'wakatime/vim-wakatime'
 call plug#end()
@@ -68,3 +69,5 @@ highlight LineNr ctermfg=Black ctermbg=LightGrey
 
 " g:* settings
 let g:SuperTabCompleteCase = 'ignore'
+let g:go_fmt_command = "goimports"
+let g:go_doc_keywordprg_enabled = "0"
