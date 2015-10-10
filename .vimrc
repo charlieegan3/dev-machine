@@ -1,44 +1,64 @@
 " 'just the essentials'
+syntax enable
 set path=$PWD/**
-syntax on
 set nocompatible
-set backspace=indent,eol,start
-set colorcolumn=80
+set wildmenu
+set showmatch
+set incsearch
+set hlsearch
 
-" tabs and space settings
-set tabstop=2
-set shiftwidth=2
+set number
+set relativenumber
+set numberwidth=3
+highlight LineNr ctermfg=Black ctermbg=LightGrey
+
+set smarttab
+set smartindent
 set expandtab
+set colorcolumn=80
+set backspace=indent,eol,start
+set tabstop=4
+set softtabstop=4
+set shiftwidth=2
+
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
+let g:SuperTabCompleteCase = 'ignore'
+let g:go_fmt_command = "goimports"
+let g:go_doc_keywordprg_enabled = "0"
 
 let mapleader=";"
 
-map <leader>f :Ack
-map <leader>c :TComment<cr>
-map <leader>vs :source %<cr>
+" movement
+noremap j gj
+noremap k gk
+noremap J 5j
+noremap K 5k
+noremap B ^
+noremap E $
 
-map <SPACE> :FZF<cr>
-map <tab> :bn<cr>
-map <cr> :w<cr>
+" plugins & shortcuts
+nnoremap <leader>f :Ack
+nnoremap <leader>c :TComment<cr>
+nnoremap <leader>vs :source %<cr>
+nnoremap <SPACE> :FZF<cr>
+nnoremap <tab> :bn<cr>
+nnoremap <cr> :w<cr>
 
-map J 5j
-nmap K 5k
-map H ^
-map L $
-map <c-k> :m .-2<CR>==
-map <c-j> :m .+1<CR>==
-map <c-l> >>
-map <c-h> <<
+" normal mappings
+nnoremap <Left>  <NOP>
+nnoremap <Right> <NOP>
+nnoremap <Up>    <NOP>
+nnoremap <Down>  <NOP>
 
-noremap <Left>  <NOP>
-noremap <Right> <NOP>
-noremap <Up>    <NOP>
-noremap <Down>  <NOP>
+" insert mappings
+inoremap kj <esc>
+inoremap jk <esc>
 
-vmap v <Plug>(expand_region_expand)
-vmap V <Plug>(expand_region_shrink)
+" visual mappings
+vnoremap v <Plug>(expand_region_expand)
+vnoremap V <Plug>(expand_region_shrink)
 
 call plug#begin()
-Plug 'https://github.com/mhinz/vim-startify'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'mileszs/ack.vim'
 Plug 'ervandew/supertab'
@@ -47,7 +67,6 @@ Plug 'terryma/vim-expand-region'
 
 Plug 'tomtom/tcomment_vim'
 Plug 'itspriddle/vim-stripper'
-Plug 'jiangmiao/auto-pairs'
 
 Plug 'tpope/vim-endwise'
 Plug 'https://github.com/slim-template/vim-slim'
@@ -57,17 +76,3 @@ Plug 'fatih/vim-go'
 
 Plug 'wakatime/vim-wakatime'
 call plug#end()
-
-" read these other files as Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
-
-" line number & gutter settings
-set number
-set relativenumber
-set numberwidth=3
-highlight LineNr ctermfg=Black ctermbg=LightGrey
-
-" g:* settings
-let g:SuperTabCompleteCase = 'ignore'
-let g:go_fmt_command = "goimports"
-let g:go_doc_keywordprg_enabled = "0"
