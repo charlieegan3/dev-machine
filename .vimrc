@@ -54,6 +54,10 @@ nnoremap <BS> 1z=
 " insert mappings
 inoremap kj <esc>
 inoremap jk <esc>
+inoremap kk <esc>
+inoremap jj <esc>
+inoremap JJ <esc>
+inoremap KK <esc>
 
 " visual mappings
 vnoremap v <Plug>(expand_region_expand)
