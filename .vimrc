@@ -6,6 +6,7 @@ set wildmenu
 set showmatch
 set incsearch
 set hlsearch
+set spell spelllang=en_us
 
 set number
 set relativenumber
@@ -40,15 +41,15 @@ noremap E $
 nnoremap <leader>f :Ack
 nnoremap <leader>c :TComment<cr>
 nnoremap <leader>vs :source %<cr>
+
 nnoremap <SPACE> :FZF<cr>
 nnoremap <tab> :bn<cr>
 nnoremap <cr> :w<cr>
-
-" normal mappings
-nnoremap <Left>  <NOP>
-nnoremap <Right> <NOP>
-nnoremap <Up>    <NOP>
-nnoremap <Down>  <NOP>
+nnoremap <Left>  [s
+nnoremap <Right> ]s
+nnoremap <Up>    z=
+nnoremap <Down>  :%s /
+nnoremap <BS> 1z=
 
 " insert mappings
 inoremap kj <esc>
@@ -57,6 +58,7 @@ inoremap jk <esc>
 " visual mappings
 vnoremap v <Plug>(expand_region_expand)
 vnoremap V <Plug>(expand_region_shrink)
+vnoremap . :norm.<CR>
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
