@@ -7,6 +7,8 @@ set showmatch
 set incsearch
 set hlsearch
 set spell spelllang=en_us
+set autoread
+set scrolloff=5
 
 set number
 set relativenumber
