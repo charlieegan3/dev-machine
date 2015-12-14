@@ -122,6 +122,7 @@ osascript -e 'tell application "System Events" to get the name of every login it
 #----------------------------------------------------------------------------------------------------------------
 open -a "Google Chrome" --args --make-default-browser
 echo "set completion-ignore-case On" >> ~/.inputrc
+mkdir Code
 
 #----------------------------------------------------------------------------------------------------------------
 # TODO
