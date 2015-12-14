@@ -68,12 +68,8 @@ vnoremap . :norm.<CR>
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'mileszs/ack.vim'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
-Plug 'terryma/vim-expand-region'
-
-Plug 'tomtom/tcomment_vim'
 Plug 'itspriddle/vim-stripper'
 
 Plug 'tpope/vim-endwise'
@@ -81,6 +77,4 @@ Plug 'https://github.com/slim-template/vim-slim'
 Plug 'mattn/emmet-vim'
 Plug 'lervag/vimtex'
 Plug 'fatih/vim-go'
-
-Plug 'wakatime/vim-wakatime'
 call plug#end()

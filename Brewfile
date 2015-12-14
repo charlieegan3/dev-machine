@@ -1,17 +1,37 @@
+tap 'homebrew/dupes'
 tap 'caskroom/cask'
-tap 'Originate/gittown'
+tap 'caskroom/fonts'
+tap 'caskroom/versions'
 
-brew 'caskroom/cask/brew-cask'
-brew 'tree'
+brew 'coreutils'
+brew 'bash'
+brew 'homebrew/dupes/grep', args: ['with-default-names']
 brew 'git'
-brew 'vim'
-brew 'openssl'
-brew 'libxml2'
-brew 'libyaml'
-brew 'postgresql'
-brew 'imagemagick'
-brew 'git-town'
+brew 'tree'
+brew 'vim', args: ['override-system-vi']
+brew 'fzf'
 
-cask 'firefox'
-cask 'sublime-text'
-cask 'subl'
+brew 'brew-cask'
+cask_args appdir: '/Applications'
+
+# General
+cask 'dropbox'
+cask 'google-chrome'
+cask 'spotify'
+cask 'slack'
+cask '1password'
+# UI
+cask 'flux'
+# Utilities
+cask 'transmission'
+cask 'paw'
+cask 'little-snitch'
+cask 'recordit'
+# Development
+cask 'iterm2'
+cask 'sublime-text3'
+cask 'vagrant'
+cask 'virtualbox'
+cask 'gitup'
+cask 'font-hack'
+cask 'mactex'

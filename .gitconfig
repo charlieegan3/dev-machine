@@ -1,6 +1,6 @@
 [user]
 	name = Charlie Egan
-	email = charlieegan3@googlemail.com
+	email = git@charlieegan3.com
 [core]
 	editor = vi
 	excludesfile = /Users/charlieegan3/.gitignore_global
