@@ -10,6 +10,7 @@ brew 'git'
 brew 'tree'
 brew 'vim', args: ['override-system-vi']
 brew 'fzf'
+brew 'ansible'
 
 brew 'brew-cask'
 cask_args appdir: '/Applications'
