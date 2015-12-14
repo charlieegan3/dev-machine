@@ -10,13 +10,24 @@ export PS1="\W|"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# ignore dupes in history
+export HISTIGNORE="&"
+
+# Who knew ^R was a thing?
+bind '"\e[A"':history-search-backward
+bind '"\e[B"':history-search-forward
+
 # aliases
+alias ..="cd .."
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
 alias vi="vim"
 alias ls="ls -A --color"
 alias l="ls -d */ --color && ls -pa | grep -v /"
 alias gits="git status -sb"
-alias gitd="git diff -U0 | grep \"^\W\w\""
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n' | pbcopy"
+alias gitc="git diff --cached --word-diff"
 
 # welcome commander
 echo "hello."
