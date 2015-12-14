@@ -18,7 +18,6 @@ cask_args appdir: '/Applications'
 cask 'dropbox'
 cask 'google-chrome'
 cask 'spotify'
-cask 'slack'
 cask '1password'
 # UI
 cask 'flux'
