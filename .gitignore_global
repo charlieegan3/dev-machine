@@ -31,3 +31,6 @@
 ehthumbs.db
 Icon?
 Thumbs.db
+
+# vagrant directory
+.vagrant
