@@ -12,6 +12,7 @@ brew 'vim', args: ['override-system-vi']
 brew 'fzf'
 brew 'ansible'
 brew 'heroku-toolbelt'
+brew 'go'
 
 brew 'brew-cask'
 cask_args appdir: '/Applications'

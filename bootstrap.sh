@@ -67,6 +67,14 @@ defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 curl https://codeload.github.com/charlieegan3/dotfiles/zip/master > dotfiles.zip
 unzip -jo dotfiles.zip
 rm dotfiles.zip
+# to get the correct Go env
+source .bashrc
+
+#----------------------------------------------------------------------------------------------------------------
+# Directories
+#----------------------------------------------------------------------------------------------------------------
+mkdir Code
+mkdir -p Code/Go/src/github.com/charlieegan3
 
 #----------------------------------------------------------------------------------------------------------------
 # homebrew
@@ -88,6 +96,7 @@ brew cask cleanup
 #----------------------------------------------------------------------------------------------------------------
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall!
+vim +GoInstallBinaries +qall!
 
 #----------------------------------------------------------------------------------------------------------------
 # ssh
@@ -122,7 +131,7 @@ osascript -e 'tell application "System Events" to get the name of every login it
 #----------------------------------------------------------------------------------------------------------------
 open -a "Google Chrome" --args --make-default-browser
 echo "set completion-ignore-case On" >> ~/.inputrc
-mkdir Code
+go get github.com/tools/godep
 
 #----------------------------------------------------------------------------------------------------------------
 # TODO
