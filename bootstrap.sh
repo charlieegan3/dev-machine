@@ -59,6 +59,15 @@ defaults write com.apple.dock showAppExposeGestureEnabled -bool false
 defaults write com.apple.dock showDesktopGestureEnabled -bool false
 defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 
+# Finder
+defaults write com.apple.finder NewWindowTarget PfHm
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Safari
+shell "defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2"
+shell "defaults write com.apple.Safari IncludeDebugMenu -bool true"
+shell 'defaults write com.apple.Safari ProxiesInBookmarksBar "()"'
+
 #TODO Spotlight
 
 #----------------------------------------------------------------------------------------------------------------
