@@ -13,6 +13,7 @@ brew 'fzf'
 brew 'ansible'
 brew 'heroku-toolbelt'
 brew 'go'
+brew 'glide'
 brew 'postgres'
 
 brew 'brew-cask'
