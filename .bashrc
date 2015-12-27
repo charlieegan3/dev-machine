@@ -34,8 +34,12 @@ alias gits="git status -sb"
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n' | pbcopy"
 alias gitc="git diff --cached --word-diff"
 
-# welcome commander
-echo "hello."
-
 #fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# other settings
+shopt -s histappend
+shopt -s checkwinsize
+
+# welcome commander
+echo "hello."
