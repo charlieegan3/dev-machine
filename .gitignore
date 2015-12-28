@@ -1,6 +1,7 @@
 *
 
 !.gitignore
+!.gitmessage
 !.gitconfig
 !.bashrc
 !com.googlecode.iterm2.plist
