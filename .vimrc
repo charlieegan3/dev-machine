@@ -9,6 +9,7 @@ set hlsearch
 set spell spelllang=en_us
 set autoread
 set scrolloff=5
+set noerrorbells
 
 set number
 set relativenumber
