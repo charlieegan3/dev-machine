@@ -34,6 +34,10 @@ alias gits="git status -sb"
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n' | pbcopy"
 alias gitc="git diff --cached --word-diff"
 
+alias dc="docker-compose"
+alias dm="docker-machine"
+alias d="docker"
+
 #fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

@@ -162,6 +162,7 @@ echo " - Little Snitch Installer"
 echo " - Under Cover Installer"
 echo " - Garmin Connect"
 echo " - Mac App Store (PDF Expert, Day One, Better Snap Tool, Fantastical, Wifi Explorer, Pixelmator)"
+echo " - Docker Setup: https://docs.docker.com/engine/installation/mac/#from-your-shell, https://github.com/docker/toolbox/issues/273"
 
 read -p "Press enter to restart"
 sudo shutdown -r now
