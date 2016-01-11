@@ -141,6 +141,7 @@ osascript -e 'tell application "System Events" to get the name of every login it
 open -a "Google Chrome" --args --make-default-browser
 echo "set completion-ignore-case On" >> ~/.inputrc
 go get github.com/tools/godep
+go get -v -u github.com/peterh/liner github.com/derekparker/delve/cmd/dlv
 
 #----------------------------------------------------------------------------------------------------------------
 # TODO
@@ -162,6 +163,8 @@ echo " - Little Snitch Installer"
 echo " - Under Cover Installer"
 echo " - Garmin Connect"
 echo " - Mac App Store (PDF Expert, Day One, Better Snap Tool, Fantastical, Wifi Explorer, Pixelmator)"
+echo " - Fantastical Default Calendar Settings"
+echo " - Delve Debugger: https://github.com/derekparker/delve/wiki/Building"
 echo " - Docker Setup: https://docs.docker.com/engine/installation/mac/#from-your-shell, https://github.com/docker/toolbox/issues/273"
 
 read -p "Press enter to restart"
