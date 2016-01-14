@@ -37,6 +37,8 @@ alias gitc="git diff --cached --word-diff"
 alias dc="docker-compose"
 alias dm="docker-machine"
 alias d="docker"
+alias dmi="dm ip default"
+alias dmsi="docker-machine start default && eval \"$(docker-machine env default)\" && dm ip default"
 
 #fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
