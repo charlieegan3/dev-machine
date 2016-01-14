@@ -29,6 +29,7 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rak
 let g:SuperTabCompleteCase = 'ignore'
 let g:go_fmt_command = "goimports"
 let g:go_doc_keywordprg_enabled = "0"
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 let mapleader=";"
 
@@ -72,6 +73,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 Plug 'itspriddle/vim-stripper'
+Plug 'mileszs/ack.vim'
 
 Plug 'tpope/vim-endwise'
 Plug 'https://github.com/slim-template/vim-slim'
