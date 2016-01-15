@@ -106,6 +106,8 @@ brew cask cleanup
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall!
 vim +GoInstallBinaries +qall!
+mkdir -p ~/.vim/colors
+curl https://raw.githubusercontent.com/nelstrom/vim-mac-classic-theme/master/colors/mac_classic.vim > ~/.vim/colors/mac_classic.vim
 
 #----------------------------------------------------------------------------------------------------------------
 # ssh

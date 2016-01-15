@@ -1,5 +1,6 @@
 " 'just the essentials'
 syntax enable
+colorscheme mac_classic
 set path=$PWD/**
 set nocompatible
 set wildmenu
