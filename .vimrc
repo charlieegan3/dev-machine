@@ -76,6 +76,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itspriddle/vim-stripper'
 Plug 'mileszs/ack.vim'
 
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+
 Plug 'tpope/vim-endwise'
 Plug 'https://github.com/slim-template/vim-slim'
 Plug 'mattn/emmet-vim'
