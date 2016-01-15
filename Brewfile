@@ -19,6 +19,7 @@ brew 'docker'
 brew 'docker-machine'
 brew 'docker-compose'
 brew 'the_silver_searcher'
+brew 'hub'
 
 brew 'brew-cask'
 cask_args appdir: '/Applications'
