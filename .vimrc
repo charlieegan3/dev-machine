@@ -82,6 +82,8 @@ Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-endwise'
 Plug 'https://github.com/slim-template/vim-slim'
 Plug 'mattn/emmet-vim'
+Plug 'gregsexton/MatchTag'
 Plug 'lervag/vimtex'
 Plug 'fatih/vim-go'
+Plug 'pearofducks/ansible-vim'
 call plug#end()
