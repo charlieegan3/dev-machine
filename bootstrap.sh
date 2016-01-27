@@ -138,6 +138,15 @@ osascript -e 'tell application "System Events" to make login item at end with pr
 osascript -e 'tell application "System Events" to get the name of every login item'
 
 #----------------------------------------------------------------------------------------------------------------
+# Docker, dlite setup
+#----------------------------------------------------------------------------------------------------------------
+curl -L https://github.com/nlf/dlite/releases/download/1.0.4/dlite > /usr/local/bin/dlite
+chmod u=rwx /usr/local/bin/dlite
+sudo dlite install
+launchctl load ~/Library/LaunchAgents/local.dlite.plist
+launchctl start local.dlite
+
+#----------------------------------------------------------------------------------------------------------------
 # Finishing Touches
 #----------------------------------------------------------------------------------------------------------------
 open -a "Google Chrome" --args --make-default-browser
@@ -167,7 +176,6 @@ echo " - Garmin Connect"
 echo " - Mac App Store (PDF Expert, Day One, Better Snap Tool, Fantastical, Wifi Explorer, Pixelmator)"
 echo " - Fantastical Default Calendar Settings"
 echo " - Delve Debugger: https://github.com/derekparker/delve/wiki/Building"
-echo " - Docker Setup: https://docs.docker.com/engine/installation/mac/#from-your-shell, https://github.com/docker/toolbox/issues/273"
 
 read -p "Press enter to restart"
 sudo shutdown -r now

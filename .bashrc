@@ -38,7 +38,6 @@ eval "$(hub alias -s)"
 alias dc="docker-compose"
 alias dm="docker-machine"
 alias d="docker"
-alias dmi="dm ip default"
 
 #fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
