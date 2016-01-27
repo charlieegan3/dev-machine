@@ -38,6 +38,7 @@ alias dc="docker-compose"
 alias dm="docker-machine"
 alias d="docker"
 alias dk='docker stop $(docker ps -a -q)'
+alias dd='open http://local.docker/'
 
 eval "$(hub alias -s)"
 
