@@ -37,6 +37,7 @@ alias gitc="git diff --cached --word-diff"
 alias dc="docker-compose"
 alias dm="docker-machine"
 alias d="docker"
+alias dk='docker stop $(docker ps -a -q)'
 
 eval "$(hub alias -s)"
 
