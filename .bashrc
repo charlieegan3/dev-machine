@@ -33,11 +33,12 @@ alias l="ls -d */ || echo \"No Directories\" && ls -d .*/ --color && ls -pa | gr
 alias gits="git status -sb"
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n' | pbcopy"
 alias gitc="git diff --cached --word-diff"
-eval "$(hub alias -s)"
 
 alias dc="docker-compose"
 alias dm="docker-machine"
 alias d="docker"
+
+eval "$(hub alias -s)"
 
 #fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
