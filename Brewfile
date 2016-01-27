@@ -35,6 +35,7 @@ cask 'transmission'
 cask 'paw'
 cask 'little-snitch'
 cask 'recordit'
+cask 'teamviewer'
 # Development
 cask 'iterm2'
 cask 'sublime-text3'
