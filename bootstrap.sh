@@ -140,11 +140,10 @@ osascript -e 'tell application "System Events" to get the name of every login it
 #----------------------------------------------------------------------------------------------------------------
 # Docker, dlite setup
 #----------------------------------------------------------------------------------------------------------------
-curl -L https://github.com/nlf/dlite/releases/download/1.0.4/dlite > /usr/local/bin/dlite
+curl -L https://github.com/nlf/dlite/releases/download/1.1.1/dlite > /usr/local/bin/dlite
 chmod u=rwx /usr/local/bin/dlite
 sudo dlite install
-launchctl load ~/Library/LaunchAgents/local.dlite.plist
-launchctl start local.dlite
+dlite start
 
 #----------------------------------------------------------------------------------------------------------------
 # Finishing Touches
