@@ -28,6 +28,7 @@ cask 'dropbox'
 cask 'google-chrome'
 cask 'spotify'
 cask '1password'
+cask 'skype'
 # UI
 cask 'flux'
 # Utilities
