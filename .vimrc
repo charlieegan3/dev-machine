@@ -65,8 +65,6 @@ inoremap JJ <esc>
 inoremap KK <esc>
 
 " visual mappings
-vnoremap v <Plug>(expand_region_expand)
-vnoremap V <Plug>(expand_region_shrink)
 vnoremap . :norm.<CR>
 
 call plug#begin()
@@ -86,4 +84,6 @@ Plug 'gregsexton/MatchTag'
 Plug 'lervag/vimtex'
 Plug 'fatih/vim-go'
 Plug 'pearofducks/ansible-vim'
+Plug 'rhysd/vim-crystal'
+Plug 'neo4j-contrib/cypher-vim-syntax'
 call plug#end()
