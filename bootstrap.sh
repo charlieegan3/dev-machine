@@ -152,6 +152,7 @@ open -a "Google Chrome" --args --make-default-browser
 echo "set completion-ignore-case On" >> ~/.inputrc
 go get github.com/tools/godep
 go get -v -u github.com/peterh/liner github.com/derekparker/delve/cmd/dlv
+curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 
 #----------------------------------------------------------------------------------------------------------------
 # TODO

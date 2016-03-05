@@ -45,6 +45,9 @@ eval "$(hub alias -s)"
 #fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+#iterm integration
+source ~/.iterm2_shell_integration.bash
+
 # other settings
 shopt -s histappend
 shopt -s checkwinsize
