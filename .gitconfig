@@ -8,5 +8,6 @@
     default = simple
 [alias]
     lg = log --pretty=format:'%Cred%h%Creset %Cblue%an %Creset(%Cgreen%ar%Creset) \t%<(55,trunc)%s' --max-count=40
+    log = log --pretty=oneline
 [commit]
     template = ~/.gitmessage
