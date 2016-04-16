@@ -34,3 +34,7 @@ Thumbs.db
 
 # vagrant directory
 .vagrant
+
+# R files
+.RData
+.Rhistory

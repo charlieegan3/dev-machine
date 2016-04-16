@@ -2,6 +2,8 @@ tap 'homebrew/dupes'
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
+tap 'homebrew/science'
+
 
 brew 'coreutils'
 brew 'bash'
@@ -19,6 +21,7 @@ brew 'docker'
 brew 'docker-compose'
 brew 'the_silver_searcher'
 brew 'hub'
+brew 'r'
 
 brew 'brew-cask'
 cask_args appdir: '/Applications'
