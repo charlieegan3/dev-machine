@@ -39,6 +39,8 @@ alias dm="docker-machine"
 alias d="docker"
 alias dk='docker stop $(docker ps -a -q)'
 alias dd='open http://local.docker/'
+# doesn't work with the double quotes
+alias dd='docker rmi -f $(docker images | grep "^<none>" | ruby -ne "puts $_.split(/\s+/)[2]")'
 
 eval "$(hub alias -s)"
 
