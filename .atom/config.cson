@@ -1,0 +1,20 @@
+"*":
+  core:
+    packagesWithKeymapsDisabled: []
+    themes: [
+      "one-light-ui"
+      "mac-classic"
+    ]
+  editor:
+    fontSize: 12
+    showInvisibles: true
+  "exception-reporting":
+    userId: "23254654-39c3-3723-52ee-c56f46820e2d"
+  "tabs-to-spaces":
+    onSave: "tabify"
+  welcome:
+    showOnStartup: false
+    
+".rb":
+  "tabs-to-spaces":
+    onSave: "untabify"

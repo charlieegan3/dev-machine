@@ -1,0 +1,15 @@
+'atom-text-editor.vim-mode:not(.insert-mode)':
+  'K': 'custom:move-five-up'
+  'J': 'custom:move-five-down'
+
+'atom-text-editor.vim-mode.normal-mode':
+  'enter': 'core:save'
+  'space': 'fuzzy-finder:toggle-file-finder'
+
+'atom-text-editor.vim-mode.insert-mode':
+  'j j': 'vim-mode:activate-normal-mode'
+  'k k': 'vim-mode:activate-normal-mode'
+  'j k': 'vim-mode:activate-normal-mode'
+  'k j': 'vim-mode:activate-normal-mode'
+  'shift-K shift-K': 'vim-mode:activate-normal-mode'
+  'shift-J shift-J': 'vim-mode:activate-normal-mode'
