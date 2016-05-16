@@ -86,4 +86,6 @@ Plug 'fatih/vim-go'
 Plug 'pearofducks/ansible-vim'
 Plug 'rhysd/vim-crystal'
 Plug 'neo4j-contrib/cypher-vim-syntax'
+Plug 'nelstrom/vim-mac-classic-theme'
+Plug 'rust-lang/rust.vim'
 call plug#end()
