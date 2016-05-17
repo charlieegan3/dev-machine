@@ -4,7 +4,6 @@ tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/science'
 
-
 brew 'coreutils'
 brew 'bash'
 brew 'homebrew/dupes/grep', args: ['with-default-names']
@@ -14,14 +13,10 @@ brew 'vim', args: ['override-system-vi']
 brew 'fzf'
 brew 'ansible'
 brew 'heroku-toolbelt'
-brew 'go'
-brew 'glide'
 brew 'postgres'
 brew 'docker'
 brew 'docker-compose'
 brew 'the_silver_searcher'
-brew 'hub'
-brew 'r'
 
 brew 'brew-cask'
 cask_args appdir: '/Applications'

@@ -76,14 +76,12 @@ shell 'defaults write com.apple.Safari ProxiesInBookmarksBar "()"'
 curl https://codeload.github.com/charlieegan3/dotfiles/zip/master > dotfiles.zip
 unzip -jo dotfiles.zip
 rm dotfiles.zip
-# to get the correct Go env
 source .bashrc
 
 #----------------------------------------------------------------------------------------------------------------
 # Directories
 #----------------------------------------------------------------------------------------------------------------
-mkdir Code
-mkdir -p Code/Go/src/github.com/charlieegan3
+mkdir ~/Code
 
 #----------------------------------------------------------------------------------------------------------------
 # homebrew
@@ -105,9 +103,6 @@ brew cask cleanup
 #----------------------------------------------------------------------------------------------------------------
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall!
-vim +GoInstallBinaries +qall!
-mkdir -p ~/.vim/colors
-curl https://raw.githubusercontent.com/nelstrom/vim-mac-classic-theme/master/colors/mac_classic.vim > ~/.vim/colors/mac_classic.vim
 
 #----------------------------------------------------------------------------------------------------------------
 # ssh
@@ -140,7 +135,7 @@ osascript -e 'tell application "System Events" to get the name of every login it
 #----------------------------------------------------------------------------------------------------------------
 # Docker, dlite setup
 #----------------------------------------------------------------------------------------------------------------
-curl -L https://github.com/nlf/dlite/releases/download/1.1.1/dlite > /usr/local/bin/dlite
+curl -L https://github.com/nlf/dlite/releases/download/1.1.5/dlite > /usr/local/bin/dlite
 chmod u=rwx /usr/local/bin/dlite
 sudo dlite install
 dlite start
@@ -150,8 +145,6 @@ dlite start
 #----------------------------------------------------------------------------------------------------------------
 open -a "Google Chrome" --args --make-default-browser
 echo "set completion-ignore-case On" >> ~/.inputrc
-go get github.com/tools/godep
-go get -v -u github.com/peterh/liner github.com/derekparker/delve/cmd/dlv
 curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 
 #----------------------------------------------------------------------------------------------------------------
@@ -175,7 +168,6 @@ echo " - Under Cover Installer"
 echo " - Garmin Connect"
 echo " - Mac App Store (PDF Expert, Day One, Better Snap Tool, Fantastical, Wifi Explorer, Pixelmator)"
 echo " - Fantastical Default Calendar Settings"
-echo " - Delve Debugger: https://github.com/derekparker/delve/wiki/Building"
 
 read -p "Press enter to restart"
 sudo shutdown -r now
