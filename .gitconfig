@@ -3,7 +3,7 @@
 	email = git@charlieegan3.com
 [core]
 	editor = vi
-	excludesfile = /Users/charlieegan3/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [push]
     default = simple
 [alias]
