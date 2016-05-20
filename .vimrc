@@ -1,3 +1,5 @@
+" Charlie's Vim Config
+
 " 'just the essentials'
 syntax enable
 colorscheme mac_classic
@@ -13,7 +15,6 @@ set scrolloff=5
 set noerrorbells
 
 set number
-set relativenumber
 set numberwidth=3
 highlight LineNr ctermfg=Black ctermbg=LightGrey
 
@@ -43,17 +44,19 @@ noremap B ^
 noremap E $
 
 " plugins & shortcuts
-nnoremap <leader>f :Ack
-nnoremap <leader>c :TComment<cr>
-nnoremap <leader>vs :source %<cr>
+nnoremap <leader>f :Autoformat<cr>
+nnoremap <leader>g :Gread<cr>
+nnoremap <leader>p :PlugInstall<cr>
+nnoremap <leader>vs :source ~/.vimrc<cr>
 
 nnoremap <SPACE> :FZF<cr>
 nnoremap <tab> :bn<cr>
+nnoremap <S-tab> :bp<cr>
 nnoremap <cr> :w<cr>
-nnoremap <Left>  [s
+nnoremap <Left> [s
 nnoremap <Right> ]s
-nnoremap <Up>    z=
-nnoremap <Down>  :%s /
+nnoremap <Up> z=
+nnoremap <Down> :%s /
 nnoremap <BS> 1z=
 
 " insert mappings
@@ -63,9 +66,6 @@ inoremap kk <esc>
 inoremap jj <esc>
 inoremap JJ <esc>
 inoremap KK <esc>
-
-" visual mappings
-vnoremap . :norm.<CR>
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -88,4 +88,5 @@ Plug 'rhysd/vim-crystal'
 Plug 'neo4j-contrib/cypher-vim-syntax'
 Plug 'nelstrom/vim-mac-classic-theme'
 Plug 'rust-lang/rust.vim'
+Plug 'Chiel92/vim-autoformat'
 call plug#end()
