@@ -143,17 +143,16 @@ dlite start
 #----------------------------------------------------------------------------------------------------------------
 # Finishing Touches
 #----------------------------------------------------------------------------------------------------------------
-open -a "Google Chrome" --args --make-default-browser
-echo "set completion-ignore-case On" >> ~/.inputrc
 curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
+curl http://assets.undercoverhq.com/client/6.5/undercover_mac.pkg > ~/Desktop/undercover.pkg
 
 #----------------------------------------------------------------------------------------------------------------
 # TODO
 #----------------------------------------------------------------------------------------------------------------
-curl http://assets.undercoverhq.com/client/6.5/undercover_mac.pkg > ~/Desktop/undercover.pkg
+
 open /Applications/App\ Store.app/
 open /Applications/System\ Preferences.app/
-open /Applications/Google\ Chrome.app
+
 echo "TODO: Setings"
 echo " - Spotlight"
 echo " - iTerm PrefsCustomFolder"
@@ -165,8 +164,7 @@ echo " - Chrome Login, set downloads folder, 1Password add on"
 echo "TODO: Install"
 echo " - Little Snitch Installer"
 echo " - Under Cover Installer"
-echo " - Garmin Connect"
-echo " - Mac App Store (PDF Expert, Day One, Better Snap Tool, Fantastical, Wifi Explorer, Pixelmator)"
+echo " - Mac App Store (PDF Expert, Day One, Better Snap Tool, Fantastical, Wifi Explorer, Pixelmator, Wunderlist)"
 echo " - Fantastical Default Calendar Settings"
 
 read -p "Press enter to restart"
