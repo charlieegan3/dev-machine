@@ -20,7 +20,7 @@ bind '"\e[B"':history-search-forward
 alias ls="ls -A --color"
 alias gits="git status -sb"
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n' | pbcopy"
-alias gitc="git diff --cached --word-diff"
+alias gitc="git diff --cached --word-diff=color"
 
 alias dc="docker-compose"
 alias dk='docker stop $(docker ps -a -q)'
