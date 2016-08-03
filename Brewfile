@@ -1,5 +1,6 @@
 tap 'homebrew/dupes'
 tap 'homebrew/science'
+tap 'homebrew/completions'
 tap 'caskroom/versions'
 tap 'caskroom/fonts'
 tap 'caskroom/cask'
@@ -11,6 +12,7 @@ brew 'homebrew/dupes/grep', args: ['with-default-names']
 brew 'git'
 brew 'tree'
 brew 'vim', args: ['override-system-vi']
+brew 'bash-completion'
 brew 'fzf'
 brew 'ansible'
 brew 'heroku-toolbelt'
@@ -18,6 +20,11 @@ brew 'postgres'
 brew 'docker'
 brew 'docker-compose'
 brew 'the_silver_searcher'
+
+# Completions
+brew 'homebrew/completions/docker-completion'
+brew 'homebrew/completions/docker-compose-completion'
+brew 'homebrew/completions/brew-cask-completion'
 
 brew 'brew-cask'
 cask_args appdir: '/Applications'

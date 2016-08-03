@@ -35,5 +35,9 @@ source ~/.iterm2_shell_integration.bash
 shopt -s histappend
 shopt -s checkwinsize
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 # welcome commander
 echo "hello."
