@@ -38,3 +38,6 @@ Thumbs.db
 # R files
 .RData
 .Rhistory
+
+# IDEs
+.idea/
