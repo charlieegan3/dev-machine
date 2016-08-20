@@ -20,6 +20,7 @@ brew 'postgres'
 brew 'docker'
 brew 'docker-compose'
 brew 'the_silver_searcher'
+brew 'gnupg'
 
 # Completions
 brew 'homebrew/completions/docker-completion'

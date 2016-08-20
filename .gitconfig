@@ -1,6 +1,6 @@
 [user]
 	name = Charlie Egan
-	email = git@charlieegan3.com
+	email = charlieegan3@users.noreply.github.com
 [core]
 	editor = vi
 	excludesfile = ~/.gitignore_global
@@ -11,3 +11,4 @@
     log = log --pretty=oneline
 [commit]
     template = ~/.gitmessage
+    gpgsign = true
