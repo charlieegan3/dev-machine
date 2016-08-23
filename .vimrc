@@ -91,4 +91,7 @@ Plug 'neo4j-contrib/cypher-vim-syntax'
 Plug 'nelstrom/vim-mac-classic-theme'
 Plug 'rust-lang/rust.vim'
 Plug 'Chiel92/vim-autoformat'
+Plug 'tpope/vim-haml'
+Plug 'kchmck/vim-coffee-script'
+Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
