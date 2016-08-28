@@ -135,12 +135,11 @@ osascript -e 'tell application "System Events" to make login item at end with pr
 osascript -e 'tell application "System Events" to get the name of every login item'
 
 #----------------------------------------------------------------------------------------------------------------
-# Docker, dlite setup
+# Kubernetes
 #----------------------------------------------------------------------------------------------------------------
-curl -L https://github.com/nlf/dlite/releases/download/1.1.5/dlite > /usr/local/bin/dlite
-chmod u=rwx /usr/local/bin/dlite
-sudo dlite install
-dlite start
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.8.0/minikube-darwin-amd64
+chmod +x minikube
+sudo mv minikube /usr/local/bin/
 
 #----------------------------------------------------------------------------------------------------------------
 # Finishing Touches
@@ -165,6 +164,7 @@ echo " - Chrome Login, set downloads folder, 1Password add on"
 
 echo "TODO: Install"
 echo " - Little Snitch Installer"
+echo " - Docker, Google Cloud"
 echo " - Under Cover Installer"
 echo " - Mac App Store (PDF Expert, Day One, Better Snap Tool, Fantastical, Wifi Explorer, Pixelmator, Wunderlist)"
 echo " - Fantastical Default Calendar Settings"
