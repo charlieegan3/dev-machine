@@ -11,6 +11,9 @@ export PS1="\W|"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# use the current tty as the GPG UI
+export GPG_TTY=`tty`
+
 # history
 export HISTIGNORE="&"
 bind '"\e[A"':history-search-backward

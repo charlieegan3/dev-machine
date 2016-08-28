@@ -17,7 +17,7 @@ brew 'ansible'
 brew 'heroku-toolbelt'
 brew 'postgres'
 brew 'the_silver_searcher'
-brew 'gnupg'
+brew 'gpg'
 brew 'awscli'
 brew 'docker-machine-driver-xhyve'
 
