@@ -1,6 +1,5 @@
 tap 'homebrew/dupes'
 tap 'homebrew/science'
-tap 'homebrew/completions'
 tap 'caskroom/versions'
 tap 'caskroom/fonts'
 tap 'caskroom/cask'
@@ -17,17 +16,11 @@ brew 'fzf'
 brew 'ansible'
 brew 'heroku-toolbelt'
 brew 'postgres'
-brew 'docker'
-brew 'docker-compose'
 brew 'the_silver_searcher'
 brew 'gnupg'
+brew 'awscli'
+brew 'docker-machine-driver-xhyve'
 
-# Completions
-brew 'homebrew/completions/docker-completion'
-brew 'homebrew/completions/docker-compose-completion'
-brew 'homebrew/completions/brew-cask-completion'
-
-brew 'brew-cask'
 cask_args appdir: '/Applications'
 
 # General
@@ -54,4 +47,3 @@ cask 'font-hack'
 cask 'postico'
 cask 'dash'
 cask 'pandoc'
-cask 'awscli'
