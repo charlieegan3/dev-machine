@@ -141,6 +141,10 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.8.0/miniku
 chmod +x minikube
 sudo mv minikube /usr/local/bin/
 
+curl -O https://storage.googleapis.com/kubernetes-release/release/v1.3.4/bin/darwin/amd64/kubectl
+chmod +x kubectl
+mv kubectl /usr/local/bin/kubectl
+
 #----------------------------------------------------------------------------------------------------------------
 # Finishing Touches
 #----------------------------------------------------------------------------------------------------------------
