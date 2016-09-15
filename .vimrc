@@ -50,6 +50,9 @@ nnoremap <leader>f :Autoformat<cr>
 nnoremap <leader>g :Gread<cr>
 nnoremap <leader>p :PlugInstall<cr>
 nnoremap <leader>vs :source ~/.vimrc<cr>
+nnoremap <leader>t :!ctags -R .<cr>
+nnoremap <leader><tab> <C-]>
+nnoremap <leader>§ <C-t>
 
 nnoremap <SPACE> :FZF<cr>
 nnoremap <tab> :bn<cr>

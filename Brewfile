@@ -20,6 +20,9 @@ brew 'the_silver_searcher'
 brew 'gpg'
 brew 'awscli'
 brew 'docker-machine-driver-xhyve'
+brew 'gnu-tar'
+brew 'ctags'
+brew 'gotags'
 
 cask_args appdir: '/Applications'
 
