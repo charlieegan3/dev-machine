@@ -30,6 +30,9 @@ alias gitcm="git log -1 --pretty=%B"
 alias dc="docker-compose"
 alias dk='docker stop $(docker ps -a -q)'
 
+alias kb='kubectl'
+alias kbs='kb get pods && kb get deployments && kb get services'
+
 #fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
