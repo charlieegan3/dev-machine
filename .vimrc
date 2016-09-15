@@ -35,7 +35,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 let mapleader=";"
 
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+let $FZF_DEFAULT_COMMAND = 'find .'
 
 " movement
 noremap j gj
