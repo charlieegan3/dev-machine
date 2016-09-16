@@ -37,4 +37,9 @@ RUN mkdir /home/developer/.vim/colors
 RUN curl https://raw.githubusercontent.com/nelstrom/vim-mac-classic-theme/master/colors/mac_classic.vim > /home/developer/.vim/colors/mac_classic.vim
 RUN vim -c PlugInstall -c qall!
 
+# install vim go tools
+ENV GOPATH /home/developer/Code
+ENV PATH $GOPATH/bin:$PATH
+RUN go get golang.org/x/tools/cmd/goimports
+
 CMD ["vim"]
