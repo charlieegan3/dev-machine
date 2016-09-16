@@ -35,7 +35,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 let mapleader=";"
 
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+let $FZF_DEFAULT_COMMAND = 'find .'
 
 " movement
 noremap j gj
@@ -53,6 +53,8 @@ nnoremap <leader>vs :source ~/.vimrc<cr>
 nnoremap <leader>t :!ctags -R .<cr>
 nnoremap <leader><tab> <C-]>
 nnoremap <leader>§ <C-t>
+nnoremap <leader>w :bd<cr>
+nnoremap <leader>q :wq<cr>
 
 nnoremap <SPACE> :FZF<cr>
 nnoremap <tab> :bn<cr>
@@ -94,6 +96,7 @@ Plug 'neo4j-contrib/cypher-vim-syntax'
 Plug 'nelstrom/vim-mac-classic-theme'
 Plug 'rust-lang/rust.vim'
 Plug 'Chiel92/vim-autoformat'
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-haml'
 Plug 'kchmck/vim-coffee-script'
 Plug 'nathanaelkane/vim-indent-guides'
