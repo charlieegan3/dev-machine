@@ -47,5 +47,9 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+# configure Ctrl-w behavior
+stty werase undef
+bind '\C-w:unix-filename-rubout'
+
 # welcome commander
 echo "hello."
