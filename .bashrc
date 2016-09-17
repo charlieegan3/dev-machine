@@ -38,6 +38,11 @@ dvim() {
   docker run --rm -it -v "$(pwd):/project" -w /project charlieegan3/vim vim $@
 }
 
+docker-clean() {
+  docker rm $(docker ps -a -q)
+  docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}')
+}
+
 #fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
