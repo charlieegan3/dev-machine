@@ -42,4 +42,7 @@ ENV GOPATH /home/developer/Code
 ENV PATH $GOPATH/bin:$PATH
 RUN go get golang.org/x/tools/cmd/goimports
 
+# set terminal colors
+ENV TERM=xterm-256color
+
 CMD ["vim"]
