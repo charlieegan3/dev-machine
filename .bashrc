@@ -15,7 +15,7 @@ export EDITOR="$VISUAL"
 export GPG_TTY=`tty`
 
 # history
-export HISTIGNORE="&"
+HISTCONTROL=ignorespace:ignoredups
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
