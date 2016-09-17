@@ -34,9 +34,7 @@ RUN ~/.fzf/install
 RUN go get golang.org/x/tools/cmd/goimports
 
 # download config files
-RUN curl https://codeload.github.com/charlieegan3/dotfiles/zip/master > dotfiles.zip
-RUN unzip -jo dotfiles.zip
-RUN rm dotfiles.zip
+ADD ./.vimrc .vimrc
 
 # install vim plugins
 RUN curl -fLo /home/developer/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
