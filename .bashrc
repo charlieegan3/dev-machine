@@ -34,7 +34,7 @@ alias kb='kubectl'
 alias kbs='kb get pods && kb get deployments && kb get services'
 
 dvim() {
-  # docker build -f ~/Dockerfile.vim -t charlieegan3/vim ~ > /dev/null
+  # docker build -f ~/Dockerfile -t charlieegan3/vim ~ > /dev/null
   docker run --rm -it -v "$(pwd):/project" -w /project charlieegan3/vim vim $@
 }
 

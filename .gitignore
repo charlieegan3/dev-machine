@@ -25,4 +25,4 @@
 !.atom/styles.less
 
 !.dockerignore
-!Dockerfile.vim
+!Dockerfile
