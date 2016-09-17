@@ -33,7 +33,10 @@ alias dk='docker stop $(docker ps -a -q)'
 alias kb='kubectl'
 alias kbs='kb get pods && kb get deployments && kb get services'
 
-alias dvim='docker build -f ~/Dockerfile.vim -t charlieegan3/vim ~ > /dev/null && docker run -it -v "$(pwd):/project" -w /project charlieegan3/vim'
+dvim() {
+  # docker build -f ~/Dockerfile.vim -t charlieegan3/vim ~ > /dev/null
+  docker run --rm -it -v "$(pwd):/project" -w /project charlieegan3/vim vim $@
+}
 
 #fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
