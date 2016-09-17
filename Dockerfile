@@ -1,4 +1,5 @@
 # Containerized Vim
+# https://hub.docker.com/r/charlieegan3/vim/
 
 FROM alpine:latest
 
@@ -9,7 +10,7 @@ ENV TERM=xterm-256color
 # dev dependencies
 RUN apk add --update --virtual build-deps build-base
 RUN apk add make libxpm-dev libx11-dev libxt-dev ncurses-dev \
-                     git libsm libice libxt libx11 ncurses
+            git libsm libice libxt libx11 ncurses
 
 # general dependencies
 RUN apk add bash ctags curl unzip ctags unzip
@@ -32,8 +33,12 @@ RUN gem install curses --no-ri --no-rdoc
 RUN ~/.fzf/install
 # goimports (required for gofmt)
 RUN go get golang.org/x/tools/cmd/goimports
+# gotags (required to generate tags for Golang projects)
+RUN go get github.com/jstemmer/gotags
+# grep, get version required for gitgutter plugin
+RUN apk add --update grep
 
-# download config files
+# Add config file
 ADD ./.vimrc .vimrc
 
 # install vim plugins
