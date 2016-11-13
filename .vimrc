@@ -36,7 +36,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 let mapleader=";"
 
-let $FZF_DEFAULT_COMMAND = 'find . -type f | grep -v ./.git'
+let $FZF_DEFAULT_COMMAND = 'find . -type f | grep -v ./.git | grep -v bundle/ | grep -v tmp/ | grep -v venv | grep -v wercker/'
 
 " movement
 noremap j gj
