@@ -4,6 +4,7 @@ tap 'caskroom/versions'
 tap 'caskroom/fonts'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
+tap 'wercker/wercker'
 
 brew 'coreutils'
 brew 'bash'
@@ -23,6 +24,7 @@ brew 'docker-machine-driver-xhyve'
 brew 'gnu-tar'
 brew 'ctags'
 brew 'gotags'
+brew 'wercker-cli'
 
 cask_args appdir: '/Applications'
 
