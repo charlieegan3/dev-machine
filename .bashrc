@@ -22,7 +22,9 @@ bind '"\e[B"':history-search-forward
 # aliases
 alias ls="ls -A --color"
 alias gits="git status -sb"
-alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n' | pbcopy"
+alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'"
+alias gitpb="gitb | pbcopy"
+alias gitpub='git push origin $(gitb)'
 alias gitc="git diff --cached --word-diff=color"
 alias gitch="git clean -df && git checkout -- ."
 alias gitcm="git log -1 --pretty=%B"
