@@ -5,6 +5,7 @@ tap 'caskroom/fonts'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'wercker/wercker'
+tap 'd12frosted/emacs-plus'
 
 brew 'coreutils'
 brew 'bash'
@@ -25,6 +26,7 @@ brew 'gnu-tar'
 brew 'ctags'
 brew 'gotags'
 brew 'wercker-cli'
+brew 'emacs-plus'
 
 cask_args appdir: '/Applications'
 
