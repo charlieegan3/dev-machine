@@ -46,21 +46,26 @@ noremap K 5k
 noremap B ^
 noremap E $
 
+" windows
+nnoremap <leader>w :bd<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>n <C-w>v
+nnoremap <tab> :bn<cr>
+nnoremap <S-tab> :bp<cr>
+
 " plugins & shortcuts
-nnoremap <leader>f :Autoformat<cr>
-nnoremap <leader>g :Gread<cr>
-nnoremap <leader>p :PlugInstall<cr>
-nnoremap <leader>vs :source ~/.vimrc<cr>
+nnoremap <SPACE> :FZF<cr>
+
 nnoremap <leader>t :!ctags -R .<cr>
 nnoremap <leader><tab> <C-]>
 nnoremap <leader>§ <C-t>
-nnoremap <leader>w :bd<cr>
-nnoremap <leader>q :q<cr>
 
-nnoremap <SPACE> :FZF<cr>
-nnoremap <tab> :bn<cr>
-nnoremap <S-tab> :bp<cr>
+nnoremap <leader>f :Autoformat<cr>
+nnoremap <leader>g :Gread<cr>
+
 nnoremap <cr> :w<cr>
+
+" spelling
 nnoremap <Left> [s
 nnoremap <Right> ]s
 nnoremap <Up> z=
