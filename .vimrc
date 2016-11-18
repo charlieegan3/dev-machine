@@ -55,7 +55,7 @@ nnoremap <leader>t :!ctags -R .<cr>
 nnoremap <leader><tab> <C-]>
 nnoremap <leader>§ <C-t>
 nnoremap <leader>w :bd<cr>
-nnoremap <leader>q :wq<cr>
+nnoremap <leader>q :q<cr>
 
 nnoremap <SPACE> :FZF<cr>
 nnoremap <tab> :bn<cr>
