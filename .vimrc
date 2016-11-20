@@ -94,6 +94,8 @@ Plug 'ervandew/supertab'       " completion
 Plug 'itspriddle/vim-stripper' " white space trimming
 Plug 'mileszs/ack.vim'         " project search
 Plug 'luochen1990/rainbow'     " bracket highlighting
+Plug 'scrooloose/nerdcommenter'        " comment toggling
+Plug 'terryma/vim-multiple-cursors'    " something a little like sublime
 Plug 'nathanaelkane/vim-indent-guides' " show indent level
 
 Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
@@ -109,8 +111,7 @@ Plug 'fatih/vim-go'             " golang
 Plug 'rust-lang/rust.vim'       " rust
 Plug 'yaml.vim'                 " yml
 Plug 'valloric/matchtagalways'  " html tag matching
-
-Plug 'scrooloose/nerdcommenter'
+Plug 'mxw/vim-jsx'              " jsx & React
 
 " currently unused
 " Plug 'slim-template/vim-slim'
