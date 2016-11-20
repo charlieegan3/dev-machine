@@ -109,4 +109,5 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-haml'
 Plug 'kchmck/vim-coffee-script'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'yaml.vim'
 call plug#end()
