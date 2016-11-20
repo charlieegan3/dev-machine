@@ -84,7 +84,7 @@ let g:NERDSpaceDelims = 1
 
 let mapleader=";"
 
-let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 
 autocmd BufWinEnter * :IndentGuidesEnable
 

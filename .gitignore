@@ -26,3 +26,5 @@
 
 !.dockerignore
 !Dockerfile
+
+!.agignore
