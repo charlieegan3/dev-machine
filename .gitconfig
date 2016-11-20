@@ -1,15 +1,19 @@
 [user]
-	name = Charlie Egan
-	email = charlieegan3@users.noreply.github.com
+  name = Charlie Egan
+  email = charlieegan3@users.noreply.github.com
 [core]
-	editor = vi
-	excludesfile = ~/.gitignore_global
-    filemode = false
+  editor = vi
+  excludesfile = ~/.gitignore_global
+  filemode = false
 [push]
-    default = simple
+  default = simple
 [alias]
-    lg = log --pretty=format:'%Cred%h%Creset %Cblue%an %Creset(%Cgreen%ar%Creset) \t%<(55,trunc)%s' --max-count=40
-    log = log --pretty=oneline
+  lg = log --pretty=format:'%Cred%h%Creset %Cblue%an %Creset(%Cgreen%ar%Creset) \t%<(55,trunc)%s' --max-count=40
+  log = log --pretty=oneline
+  s = ! git status -sb
+  c = diff --cached --word-diff=color
+  co = clean -df && git checkout -- .
+  cm = log -1 --pretty=%B
 [commit]
-    template = ~/.gitmessage
-    gpgsign = true
+  template = ~/.gitmessage
+  gpgsign = true

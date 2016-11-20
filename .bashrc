@@ -21,28 +21,26 @@ bind '"\e[B"':history-search-forward
 
 # aliases
 alias ls="ls -A --color"
-alias gits="git status -sb"
-alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'"
-alias gitpb="gitb | pbcopy"
-alias gitpub='git push origin $(gitb)'
-alias gitc="git diff --cached --word-diff=color"
-alias gitch="git clean -df && git checkout -- ."
-alias gitcm="git log -1 --pretty=%B"
-
 alias dc="docker-compose"
 alias dk='docker stop $(docker ps -a -q)'
 
-alias kb='kubectl'
-alias kbs='kb get pods && kb get deployments && kb get services'
-
-dvim() {
-  # docker build -f ~/Dockerfile -t charlieegan3/vim ~ > /dev/null
-  docker run --rm -it -v "$(pwd):/project" -w /project charlieegan3/vim vim $@
-}
-
+# functions
 docker-clean() {
   docker rm $(docker ps -a -q)
   docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}')
+}
+gitb() {
+  git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'
+}
+gitpb() {
+  gitb | pbcopy
+}
+gitpub() {
+  git push origin $(gitb)
+}
+dvim() {
+  # docker build -f ~/Dockerfile -t charlieegan3/vim ~ > /dev/null
+  docker run --rm -it -v "$(pwd):/project" -w /project charlieegan3/vim vim $@
 }
 
 #fzf search
