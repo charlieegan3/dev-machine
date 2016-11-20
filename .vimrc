@@ -27,6 +27,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=2
 
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
+
 " movement
 noremap j gj
 noremap k gk
@@ -70,12 +72,15 @@ inoremap JJ <esc>
 inoremap KK <esc>
 
 " plugin settings
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 let g:SuperTabCompleteCase = 'ignore'
+
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
 let g:go_doc_keywordprg_enabled = "0"
+
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+let g:NERDSpaceDelims = 1
 
 let mapleader=";"
 
@@ -104,6 +109,8 @@ Plug 'fatih/vim-go'             " golang
 Plug 'rust-lang/rust.vim'       " rust
 Plug 'yaml.vim'                 " yml
 Plug 'valloric/matchtagalways'  " html tag matching
+
+Plug 'scrooloose/nerdcommenter'
 
 " currently unused
 " Plug 'slim-template/vim-slim'
