@@ -27,17 +27,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=2
 
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
-let g:SuperTabCompleteCase = 'ignore'
-let g:go_fmt_command = "goimports"
-let g:go_fmt_autosave = 1
-let g:go_doc_keywordprg_enabled = "0"
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
-let mapleader=";"
-
-let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
-
 " movement
 noremap j gj
 noremap k gk
@@ -79,6 +68,20 @@ inoremap kk <esc>
 inoremap jj <esc>
 inoremap JJ <esc>
 inoremap KK <esc>
+
+" plugin settings
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
+let g:SuperTabCompleteCase = 'ignore'
+let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
+let g:go_doc_keywordprg_enabled = "0"
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+let mapleader=";"
+
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+
+autocmd BufWinEnter * :IndentGuidesEnable
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
