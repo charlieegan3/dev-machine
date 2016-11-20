@@ -85,29 +85,30 @@ autocmd BufWinEnter * :IndentGuidesEnable
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'ervandew/supertab'
-Plug 'airblade/vim-gitgutter'
-Plug 'itspriddle/vim-stripper'
-Plug 'mileszs/ack.vim'
+Plug 'ervandew/supertab'       " completion
+Plug 'itspriddle/vim-stripper' " white space trimming
+Plug 'mileszs/ack.vim'         " project search
+Plug 'luochen1990/rainbow'     " bracket highlighting
+Plug 'nathanaelkane/vim-indent-guides' " show indent level
 
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
+Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
 
-Plug 'tpope/vim-endwise'
-Plug 'https://github.com/slim-template/vim-slim'
-Plug 'mattn/emmet-vim'
-Plug 'gregsexton/MatchTag'
-Plug 'lervag/vimtex'
-Plug 'fatih/vim-go'
-Plug 'pearofducks/ansible-vim'
-Plug 'rhysd/vim-crystal'
-Plug 'neo4j-contrib/cypher-vim-syntax'
-Plug 'nelstrom/vim-mac-classic-theme'
-Plug 'rust-lang/rust.vim'
-Plug 'Chiel92/vim-autoformat'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-haml'
-Plug 'kchmck/vim-coffee-script'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'yaml.vim'
+Plug 'tpope/vim-fugitive'      " git commands
+Plug 'airblade/vim-gitgutter'  " gutter git status
+
+Plug 'vim-ruby/vim-ruby'        " ruby
+Plug 'tpope/vim-endwise'        " ruby end insertion
+Plug 'tpope/vim-haml'           " haml
+Plug 'kchmck/vim-coffee-script' " coffeescript
+Plug 'fatih/vim-go'             " golang
+Plug 'rust-lang/rust.vim'       " rust
+Plug 'yaml.vim'                 " yml
+Plug 'valloric/matchtagalways'  " html tag matching
+
+" currently unused
+" Plug 'slim-template/vim-slim'
+" Plug 'lervag/vimtex'
+" Plug 'pearofducks/ansible-vim'
+" Plug 'rhysd/vim-crystal'
+" Plug 'neo4j-contrib/cypher-vim-syntax'
 call plug#end()
