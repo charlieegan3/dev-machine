@@ -29,6 +29,8 @@ set shiftwidth=2
 
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 
+let mapleader=";"
+
 " movement
 noremap j gj
 noremap k gk
@@ -81,8 +83,6 @@ let g:go_doc_keywordprg_enabled = "0"
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 let g:NERDSpaceDelims = 1
-
-let mapleader=";"
 
 let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 
