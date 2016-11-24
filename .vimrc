@@ -45,6 +45,8 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>n <C-w>v
 nnoremap <tab> :bn<cr>
 nnoremap <S-tab> :bp<cr>
+nnoremap <leader>v :vsp<cr>
+nnoremap <leader>rm :call delete(expand('%')) \| bdelete!<CR>
 
 " plugins & shortcuts
 nnoremap <SPACE> :FZF<cr>
