@@ -14,8 +14,14 @@ bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
 # aliases
+alias vi="vim"
+alias ls="ls -A --color"
+
 alias dc="docker-compose"
 alias dk='docker stop $(docker ps -a -q)'
+
+alias copy="xclip -selection clipboard"
+alias paste="xclip -o"
 
 # functions
 docker-clean() {
@@ -26,7 +32,7 @@ gitb() {
   git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'
 }
 gitpb() {
-  gitb | pbcopy
+  gitb | xclip -selection clipboard
 }
 gitpub() {
   git push origin $(gitb)
