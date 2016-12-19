@@ -22,6 +22,7 @@ alias dk='docker stop $(docker ps -a -q)'
 
 alias copy="xclip -selection clipboard"
 alias paste="xclip -o"
+alias xcopy="xclip -o | xclip -selection clipboard"
 
 # functions
 docker-clean() {
