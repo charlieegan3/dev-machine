@@ -88,7 +88,7 @@ let g:NERDSpaceDelims = 1
 
 let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 
-autocmd BufWinEnter * :IndentGuidesEnable
+" autocmd BufWinEnter * :IndentGuidesEnable
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -98,7 +98,7 @@ Plug 'mileszs/ack.vim'         " project search
 Plug 'luochen1990/rainbow'     " bracket highlighting
 Plug 'scrooloose/nerdcommenter'        " comment toggling
 Plug 'terryma/vim-multiple-cursors'    " something a little like sublime
-Plug 'nathanaelkane/vim-indent-guides' " show indent level
+" Plug 'nathanaelkane/vim-indent-guides' " show indent level
 
 
 Plug 'tpope/vim-fugitive'      " git commands
