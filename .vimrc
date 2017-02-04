@@ -82,7 +82,7 @@ let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
 let g:go_doc_keywordprg_enabled = "0"
 
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = "ag -ul --nogroup --nocolor --column"
 
 let g:NERDSpaceDelims = 1
 
