@@ -2,7 +2,8 @@
 
 " 'just the essentials'
 syntax enable
-" colorscheme mac_classic
+set background=dark
+colorscheme solarized
 set path=$PWD/**
 set nocompatible
 set wildmenu
