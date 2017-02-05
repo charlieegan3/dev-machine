@@ -36,6 +36,12 @@ gitpb() {
 gitpub() {
   git push origin $(gitb)
 }
+vpn-init() {
+  sudo expect /etc/openvpn/start.sh
+}
+vpn-exit() {
+  sudo killall openvpn
+}
 
 #fzf search
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
