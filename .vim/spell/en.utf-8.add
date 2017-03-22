@@ -70,3 +70,5 @@ unicode
 ENV
 hostnames
 Unboxed
+OSX
+gpg
