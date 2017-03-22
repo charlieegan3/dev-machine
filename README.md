@@ -1,4 +1,8 @@
-# Linux Environment Setup
+# dotfiles
+
+My configuration files for things that I use.  OSX & Linux.
+
+## Linux Setup
 
 ```
 curl https://codeload.github.com/charlieegan3/dotfiles/zip/linux > dotfiles.zip
@@ -29,3 +33,8 @@ git reset --hard origin/linux
 ```
 
 * Create a code directory
+
+## OSX setup
+
+Look back in the history; there was a script where I was foolish to think that
+the process could be automated...
