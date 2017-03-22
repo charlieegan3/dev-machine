@@ -1,9 +1,3 @@
-# set paths
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-export PATH=/usr/local/texlive/2015/bin/x86_64-darwin:$PATH
-export PATH=/Users/charlie/.cargo/bin:$PATH
-
 # set prompt format
 export PS1="\W|"
 
@@ -20,8 +14,13 @@ bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
 # aliases
+alias vi="vim"
+alias ls="ls -A --color"
+
 alias dc="docker-compose"
 alias dk='docker stop $(docker ps -a -q)'
+
+alias xcopy="xclip -o | xclip -selection clipboard"
 
 # functions
 docker-clean() {
@@ -32,14 +31,16 @@ gitb() {
   git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'
 }
 gitpb() {
-  gitb | pbcopy
+  gitb | xclip -selection clipboard
 }
 gitpub() {
   git push origin $(gitb)
 }
-dvim() {
-  # docker build -f ~/Dockerfile -t charlieegan3/vim ~ > /dev/null
-  docker run --rm -it -v "$(pwd):/project" -w /project charlieegan3/vim vim $@
+vpn-init() {
+  sudo expect /etc/openvpn/start.sh
+}
+vpn-exit() {
+  sudo killall openvpn
 }
 
 #fzf search
@@ -48,10 +49,6 @@ dvim() {
 # other settings
 shopt -s histappend
 shopt -s checkwinsize
-
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
 
 # configure Ctrl-w behavior
 stty werase undef

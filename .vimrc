@@ -2,7 +2,8 @@
 
 " 'just the essentials'
 syntax enable
-colorscheme mac_classic
+set background=dark
+colorscheme solarized
 set path=$PWD/**
 set nocompatible
 set wildmenu
@@ -82,13 +83,13 @@ let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
 let g:go_doc_keywordprg_enabled = "0"
 
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = "ag -ul --nogroup --nocolor --column"
 
 let g:NERDSpaceDelims = 1
 
 let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 
-autocmd BufWinEnter * :IndentGuidesEnable
+" autocmd BufWinEnter * :IndentGuidesEnable
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -98,9 +99,8 @@ Plug 'mileszs/ack.vim'         " project search
 Plug 'luochen1990/rainbow'     " bracket highlighting
 Plug 'scrooloose/nerdcommenter'        " comment toggling
 Plug 'terryma/vim-multiple-cursors'    " something a little like sublime
-Plug 'nathanaelkane/vim-indent-guides' " show indent level
+" Plug 'nathanaelkane/vim-indent-guides' " show indent level
 
-Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
 
 Plug 'tpope/vim-fugitive'      " git commands
 Plug 'airblade/vim-gitgutter'  " gutter git status
@@ -116,6 +116,7 @@ Plug 'valloric/matchtagalways'  " html tag matching
 Plug 'mxw/vim-jsx'              " jsx & React
 
 " currently unused
+" Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
 " Plug 'slim-template/vim-slim'
 " Plug 'lervag/vimtex'
 " Plug 'pearofducks/ansible-vim'

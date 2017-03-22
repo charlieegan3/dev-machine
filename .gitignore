@@ -1,5 +1,7 @@
 *
 
+!README.md
+
 !.gitignore
 !.gitmessage
 !.gitconfig
@@ -9,7 +11,6 @@
 !.vimrc
 !.gitignore_global
 !Brewfile
-!.iterm2_shell_integration.bash
 
 !.vim
 !.vim/spell
@@ -24,7 +25,10 @@
 !.atom/snippets.cson
 !.atom/styles.less
 
-!.dockerignore
-!Dockerfile
-
 !.agignore
+
+!.i3
+!.i3/config
+!.i3status.conf
+
+!.Xdefaults
