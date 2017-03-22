@@ -7,7 +7,6 @@
 !.gitconfig
 !.bashrc
 !.inputrc
-!com.googlecode.iterm2.plist
 !.vimrc
 !.gitignore_global
 !Brewfile
@@ -16,14 +15,6 @@
 !.vim/spell
 !.vim/spell/en.utf-8.add
 .vim/spell/en.utf-8.add.spl
-
-!.atom/
-!.atom/.gitignore
-!.atom/config.cson
-!.atom/init.coffee
-!.atom/keymap.cson
-!.atom/snippets.cson
-!.atom/styles.less
 
 !.agignore
 
