@@ -57,6 +57,7 @@ fi
 stty werase undef
 bind '\C-w:unix-filename-rubout'
 
+source $HOME/.rvm/scripts/rvm
 source $HOME/.cargo/env
 
 # welcome commander
