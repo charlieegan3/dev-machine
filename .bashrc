@@ -57,5 +57,7 @@ fi
 stty werase undef
 bind '\C-w:unix-filename-rubout'
 
+source $HOME/.cargo/env
+
 # welcome commander
 echo "hello."
