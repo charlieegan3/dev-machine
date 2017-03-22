@@ -20,7 +20,6 @@ bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
 # aliases
-alias ls="ls -A --color"
 alias dc="docker-compose"
 alias dk='docker stop $(docker ps -a -q)'
 
