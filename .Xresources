@@ -1,5 +1,8 @@
 URxvt.font: xft:monospace:antialias=true:size=11
 URxvt.cursorColor: #7dadec
+URxvt.scrollBar: false
+URxvt.internalBorder: 0
+URxvt.lineSpace: 0
 
 ! Base16 London Tube
 ! Scheme: Jan T. Sott
