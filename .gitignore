@@ -25,3 +25,6 @@
 !.i3status.conf
 
 !.Xresources
+
+!.config
+!.config/compton.conf
