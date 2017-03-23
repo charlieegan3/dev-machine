@@ -3,7 +3,7 @@
 " 'just the essentials'
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme base16-default-dark
 set path=$PWD/**
 set nocompatible
 set wildmenu
@@ -104,6 +104,8 @@ Plug 'terryma/vim-multiple-cursors'    " something a little like sublime
 
 Plug 'tpope/vim-fugitive'      " git commands
 Plug 'airblade/vim-gitgutter'  " gutter git status
+
+Plug 'chriskempson/base16-vim'
 
 Plug 'vim-ruby/vim-ruby'        " ruby
 Plug 'tpope/vim-endwise'        " ruby end insertion
