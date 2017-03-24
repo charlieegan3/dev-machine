@@ -15,6 +15,7 @@ set autoread
 set scrolloff=5
 set noerrorbells
 set colorcolumn=80
+set nowrap
 
 set number
 set numberwidth=3
