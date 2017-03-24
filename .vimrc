@@ -42,6 +42,10 @@ highlight GitGutterAdd ctermbg=black
 highlight GitGutterChange ctermbg=black
 highlight GitGutterDelete ctermbg=black
 highlight GitGutterChangeDelete ctermbg=black
+hi BufTabLineCurrent ctermbg=darkgrey
+hi BufTabLineActive ctermbg=white
+hi BufTabLineHidden ctermbg=black
+hi BufTabLineFill ctermbg=grey
 
 " movement
 noremap j gj
@@ -103,6 +107,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 " automatic commands
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 autocmd BufWritePre * :Tab2Space
+autocmd BufWritePost,FileWritePost * :wa
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -113,6 +118,7 @@ Plug 'luochen1990/rainbow'     " bracket highlighting
 Plug 'scrooloose/nerdcommenter'        " comment toggling
 Plug 'terryma/vim-multiple-cursors'    " something a little like sublime
 Plug 'rhlobo/vim-super-retab'        " command to convert tabs to spaces
+Plug 'ap/vim-buftabline' " tabs for open buffers
 
 Plug 'tpope/vim-fugitive'      " git commands
 Plug 'airblade/vim-gitgutter'  " gutter git status
