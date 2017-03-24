@@ -19,6 +19,10 @@ set cursorcolumn " mark current column in other lines
 set lazyredraw " only redraw vim when required
 set autowrite " autowrite files allowing switching without saving
 
+set undodir=~/.vim/.undo//
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
+
 set foldenable " enable code folding
 set foldmethod=indent " use indentation to fold
 set foldlevelstart=2 " start folding after 2 levels of nesting
