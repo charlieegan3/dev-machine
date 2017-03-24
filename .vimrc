@@ -16,6 +16,7 @@ set scrolloff=5
 set noerrorbells
 set colorcolumn=80
 set nowrap
+set cursorcolumn
 
 set number
 set numberwidth=3
@@ -26,6 +27,11 @@ set tabstop=8 softtabstop=8 shiftwidth=2
 set backspace=indent,eol,start
 
 let mapleader=";"
+
+" color UI elements
+hi CursorColumn ctermfg=white ctermbg=black
+hi StatusLine ctermfg=black ctermbg=white
+hi WildMenu ctermfg=white ctermbg=black
 
 " movement
 noremap j gj
