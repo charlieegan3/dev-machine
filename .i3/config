@@ -93,39 +93,39 @@ exec_always --no-startup-id fix_xcursor
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	status_command i3status
-	position bottom
+        status_command i3status
+        position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
 #	tray_output eDP1
 
-	bindsym button4 nop
-	bindsym button5 nop
-	font xft:Noto Sans 10.5
-	strip_workspace_numbers yes
+        bindsym button4 nop
+        bindsym button5 nop
+        font xft:Noto Sans 10.5
+        strip_workspace_numbers yes
 
-	colors {
-		background #2B2C2B
+        colors {
+                background #2B2C2B
                 statusline #F9FAF9
-		separator  #454947
+                separator  #454947
 
-		focused_workspace  #F9FAF9 #16A085 #2B2C2B
-		active_workspace   #595B5B #353836 #FDF6E3
-		inactive_workspace #595B5B #353836 #EEE8D5
-		urgent_workspace   #16A085 #FDF6E3 #E5201D
-	}
+                focused_workspace  #F9FAF9 #b3b3b3 #2B2C2B
+                active_workspace   #595B5B #353836 #FDF6E3
+                inactive_workspace #595B5B #353836 #EEE8D5
+                urgent_workspace   #b3b3b3 #FDF6E3 #E5201D
+        }
 }
 
 # Theme colors
 # class                 border  backgr. text    indic.  child_border
-client.focused          #808280 #808280 #80FFF9 #FDF6E3
-client.focused_inactive #434745 #434745 #16A085 #454948
-client.unfocused        #434745 #434745 #16A085 #454948
-client.urgent           #CB4B16 #FDF6E3 #16A085 #268BD2
-client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
+client.focused          #666666 #b3b3b3 #000000 #737373
+client.focused_inactive #000000 #000000 #e6e6e6 #737373
+client.unfocused        #000000 #000000 #e6e6e6 #737373
+client.urgent           #000000 #000000 #e6e6e6 #737373
+client.placeholder      #000000 #000000 #e6e6e6 #737373 #0c0c0c
 
-client.background       #2B2C2B
+client.background       #000000
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##

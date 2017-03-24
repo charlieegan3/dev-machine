@@ -31,3 +31,5 @@
 
 !.config
 !.config/compton.conf
+!.config/dunst
+!.config/dunst/dunstrc
