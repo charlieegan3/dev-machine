@@ -16,6 +16,8 @@
 !.vim/spell
 !.vim/spell/en.utf-8.add
 .vim/spell/en.utf-8.add.spl
+!.vim/colors
+!.vim/colors/*.vim
 
 !.agignore
 

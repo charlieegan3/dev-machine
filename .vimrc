@@ -123,8 +123,6 @@ Plug 'ap/vim-buftabline' " tabs for open buffers
 Plug 'tpope/vim-fugitive'      " git commands
 Plug 'airblade/vim-gitgutter'  " gutter git status
 
-Plug 'chriskempson/base16-vim'
-
 Plug 'vim-ruby/vim-ruby'        " ruby
 Plug 'tpope/vim-endwise'        " ruby end insertion
 Plug 'tpope/vim-haml'           " haml
