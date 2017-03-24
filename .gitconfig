@@ -2,7 +2,7 @@
   name = Charlie Egan
   email = charlieegan3@users.noreply.github.com
 [core]
-  editor = vi
+  editor = vim
   excludesfile = ~/.gitignore_global
   filemode = false
 [push]
