@@ -17,6 +17,7 @@ set colorcolumn=80 " draw a column to guide line length
 set nowrap " don't wrap lines
 set cursorcolumn " mark current column in other lines
 set lazyredraw " only redraw vim when required
+set autowrite " autowrite files allowing switching without saving
 
 set foldenable " enable code folding
 set foldmethod=indent " use indentation to fold
