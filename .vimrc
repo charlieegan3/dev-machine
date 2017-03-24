@@ -1,37 +1,41 @@
 " Charlie's Vim Config
 
 " 'just the essentials'
-syntax enable
-set background=dark
-colorscheme base16-default-dark
-set path=$PWD/**
-set nocompatible
-set wildmenu
-set showmatch
-set incsearch
-set hlsearch
-set spell spelllang=en_us
-set autoread
-set scrolloff=5
-set noerrorbells
-set colorcolumn=80
-set nowrap
-set cursorcolumn
+syntax enable " turn on syntax highlighting
+set background=dark " use a dark background
+colorscheme base16-default-dark " use the base16 colorscheme, irrelevant which as inherits from terminal
+set path=$PWD/** " use the current working directory as the path
+set nocompatible " disable compatibility features
+set wildmenu " show command suggestions
+set showmatch " highlight matching parenthesis
+set incsearch " search while typing
+set hlsearch " mark matches to searches
+set spell spelllang=en_us " enable spelling highlighting
+set scrolloff=5 " keep 5 lines between top/bottom of screen and cursor
+set noerrorbells " i don't make mistakes, so I don't need the bells
+set colorcolumn=80 " draw a column to guide line length
+set nowrap " don't wrap lines
+set cursorcolumn " mark current column in other lines
+set lazyredraw " only redraw vim when required
 
-set number
-set numberwidth=3
-highlight LineNr ctermfg=Black ctermbg=LightGrey
+set number numberwidth=3 " show numbers column
 
-set smarttab smartindent expandtab
-set tabstop=8 softtabstop=8 shiftwidth=2
-set backspace=indent,eol,start
+set smarttab smartindent expandtab " sane tab settings
+set tabstop=8 softtabstop=8 shiftwidth=2 " indentation quantities
+set backspace=indent,eol,start " backspace behavior
 
 let mapleader=";"
 
 " color UI elements
-hi CursorColumn ctermfg=white ctermbg=black
-hi StatusLine ctermfg=black ctermbg=white
-hi WildMenu ctermfg=white ctermbg=black
+highlight CursorColumn ctermfg=white ctermbg=black
+highlight StatusLine ctermfg=black ctermbg=white
+highlight WildMenu ctermfg=white ctermbg=black
+highlight LineNr ctermfg=darkgrey ctermbg=black
+highlight SignColumn ctermbg=black
+highlight GitGutterAdd ctermbg=black
+highlight GitGutterChange ctermbg=black
+highlight GitGutterDelete ctermbg=black
+highlight GitGutterChangeDelete ctermbg=black
 
 " movement
 noremap j gj
