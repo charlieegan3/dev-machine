@@ -42,10 +42,13 @@ highlight GitGutterAdd ctermbg=black
 highlight GitGutterChange ctermbg=black
 highlight GitGutterDelete ctermbg=black
 highlight GitGutterChangeDelete ctermbg=black
-hi BufTabLineCurrent ctermbg=darkgrey
-hi BufTabLineActive ctermbg=white
-hi BufTabLineHidden ctermbg=black
-hi BufTabLineFill ctermbg=grey
+highlight BufTabLineCurrent ctermbg=darkgrey
+highlight BufTabLineActive ctermbg=white
+highlight BufTabLineHidden ctermbg=black
+highlight BufTabLineFill ctermbg=grey
+highlight SpellBad ctermbg=red ctermfg=black cterm=none
+highlight SpellLocal ctermbg=red ctermfg=black cterm=none
+highlight SpellRare ctermbg=red ctermfg=black cterm=none
 
 " movement
 noremap j gj
