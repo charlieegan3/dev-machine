@@ -25,8 +25,6 @@ set smarttab smartindent expandtab
 set tabstop=8 softtabstop=8 shiftwidth=2
 set backspace=indent,eol,start
 
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
-
 let mapleader=";"
 
 " movement
@@ -86,7 +84,8 @@ let g:NERDSpaceDelims = 1
 
 let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 
-" autocmd BufWinEnter * :IndentGuidesEnable
+" automatic commands
+autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 autocmd BufWritePre * :Tab2Space
 
 call plug#begin()
