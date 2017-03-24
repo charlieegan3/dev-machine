@@ -115,6 +115,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 autocmd BufWritePre * :Tab2Space
 autocmd BufWritePost,FileWritePost * :wa
+autocmd VimEnter * :silent !mkdir ~/.vim/.undo/ ~/.vim/.backup/ ~/.vim/.swp/
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
