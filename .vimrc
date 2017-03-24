@@ -14,19 +14,15 @@ set spell spelllang=en_us
 set autoread
 set scrolloff=5
 set noerrorbells
+set colorcolumn=80
 
 set number
 set numberwidth=3
 highlight LineNr ctermfg=Black ctermbg=LightGrey
 
-set smarttab
-set smartindent
-set expandtab
-set colorcolumn=80
+set smarttab smartindent expandtab
+set tabstop=8 softtabstop=8 shiftwidth=2
 set backspace=indent,eol,start
-set tabstop=4
-set softtabstop=4
-set shiftwidth=2
 
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 
@@ -90,6 +86,7 @@ let g:NERDSpaceDelims = 1
 let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 
 " autocmd BufWinEnter * :IndentGuidesEnable
+autocmd BufWritePre * :Tab2Space
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -99,8 +96,7 @@ Plug 'mileszs/ack.vim'         " project search
 Plug 'luochen1990/rainbow'     " bracket highlighting
 Plug 'scrooloose/nerdcommenter'        " comment toggling
 Plug 'terryma/vim-multiple-cursors'    " something a little like sublime
-" Plug 'nathanaelkane/vim-indent-guides' " show indent level
-
+Plug 'rhlobo/vim-super-retab'        " command to convert tabs to spaces
 
 Plug 'tpope/vim-fugitive'      " git commands
 Plug 'airblade/vim-gitgutter'  " gutter git status
@@ -119,6 +115,7 @@ Plug 'mxw/vim-jsx'              " jsx & React
 
 " currently unused
 " Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
+" Plug 'nathanaelkane/vim-indent-guides' " show indent level
 " Plug 'slim-template/vim-slim'
 " Plug 'lervag/vimtex'
 " Plug 'pearofducks/ansible-vim'
