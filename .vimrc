@@ -122,6 +122,9 @@ autocmd BufWritePost,FileWritePost * :wa
 autocmd VimEnter * :silent !mkdir ~/.vim/.undo/ ~/.vim/.backup/ ~/.vim/.swp/
 
 if has('nvim')
+  tnoremap jk <C-\><C-n>
+  tnoremap kj <C-\><C-n>
+
   augroup terminal
     autocmd TermOpen * set bufhidden=hide
     autocmd TermOpen * setlocal nospell
