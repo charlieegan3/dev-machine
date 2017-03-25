@@ -119,6 +119,13 @@ autocmd BufWritePre * :Tab2Space
 autocmd BufWritePost,FileWritePost * :wa
 autocmd VimEnter * :silent !mkdir ~/.vim/.undo/ ~/.vim/.backup/ ~/.vim/.swp/
 
+if has('nvim')
+  augroup terminal
+    autocmd TermOpen * set bufhidden=hide
+    autocmd TermOpen * setlocal nospell
+  augroup END
+endif
+
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'ervandew/supertab'       " completion
@@ -140,7 +147,6 @@ Plug 'kchmck/vim-coffee-script' " coffeescript
 Plug 'fatih/vim-go'             " golang
 Plug 'rust-lang/rust.vim'       " rust
 Plug 'yaml.vim'                 " yml
-Plug 'valloric/matchtagalways'  " html tag matching
 Plug 'mxw/vim-jsx'              " jsx & React
 
 " currently unused

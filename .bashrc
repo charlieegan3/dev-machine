@@ -14,7 +14,7 @@ bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
 
 # aliases
-alias vi="vim"
+alias vi="nvim"
 alias ls="ls -AG"
 
 alias dc="docker-compose"

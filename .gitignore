@@ -33,3 +33,5 @@
 !.config/compton.conf
 !.config/dunst
 !.config/dunst/dunstrc
+
+!link_nvim.sh
