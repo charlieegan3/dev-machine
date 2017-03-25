@@ -56,6 +56,7 @@ highlight BufTabLineFill ctermbg=grey
 highlight SpellBad ctermbg=red ctermfg=black cterm=none
 highlight SpellLocal ctermbg=red ctermfg=black cterm=none
 highlight SpellRare ctermbg=red ctermfg=black cterm=none
+highlight MatchParen ctermbg=black ctermfg=white cterm=underline
 
 " movement
 noremap j gj
