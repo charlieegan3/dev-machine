@@ -90,10 +90,12 @@ nnoremap <leader>g :Gread<cr>
 
 nnoremap <cr> :w<cr>
 
+vnoremap <cr> "+y<cr>
+vnoremap <BS> "+p<cr>
+
 " spelling
 nnoremap <Left> [s
 nnoremap <Right> ]s
-nnoremap <Up> z=
 nnoremap <Down> :%s /
 nnoremap <BS> 1z=
 
