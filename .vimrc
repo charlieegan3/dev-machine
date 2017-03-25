@@ -10,6 +10,8 @@ set wildmenu " show command suggestions
 set showmatch " highlight matching parenthesis
 set incsearch " search while typing
 set hlsearch " mark matches to searches
+set ignorecase " Make searches case insensitive
+set smartcase " (Unless they contain a capital letter)
 set spell spelllang=en_us " enable spelling highlighting
 set scrolloff=5 " keep 5 lines between top/bottom of screen and cursor
 set noerrorbells " i don't make mistakes, so I don't need the bells
