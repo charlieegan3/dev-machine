@@ -145,6 +145,7 @@ Plug 'scrooloose/nerdcommenter'        " comment toggling
 Plug 'terryma/vim-multiple-cursors'    " something a little like sublime
 Plug 'rhlobo/vim-super-retab'        " command to convert tabs to spaces
 Plug 'ap/vim-buftabline' " tabs for open buffers
+Plug 'danro/rename.vim' " adds the :rename command
 
 Plug 'tpope/vim-fugitive'      " git commands
 Plug 'airblade/vim-gitgutter'  " gutter git status
