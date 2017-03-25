@@ -70,8 +70,8 @@ noremap B ^
 noremap E $
 
 " windows
-nnoremap <leader>w :bd<cr>
-nnoremap <leader>q :q<cr>
+nnoremap <leader>w :bd!<cr>
+nnoremap <leader>t :terminal<cr>
 nnoremap <leader>n <C-w>v
 nnoremap <tab> :bn<cr>
 nnoremap <S-tab> :bp<cr>
@@ -81,7 +81,7 @@ nnoremap <leader>rm :call delete(expand('%')) \| bdelete!<CR>
 " plugins & shortcuts
 nnoremap <SPACE> :FZF<cr>
 
-nnoremap <leader>t :!ctags -R .<cr>
+nnoremap <leader>T :!ctags -R .<cr>
 nnoremap <leader><tab> <C-]>
 nnoremap <leader>§ <C-t>
 
