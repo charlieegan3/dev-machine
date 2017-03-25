@@ -21,6 +21,7 @@ set cursorcolumn " mark current column in other lines
 set lazyredraw " only redraw vim when required
 set autowrite " autowrite files allowing switching without saving
 set laststatus=0 " don't show the filename at the bottom of window (because it's at the top)
+set clipboard=unnamedplus " use "+ as the clipboard buffer
 
 set undodir=~/.vim/.undo//
 set backupdir=~/.vim/.backup//
