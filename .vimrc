@@ -53,9 +53,9 @@ highlight BufTabLineCurrent ctermbg=black
 highlight BufTabLineActive ctermbg=white
 highlight BufTabLineHidden ctermbg=darkgrey
 highlight BufTabLineFill ctermbg=grey
-highlight SpellBad ctermbg=red ctermfg=black cterm=none
-highlight SpellLocal ctermbg=red ctermfg=black cterm=none
-highlight SpellRare ctermbg=red ctermfg=black cterm=none
+highlight SpellBad ctermbg=darkgrey ctermfg=black cterm=none
+highlight SpellLocal ctermbg=darkgrey ctermfg=black cterm=none
+highlight SpellRare ctermbg=darkgrey ctermfg=black cterm=none
 highlight MatchParen ctermbg=black ctermfg=white cterm=underline
 
 " movement
