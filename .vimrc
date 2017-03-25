@@ -37,6 +37,9 @@ set smarttab smartindent expandtab " sane tab settings
 set tabstop=8 softtabstop=8 shiftwidth=2 " indentation quantities
 set backspace=indent,eol,start " backspace behavior
 
+set list " show invisibles
+set listchars=tab:>·,trail:~,extends:>,precedes:<
+
 let mapleader=";"
 
 " color UI elements
@@ -44,7 +47,7 @@ highlight CursorColumn ctermfg=white ctermbg=black
 highlight StatusLine ctermfg=black ctermbg=white
 highlight WildMenu ctermfg=white ctermbg=black
 highlight LineNr ctermfg=darkgrey ctermbg=black
-highlight SignColumn ctermbg=black
+highlight SignColumn ctermbg=black " git gutter column
 highlight GitGutterAdd ctermbg=black
 highlight GitGutterChange ctermbg=black
 highlight GitGutterDelete ctermbg=black
@@ -57,6 +60,7 @@ highlight SpellBad ctermbg=darkgrey ctermfg=black cterm=none
 highlight SpellLocal ctermbg=darkgrey ctermfg=black cterm=none
 highlight SpellRare ctermbg=darkgrey ctermfg=black cterm=none
 highlight MatchParen ctermbg=black ctermfg=white cterm=underline
+highlight SpecialKey ctermbg=darkred " trailing whitespace
 
 " movement
 noremap j gj
