@@ -17,7 +17,6 @@ set scrolloff=5 " keep 5 lines between top/bottom of screen and cursor
 set noerrorbells " i don't make mistakes, so I don't need the bells
 set colorcolumn=80 " draw a column to guide line length
 set nowrap " don't wrap lines
-set cursorcolumn " mark current column in other lines
 set lazyredraw " only redraw vim when required
 set autowrite " autowrite files allowing switching without saving
 set laststatus=0 " don't show the filename at the bottom of window (because it's at the top)
@@ -44,7 +43,6 @@ set listchars=tab:>·,trail:~,extends:>,precedes:<
 let mapleader=";"
 
 " color UI elements
-highlight CursorColumn ctermfg=white ctermbg=black
 highlight StatusLine ctermfg=black ctermbg=white
 highlight WildMenu ctermfg=white ctermbg=black
 highlight LineNr ctermfg=darkgrey ctermbg=black
@@ -124,7 +122,6 @@ let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 autocmd BufWritePre * :Tab2Space
 autocmd BufWritePost,FileWritePost * :wa
-autocmd VimEnter * :silent !mkdir ~/.vim/.undo/ ~/.vim/.backup/ ~/.vim/.swp/
 
 if has('nvim')
   tnoremap jk <C-\><C-n>
