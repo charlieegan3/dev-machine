@@ -7,13 +7,15 @@
   filemode = false
 [push]
   default = simple
-[alias]
-  lg = log --pretty=format:'%Cred%h%Creset %Cblue%an %Creset(%Cgreen%ar%Creset) \t%<(55,trunc)%s' --max-count=40
-  log = log --pretty=oneline
-  s = ! git status -sb
-  c = diff --cached --word-diff=color
-  co = clean -df && git checkout -- .
-  cm = log -1 --pretty=%B
+[color]
+  ui = auto
 [commit]
   template = ~/.gitmessage
   gpgsign = true
+[alias]
+  s = ! git status -sb
+  c = diff --cached --word-diff=color
+  lg = log --pretty=format:'%Cred%h%Creset %Cblue%an %Creset(%Cgreen%ar%Creset) \t%<(55,trunc)%s' --max-count=40
+  log = log --pretty=oneline
+  co = clean -df && git checkout -- .
+  cm = log -1 --pretty=%B
