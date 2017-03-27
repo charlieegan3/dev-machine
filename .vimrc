@@ -127,7 +127,7 @@ autocmd BufWritePre * :Tab2Space
 autocmd BufWritePost,FileWritePost * :wa
 
 if has('nvim')
-  tnoremap <esc> <C-\><C-n>
+  tnoremap <esc><esc> <C-\><C-n>
 
   augroup terminal
     autocmd TermOpen * set bufhidden=hide
