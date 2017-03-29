@@ -113,8 +113,6 @@ let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
 let g:go_doc_keywordprg_enabled = "0"
 
-let g:ackprg = "ag -ul --nogroup --nocolor --column"
-
 let g:NERDSpaceDelims = 1
 
 let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
@@ -135,26 +133,26 @@ endif
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'ervandew/supertab'       " completion
-Plug 'mileszs/ack.vim'         " project search
-Plug 'luochen1990/rainbow'     " bracket highlighting
-Plug 'scrooloose/nerdcommenter'        " comment toggling
-Plug 'terryma/vim-multiple-cursors'    " something a little like sublime
-Plug 'rhlobo/vim-super-retab'        " command to convert tabs to spaces
-Plug 'ap/vim-buftabline' " tabs for open buffers
-Plug 'danro/rename.vim' " adds the :rename command
+Plug 'ervandew/supertab'            " completion
+Plug 'rking/ag.vim'                 " project search
+Plug 'luochen1990/rainbow'          " bracket highlighting
+Plug 'ap/vim-buftabline'            " tabs for open buffers
+Plug 'danro/rename.vim'             " adds the :rename command
+Plug 'scrooloose/nerdcommenter'     " comment toggling
+Plug 'rhlobo/vim-super-retab'       " command to convert tabs to spaces
+Plug 'terryma/vim-multiple-cursors' " something a little like sublime
 
-Plug 'tpope/vim-fugitive'      " git commands
-Plug 'airblade/vim-gitgutter'  " gutter git status
+Plug 'tpope/vim-fugitive'           " git commands
+Plug 'airblade/vim-gitgutter'       " gutter git status
 
-Plug 'vim-ruby/vim-ruby'        " ruby
-Plug 'tpope/vim-endwise'        " ruby end insertion
-Plug 'tpope/vim-haml'           " haml
-Plug 'kchmck/vim-coffee-script' " coffeescript
-Plug 'fatih/vim-go'             " golang
-Plug 'rust-lang/rust.vim'       " rust
-Plug 'yaml.vim'                 " yml
-Plug 'mxw/vim-jsx'              " jsx & React
+Plug 'vim-ruby/vim-ruby'            " ruby
+Plug 'tpope/vim-endwise'            " ruby end insertion
+Plug 'tpope/vim-haml'               " haml
+Plug 'kchmck/vim-coffee-script'     " coffeescript
+Plug 'fatih/vim-go'                 " golang
+Plug 'rust-lang/rust.vim'           " rust
+Plug 'yaml.vim'                     " yml
+Plug 'mxw/vim-jsx'                  " jsx & React
 
 " currently unused
 " Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
