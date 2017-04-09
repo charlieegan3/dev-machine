@@ -5,17 +5,32 @@
   editor = vim
   excludesfile = ~/.gitignore_global
   filemode = false
+[transfer]
+  fsckobjects = true
 [push]
   default = simple
 [color]
   ui = auto
+[color "status"]
+  added = green
+  changed = blue bold
+  untracked = red bold
 [commit]
   template = ~/.gitmessage
   gpgsign = true
+[status]
+  showUntrackedFiles = all
+[stash]
+  showPatch = true
+[rebase]
+  autostash = true
+[log]
+  decorate = full
 [alias]
-  s = ! git status -sb
+  s = status -sb
   c = diff --cached --word-diff=color
   lg = log --pretty=format:'%Cred%h%Creset %Cblue%an %Creset(%Cgreen%ar%Creset) \t%<(55,trunc)%s' --max-count=40
-  log = log --pretty=oneline
-  co = clean -df && git checkout -- .
   cm = log -1 --pretty=%B
+  prune = fetch --prune
+  undo = reset --soft HEAD^
+  stash-all = stash save --include-untracked
