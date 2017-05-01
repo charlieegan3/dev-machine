@@ -34,9 +34,11 @@ set number numberwidth=3 " show numbers column
 
 set smarttab smartindent expandtab " sane tab settings
 set tabstop=8 softtabstop=8 shiftwidth=2 " indentation quantities
+autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+
 set backspace=indent,eol,start " backspace behavior
 
-set list " show invisibles
+" set list " show invisibles, toggled later in autocmd
 set listchars=tab:>·,trail:~,extends:>,precedes:<
 
 let mapleader=";"
@@ -58,7 +60,8 @@ highlight SpellBad ctermbg=darkgrey ctermfg=white cterm=none
 highlight SpellLocal ctermbg=darkgrey ctermfg=white cterm=none
 highlight SpellRare ctermbg=darkgrey ctermfg=white cterm=none
 highlight MatchParen ctermbg=black ctermfg=white cterm=underline
-highlight SpecialKey ctermbg=darkred " trailing whitespace
+syntax match TrailingWhitespace "\s+$"
+highlight TrailingWhitespace ctermbg=darkred
 
 " movement
 noremap j gj
@@ -111,6 +114,7 @@ let g:SuperTabCompleteCase = 'ignore'
 
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
+let g:go_metalinter_autosave = 1
 let g:go_doc_keywordprg_enabled = "0"
 
 let g:NERDSpaceDelims = 1
@@ -118,9 +122,13 @@ let g:NERDSpaceDelims = 1
 let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 
 " automatic commands
-autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre * :Tab2Space
+
+" go
+autocmd BufRead,BufNewFile *.go set nolist
+" ruby
+autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 
 if has('nvim')
   tnoremap <esc><esc> <C-\><C-n>

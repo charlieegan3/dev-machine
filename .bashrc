@@ -60,5 +60,7 @@ source $HOME/.cargo/env
 # welcome commander
 echo "hello."
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# Add language specific settings
 export PATH="$PATH:$HOME/.rvm/bin"
+export GOPATH=$HOME/Code/go
+export PATH="$PATH:$GOPATH/bin"
