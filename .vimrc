@@ -131,11 +131,13 @@ autocmd BufRead,BufNewFile *.go set nolist
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 
 if has('nvim')
-  tnoremap <esc><esc> <C-\><C-n>
+  tnoremap <S-tab> <C-\><C-n>:bp<cr>
+  cnoreabbrev wq w
 
   augroup terminal
     autocmd TermOpen * set bufhidden=hide
     autocmd TermOpen * setlocal nospell
+    nnoremap <leader>w <C-c>:bd!<cr>
   augroup END
 endif
 
