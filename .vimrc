@@ -16,6 +16,7 @@ set spell spelllang=en_us " enable spelling highlighting
 set scrolloff=5 " keep 5 lines between top/bottom of screen and cursor
 set noerrorbells " i don't make mistakes, so I don't need the bells
 set colorcolumn=80 " draw a column to guide line length
+autocmd Filetype go setlocal colorcolumn=0
 set nowrap " don't wrap lines
 set lazyredraw " only redraw vim when required
 set autowrite " autowrite files allowing switching without saving
