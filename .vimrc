@@ -133,7 +133,6 @@ autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,
 
 if has('nvim')
   tnoremap <S-tab> <C-\><C-n>:bp<cr>
-  cnoreabbrev wq w
 
   augroup terminal
     autocmd TermOpen * set bufhidden=hide
