@@ -132,6 +132,8 @@ autocmd BufWritePre * :Tab2Space
 autocmd BufRead,BufNewFile *.go set nolist
 " ruby
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
+" conf
+autocmd BufRead,BufNewFile {*.conf} set ft=c
 
 if has('nvim')
   tnoremap <S-tab> <C-\><C-n>:bp<cr>
