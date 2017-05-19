@@ -120,6 +120,8 @@ let g:go_doc_keywordprg_enabled = "0"
 
 let g:NERDSpaceDelims = 1
 
+let g:terraform_fmt_on_save = 1
+
 let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 
 " automatic commands
@@ -163,6 +165,7 @@ Plug 'fatih/vim-go'                 " golang
 Plug 'rust-lang/rust.vim'           " rust
 Plug 'yaml.vim'                     " yml
 Plug 'mxw/vim-jsx'                  " jsx & React
+Plug 'hashivim/vim-terraform'       " terraform fmt
 
 " currently unused
 " Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
