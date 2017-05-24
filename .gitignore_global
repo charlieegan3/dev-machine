@@ -1,3 +1,6 @@
+# local env_vars
+local_env.sh
+
 # Compiled source
 *.com
 *.class
