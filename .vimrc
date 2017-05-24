@@ -167,7 +167,7 @@ Plug 'fatih/vim-go'                 " golang
 Plug 'rust-lang/rust.vim'           " rust
 Plug 'yaml.vim'                     " yml
 Plug 'mxw/vim-jsx'                  " jsx & React
-Plug 'hashivim/vim-terraform'       " terraform fmt
+Plug 'charlieegan3/vim-terraform'   " terraform fmt
 
 " currently unused
 " Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
