@@ -10,9 +10,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_recency
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# start dmenu
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -l 50 -fn Noto-14 -nb "#2B2C2B" -nf "#DDDDDD" -sb "#404040" -sf "#F9FAF9""
 
 # change focus
 bindsym $mod+h focus left
