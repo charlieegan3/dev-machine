@@ -12,7 +12,6 @@ set incsearch " search while typing
 set hlsearch " mark matches to searches
 set ignorecase " Make searches case insensitive
 set smartcase " (Unless they contain a capital letter)
-set spell spelllang=en_us " enable spelling highlighting
 set scrolloff=5 " keep 5 lines between top/bottom of screen and cursor
 set noerrorbells " i don't make mistakes, so I don't need the bells
 set colorcolumn=80 " draw a column to guide line length
@@ -57,9 +56,9 @@ highlight BufTabLineCurrent ctermbg=black
 highlight BufTabLineActive ctermbg=white
 highlight BufTabLineHidden ctermbg=darkgrey
 highlight BufTabLineFill ctermbg=grey
-highlight SpellBad ctermbg=darkgrey ctermfg=white cterm=none
-highlight SpellLocal ctermbg=darkgrey ctermfg=white cterm=none
-highlight SpellRare ctermbg=darkgrey ctermfg=white cterm=none
+highlight SpellBad ctermbg=237 ctermfg=white cterm=none
+highlight SpellLocal ctermbg=237 ctermfg=white cterm=none
+highlight SpellRare ctermbg=237 ctermfg=white cterm=none
 highlight MatchParen ctermbg=black ctermfg=white cterm=underline
 syntax match TrailingWhitespace "\s+$"
 highlight TrailingWhitespace ctermbg=darkred
@@ -134,6 +133,9 @@ autocmd BufRead,BufNewFile *.go set nolist
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 " conf
 autocmd BufRead,BufNewFile {*.conf} set ft=c
+" text
+autocmd BufEnter {*.md,*.txt} set spell spelllang=en_gb
+autocmd BufLeave {*.md,*.txt} set nospell
 
 if has('nvim')
   tnoremap <S-tab> <C-\><C-n>:bp<cr>
