@@ -172,7 +172,7 @@ Plug 'tpope/vim-haml'               " haml
 Plug 'kchmck/vim-coffee-script'     " coffeescript
 Plug 'fatih/vim-go'                 " golang
 Plug 'rust-lang/rust.vim'           " rust
-Plug 'yaml.vim'                     " yml
+Plug 'avakhov/vim-yaml'             " ya`ml
 Plug 'mxw/vim-jsx'                  " jsx & React
 Plug 'charlieegan3/vim-terraform'   " terraform fmt
 
