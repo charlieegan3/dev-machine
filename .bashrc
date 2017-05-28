@@ -10,8 +10,6 @@ export GPG_TTY=`tty`
 
 # history
 HISTCONTROL=ignorespace:ignoredups
-bind '"\e[A"':history-search-backward
-bind '"\e[B"':history-search-forward
 
 # aliases
 alias vi="nvim"
@@ -49,10 +47,6 @@ vpn-exit() {
 # other settings
 shopt -s histappend
 shopt -s checkwinsize
-
-# configure Ctrl-w behavior
-stty werase undef
-bind '\C-w:unix-filename-rubout'
 
 source $HOME/.rvm/scripts/rvm
 source $HOME/.cargo/env
