@@ -35,8 +35,13 @@ gitpb() {
 shopt -s histappend
 shopt -s checkwinsize
 
-source $HOME/.rvm/scripts/rvm
-source $HOME/.cargo/env
+# toolchains
+if [ -d $HOME/.rvm/scripts/rvm ]; then
+  source $HOME/.rvm/scripts/rvm
+fi
+if [ -d $HOME/.cargo/env ]; then
+  source $HOME/.cargo/env
+fi
 
 # welcome commander
 echo "hello."
