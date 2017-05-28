@@ -36,12 +36,9 @@ shopt -s histappend
 shopt -s checkwinsize
 
 # toolchains
-if [ -d $HOME/.rvm/scripts/rvm ]; then
-  source $HOME/.rvm/scripts/rvm
-fi
-if [ -d $HOME/.cargo/env ]; then
-  source $HOME/.cargo/env
-fi
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+[[ -s $HOME/.cargo/env ]]       && source $HOME/.cargo/env
+[[ -s /usr/local/heroku/bin ]]  && export PATH="/usr/local/heroku/bin:$PATH"
 
 # welcome commander
 echo "hello."

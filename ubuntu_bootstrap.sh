@@ -43,3 +43,11 @@ sudo add-apt-repository \
 sudo apt-get update
 sudo apt-get -y install docker-ce
 sudo usermod -aG docker $USER
+
+# install heroku tooling
+heroku --version || curl https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+# install toolchains
+rvm || \curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=bundler,rails,nokogiri
+go || sudo apt-get install -y golang-go
+cargo || curl -sSf https://static.rust-lang.org/rustup.sh | sh
