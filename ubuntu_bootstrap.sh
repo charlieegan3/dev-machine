@@ -17,7 +17,7 @@ sudo apt-get autoremove
 
 # install wanted software
 sudo apt-get update
-sudo apt-get install -y software-properties-common
+sudo apt-get install -y apt-transport-https ca-certificates software-properties-common
 sudo apt-get install -y curl firefox git neovim rxvt-unicode silversearcher-ag tree vim
 
 # configure dotfiles
@@ -32,4 +32,14 @@ fi
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim +PlugInstall +qall!
-ln .config/nvim/init.vim .vim_config
+ln -sf .config/nvim/init.vim .vim_config
+
+# install docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+  "deb [arch=amd64] https://download.docker.com/linux/ubuntu yakkety stable \
+  $(lsb_release -cs) \
+  stable"
+sudo apt-get update
+sudo apt-get -y install docker-ce
+sudo usermod -aG docker $USER
