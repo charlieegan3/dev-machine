@@ -51,3 +51,7 @@ heroku --version || curl https://toolbelt.heroku.com/install-ubuntu.sh | sh
 rvm || \curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=bundler,rails,nokogiri
 go || sudo apt-get install -y golang-go
 cargo || curl -sSf https://static.rust-lang.org/rustup.sh | sh
+
+# gnome settings
+gsettings set org.gnome.desktop.background show-desktop-icons true
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
