@@ -21,24 +21,11 @@ alias dk='docker stop $(docker ps -a -q)'
 alias xcopy="xclip -o | xclip -selection clipboard"
 
 # functions
-docker-clean() {
-  docker rm $(docker ps -a -q)
-  docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}')
-}
 gitb() {
   git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'
 }
 gitpb() {
   gitb | xclip -selection clipboard
-}
-gitpub() {
-  git push origin $(gitb)
-}
-vpn-init() {
-  sudo expect /etc/openvpn/start.sh
-}
-vpn-exit() {
-  sudo killall openvpn
 }
 
 #fzf search
