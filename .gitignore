@@ -11,6 +11,7 @@
 !.dmenurc
 !.gitignore_global
 !Brewfile
+!ubuntu_bootstrap.sh
 
 !.vim
 !.vim/spell
