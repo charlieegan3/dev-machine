@@ -39,5 +39,6 @@
 !.config/compton.conf
 !.config/dunst
 !.config/dunst/dunstrc
-
-!link_nvim.sh
+!.config/nvim/init.vim
+!.config/nvim/colors/base16-default-dark.vim
+!.config/nvim/spell/en.utf-8.add
