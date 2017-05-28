@@ -55,3 +55,4 @@ cargo || curl -sSf https://static.rust-lang.org/rustup.sh | sh
 # gnome settings
 gsettings set org.gnome.desktop.background show-desktop-icons true
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+curl https://raw.githubusercontent.com/chriskempson/base16-gnome-terminal/master/base16-londontube.light.sh | bash
