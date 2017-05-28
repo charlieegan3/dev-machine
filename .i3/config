@@ -5,7 +5,7 @@ set $mod Mod1
 font pango:monospace 11
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
