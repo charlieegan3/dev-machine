@@ -7,18 +7,17 @@ DEBIAN_FRONTEND=noninteractive
 
 # remove unwanted software
 sudo apt-get remove -y --purge aisleriot cheese dconf-editor gnome-calculator gnome-calendar \
-  gnome-contacts gnome-documents gnome-games gnome-getting-started-docs \
-  gnome-gettings-started-docs gnome-mahjongg gnome-maps gnome-mines \
-  gnome-music gnome-orca gnome-photos gnome-sudoku gnome-user-guide \
-  gnome-user-guide gnome-weather gnome-weather libreoffice* \
-  rhythmbox* simple-scan totem || true
+  gnome-contacts gnome-documents gnome-games gnome-gettings-started-docs \
+  gnome-mahjongg gnome-maps gnome-mines gnome-music gnome-orca gnome-photos \
+  gnome-sudoku gnome-user-guide gnome-user-guide gnome-weather gnome-weather \
+  libreoffice* rhythmbox* simple-scan totem || true
 sudo apt-get clean
 sudo apt-get autoremove
 
 # install wanted software
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates software-properties-common
-sudo apt-get install -y curl firefox git neovim rxvt-unicode silversearcher-ag tree vim
+sudo apt-get install -y curl firefox git neovim silversearcher-ag tree vim
 
 # configure dotfiles
 if ! [ -d .git ]; then
@@ -31,7 +30,7 @@ fi
 # configure nvim
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-nvim +PlugInstall +qall!
+nvim +PlugInstall +qall
 ln -sf .config/nvim/init.vim .vim_config
 
 # install docker
@@ -45,7 +44,7 @@ sudo apt-get -y install docker-ce
 sudo usermod -aG docker $USER
 
 # install heroku tooling
-heroku --version || curl https://toolbelt.heroku.com/install-ubuntu.sh | sh
+heroku --version || curl https://toolbelt.heroku.com/install-ubuntu.sh | sh && git checkout .bashrc
 
 # install toolchains
 rvm || \curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=bundler,rails,nokogiri
@@ -55,4 +54,6 @@ cargo || curl -sSf https://static.rust-lang.org/rustup.sh | sh
 # gnome settings
 gsettings set org.gnome.desktop.background show-desktop-icons true
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+gsettings set org.gnome.desktop.sound event-sounds false
+# file new profile required?
 curl https://raw.githubusercontent.com/chriskempson/base16-gnome-terminal/master/base16-londontube.light.sh | bash
