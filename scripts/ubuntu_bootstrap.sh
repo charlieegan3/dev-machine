@@ -40,15 +40,20 @@ then
   done
 fi
 
-# install binaries
+# install things that don't come in boxes
+! [[ -e ~/.rvm ]] && \curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=bundler,rails,nokogiri
+! [[ -e /usr/bin/go ]] && sudo apt-get install -y golang-go
+! [[ -e /usr/local/bin/cargo ]] && curl -sSf https://static.rust-lang.org/rustup.sh | sh
+! [[ -e /usr/local/heroku ]] && curl https://toolbelt.heroku.com/install-ubuntu.sh | sh && git checkout .bashrc
+
 ! [[ -e /usr/local/bin/terraform ]] && curl -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.9.6/terraform_0.9.6_linux_amd64.zip && \
   unzip /tmp/terraform.zip && \
   sudo mv terraform /usr/local/bin
+
 ! [[ -e /usr/local/bin/packer ]] && curl -o /tmp/packer.zip https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip && \
   unzip /tmp/packer.zip && \
   sudo mv packer /usr/local/bin
 
-# install docker
 if ! [[ -e /usr/bin/docker ]]; then
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
   sudo add-apt-repository \
@@ -59,14 +64,6 @@ if ! [[ -e /usr/bin/docker ]]; then
   sudo apt-get -y install docker-ce
   sudo usermod -aG docker $USER
 fi
-
-# install toolchains
-! [[ -e ~/.rvm ]] && \curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=bundler,rails,nokogiri
-! [[ -e /usr/bin/go ]] && sudo apt-get install -y golang-go
-! [[ -e /usr/local/bin/cargo ]] && curl -sSf https://static.rust-lang.org/rustup.sh | sh
-
-# install heroku tooling
-! [[ -e /usr/local/heroku ]] && curl https://toolbelt.heroku.com/install-ubuntu.sh | sh && git checkout .bashrc
 
 # configure dotfiles
 if ! [ -e ~/.git ]; then
@@ -84,7 +81,7 @@ if ! [ -e ~/.config/nvim/autoload/plug.vim ]; then
   ln -sf .config/nvim/init.vim .vim_config
 fi
 
-# gnome settings
+# config gnome
 gsettings set org.gnome.desktop.background show-desktop-icons true
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 gsettings set org.gnome.desktop.sound event-sounds false
