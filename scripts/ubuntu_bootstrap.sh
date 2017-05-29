@@ -33,7 +33,7 @@ then
   wantedPackages=(apt-transport-https ca-certificates software-properties-common \
     curl firefox git neovim silversearcher-ag tree vim)
 
-  sudo apt-get update
+  sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
   do
     sudo apt-get install -y $package
@@ -60,9 +60,16 @@ if ! [[ -e /usr/bin/docker ]]; then
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu yakkety stable \
     $(lsb_release -cs) \
     stable"
-  sudo apt-get update
+  sudo apt-get update >> /dev/null
   sudo apt-get -y install docker-ce
   sudo usermod -aG docker $USER
+fi
+
+if ! [[ -e /usr/bin/spotify ]]; then
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+  echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+  sudo apt-get update >> /dev/null
+  sudo apt-get install -y spotify-client
 fi
 
 # configure dotfiles
