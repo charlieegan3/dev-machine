@@ -3,7 +3,7 @@
   email = charlieegan3@users.noreply.github.com
 [core]
   editor = vim
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.git_config/.gitignore_global
   filemode = false
 [transfer]
   fsckobjects = true
@@ -16,7 +16,7 @@
   changed = blue bold
   untracked = red bold
 [commit]
-  template = ~/.gitmessage
+  template = ~/.git_config/.gitmessage
   gpgsign = true
 [status]
   showUntrackedFiles = all
@@ -35,4 +35,4 @@
   undo = reset --soft HEAD^
   stash-all = stash save --include-untracked
 [credential]
-	helper = cache --timeout=9999999999999
+        helper = cache --timeout=9999999999999
