@@ -27,6 +27,26 @@ sudo apt-get install -y curl firefox git neovim silversearcher-ag tree vim
   unzip /tmp/packer.zip && \
   sudo mv packer /usr/local/bin
 
+# install docker
+if ! [[ -s /usr/bin/docker ]]; then
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  sudo add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu yakkety stable \
+    $(lsb_release -cs) \
+    stable"
+  sudo apt-get update
+  sudo apt-get -y install docker-ce
+  sudo usermod -aG docker $USER
+fi
+
+# install toolchains
+rvm || \curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=bundler,rails,nokogiri
+go || sudo apt-get install -y golang-go
+cargo || curl -sSf https://static.rust-lang.org/rustup.sh | sh
+
+# install heroku tooling
+heroku --version || curl https://toolbelt.heroku.com/install-ubuntu.sh | sh && git checkout .bashrc
+
 # configure dotfiles
 if ! [ -d .git ]; then
   git init .
@@ -35,29 +55,11 @@ if ! [ -d .git ]; then
   git reset --hard origin/master
 fi
 
-# configure nvim
+# configure neovim
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim +PlugInstall +qall
 ln -sf .config/nvim/init.vim .vim_config
-
-# install docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
-  "deb [arch=amd64] https://download.docker.com/linux/ubuntu yakkety stable \
-  $(lsb_release -cs) \
-  stable"
-sudo apt-get update
-sudo apt-get -y install docker-ce
-sudo usermod -aG docker $USER
-
-# install heroku tooling
-heroku --version || curl https://toolbelt.heroku.com/install-ubuntu.sh | sh && git checkout .bashrc
-
-# install toolchains
-rvm || \curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=bundler,rails,nokogiri
-go || sudo apt-get install -y golang-go
-cargo || curl -sSf https://static.rust-lang.org/rustup.sh | sh
 
 # gnome settings
 gsettings set org.gnome.desktop.background show-desktop-icons true
