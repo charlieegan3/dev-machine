@@ -14,11 +14,11 @@ HISTCONTROL=ignorespace:ignoredups
 # aliases
 alias vi="nvim"
 alias ls="ls -AG"
-
 alias dc="docker-compose"
-alias dk='docker stop $(docker ps -a -q)'
-
-alias xcopy="xclip -o | xclip -selection clipboard"
+if [[ $(uname) == "Linux" ]]; then
+  alias pbcopy='xsel --clipboard --input'
+  alias pbpaste='xsel --clipboard --output'
+fi
 
 # functions
 gitb() {
