@@ -19,6 +19,14 @@ sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates software-properties-common
 sudo apt-get install -y curl firefox git neovim silversearcher-ag tree vim
 
+# install binaries
+! [[ -s /usr/local/bin/terraform ]] && curl -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.9.6/terraform_0.9.6_linux_amd64.zip && \
+  unzip /tmp/terraform.zip && \
+  sudo mv terraform /usr/local/bin
+! [[ -s /usr/local/bin/packer ]] && curl -o /tmp/packer.zip https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip && \
+  unzip /tmp/packer.zip && \
+  sudo mv packer /usr/local/bin
+
 # configure dotfiles
 if ! [ -d .git ]; then
   git init .
