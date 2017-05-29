@@ -6,18 +6,39 @@ set -e
 DEBIAN_FRONTEND=noninteractive
 
 # remove unwanted software
-sudo apt-get remove -y --purge aisleriot cheese dconf-editor gnome-calculator gnome-calendar \
-  gnome-contacts gnome-documents gnome-games gnome-gettings-started-docs \
-  gnome-mahjongg gnome-maps gnome-mines gnome-music gnome-orca gnome-photos \
-  gnome-sudoku gnome-user-guide gnome-user-guide gnome-weather gnome-weather \
-  libreoffice* rhythmbox* simple-scan totem || true
-sudo apt-get clean
-sudo apt-get autoremove
+read -p "Remove packages? y/n" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  unwantedPackages=(aisleriot cheese dconf-editor gnome-calculator gnome-calendar \
+    gnome-contacts gnome-documents gnome-games gnome-gettings-started-docs \
+    gnome-mahjongg gnome-maps gnome-mines gnome-music gnome-orca gnome-photos \
+    gnome-sudoku gnome-user-guide gnome-user-guide gnome-weather gnome-weather \
+    libreoffice* rhythmbox* simple-scan totem)
+
+  for package in "${unwantedPackages[@]}"
+  do
+    sudo apt-get remove -y --purge $package || true
+  done
+
+  sudo apt-get clean
+  sudo apt-get autoremove
+fi
 
 # install wanted software
-sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates software-properties-common
-sudo apt-get install -y curl firefox git neovim silversearcher-ag tree vim
+read -p "Install packages? y/n" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  wantedPackages=(apt-transport-https ca-certificates software-properties-common \
+    curl firefox git neovim silversearcher-ag tree vim)
+
+  sudo apt-get update
+  for package in "${wantedPackages[@]}"
+  do
+    sudo apt-get install -y $package
+  done
+fi
 
 # install binaries
 ! [[ -e /usr/local/bin/terraform ]] && curl -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.9.6/terraform_0.9.6_linux_amd64.zip && \
