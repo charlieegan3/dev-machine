@@ -40,6 +40,7 @@ gitpb() {
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$GOPATH/bin"
 export GOPATH=$HOME/Code/go
+export PATH=~/.local/bin:$PATH # awscli
 
 # welcome commander
 echo "hello."

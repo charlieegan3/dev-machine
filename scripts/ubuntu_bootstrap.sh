@@ -72,6 +72,12 @@ if ! [[ -e /usr/bin/spotify ]]; then
   sudo apt-get install -y spotify-client
 fi
 
+if ! [ -e ~/.local/bin/aws ]; then
+  sudo apt-get install -y python-pip python-dev build-essential
+  sudo pip install --upgrade pip
+  pip install --upgrade --user awscli
+fi
+
 # configure dotfiles
 if ! [ -e ~/.git ]; then
   git init .
