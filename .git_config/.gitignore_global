@@ -1,6 +1,9 @@
 # local env_vars
 local_env.sh
 
+# tf state backups
+*.backup
+
 # Compiled source
 *.com
 *.class
