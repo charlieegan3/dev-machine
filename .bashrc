@@ -26,12 +26,21 @@ if [[ $(uname) == "Linux" ]]; then
     nautilus "$1" &> /dev/null
   }
 fi
-gitb() {
+function gitb() {
   git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'
 }
-gitpb() {
+function gitpb() {
   gitb | xclip -selection clipboard
 }
+function local_env_cd() {
+  builtin cd $1
+  local_env_file=./local_env.sh
+  if [ -e $local_env_file ]; then
+    source $local_env_file
+    cat $local_env_file
+  fi
+}
+alias cd="local_env_cd"
 
 # tools
 [[ -e /usr/local/heroku/bin ]]  && export PATH="/usr/local/heroku/bin:$PATH"
