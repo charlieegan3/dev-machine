@@ -78,6 +78,18 @@ if ! [ -e ~/.local/bin/aws ]; then
   pip install --upgrade --user awscli
 fi
 
+if ! [ -e ~/usr/bin/psql ]; then
+  sudo apt-get install -y postgresql postgresql-contrib postgresql-client libpq-dev
+
+  PG_HBA=$(sudo ls /etc/postgresql/*/main/pg_hba.conf | sort | tail -n 1)
+  sudo sed -i.bak -e 's/peer\|md5/trust/g' $PG_HBA
+  sudo /etc/init.d/postgresql restart
+
+  sudo -u postgres createuser $(whoami) || true
+  sudo -u postgres createdb $(whoami) || true
+  psql -U postgres -c "ALTER USER $(whoami) WITH SUPERUSER;"
+fi
+
 # configure dotfiles
 if ! [ -e ~/.git ]; then
   git init .
