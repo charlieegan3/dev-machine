@@ -141,6 +141,8 @@ autocmd BufRead,BufNewFile {*.conf} set ft=c
 " text
 autocmd BufEnter {*.md,*.txt} set spell spelllang=en_gb
 autocmd BufLeave {*.md,*.txt} set nospell
+" vim
+autocmd BufRead,BufNewFile {.vim_config} set ft=vim
 
 if has('nvim')
   tnoremap <S-tab> <C-\><C-n>:bp<cr>
