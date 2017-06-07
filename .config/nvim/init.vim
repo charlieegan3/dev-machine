@@ -94,6 +94,7 @@ nnoremap <cr> :w<cr>
 
 vnoremap <cr> "+y<cr>
 vnoremap <BS> "+p<cr>
+vnoremap i    =
 
 " spelling
 nnoremap <Left> [s
