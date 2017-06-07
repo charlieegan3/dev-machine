@@ -103,6 +103,7 @@ if ! [ -e ~/.config/nvim/autoload/plug.vim ]; then
   curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
           https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   nvim +PlugInstall +qall
+  nvim +GoInstallBinaries +qall
   ln -sf .config/nvim/init.vim .vim_config
 fi
 
