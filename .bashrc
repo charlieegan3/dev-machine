@@ -32,13 +32,16 @@ function gitb() {
 function gitpb() {
   gitb | xclip -selection clipboard
 }
-function local_env_cd() {
-  builtin cd $1
+function source_local_env_file() {
   local_env_file=./local_env.sh
   if [ -e $local_env_file ]; then
     source $local_env_file
     cat $local_env_file
   fi
+}
+function local_env_cd() {
+  builtin cd $1
+  source_local_env_file
 }
 alias cd="local_env_cd"
 
@@ -52,4 +55,6 @@ export GOPATH=$HOME/Code/go
 export PATH=~/.local/bin:$PATH # awscli
 
 # welcome commander
+clear
 echo "hello."
+source_local_env_file
