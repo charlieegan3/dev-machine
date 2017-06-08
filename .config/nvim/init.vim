@@ -80,7 +80,7 @@ nnoremap <S-tab> :bp<cr>
 nnoremap <leader>v :vsp<cr>
 nnoremap <leader>rm :call delete(expand('%')) \| bdelete!<CR>
 
-" plugins & shortcuts
+" shortcuts
 nnoremap <SPACE> :FZF<cr>
 
 nnoremap <leader>T :!ctags -R .<cr>
@@ -92,9 +92,11 @@ nnoremap <leader>g :Gread<cr>
 
 nnoremap <cr> :w<cr>
 
+nnoremap <Up> mzgg=G`z
+
 vnoremap <cr> "+y<cr>
 vnoremap <BS> "+p<cr>
-vnoremap i    =
+vnoremap <SPACE> =
 
 " spelling
 nnoremap <Left> [s
