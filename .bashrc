@@ -5,6 +5,10 @@ export PS1="\W|"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# set terminal env
+export COLORTERM=truecolor
+export TERM=xterm-256color
+
 # use correct window size
 shopt -s checkwinsize
 
