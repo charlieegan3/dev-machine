@@ -78,7 +78,7 @@ if ! [ -e ~/.local/bin/aws ]; then
   pip install --upgrade --user awscli
 fi
 
-if ! [ -e ~/usr/bin/psql ]; then
+if ! [ -e /usr/bin/psql ]; then
   sudo apt-get install -y postgresql postgresql-contrib postgresql-client libpq-dev
 
   PG_HBA=$(sudo ls /etc/postgresql/*/main/pg_hba.conf | sort | tail -n 1)
