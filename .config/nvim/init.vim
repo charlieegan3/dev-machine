@@ -101,8 +101,11 @@ vnoremap <SPACE> =
 " spelling
 nnoremap <Left> [s
 nnoremap <Right> ]s
-nnoremap <Down> :%s /
 nnoremap <BS> 1z=
+
+" replacing
+nnoremap <Down> :%s /
+nnoremap <leader>r "zyiw:exe "%s/".@z."//g"
 
 " insert mappings
 inoremap kj <esc>
@@ -139,6 +142,7 @@ autocmd InsertEnter * :setlocal nohlsearch
 autocmd BufRead,BufNewFile *.go set nolist
 " ruby
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
+autocmd BufRead,BufNewFile {*_spec.rb} nnoremap tt :!bundle exec rspec % \| grep -v '/gems/'<cr>
 " conf
 autocmd BufRead,BufNewFile {*.conf} set ft=c
 " text
