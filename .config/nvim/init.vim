@@ -140,6 +140,8 @@ autocmd InsertEnter * :setlocal nohlsearch
 
 " go
 autocmd BufRead,BufNewFile *.go set nolist
+autocmd BufRead,BufNewFile *.go nnoremap tt :! go test<cr>
+autocmd BufRead,BufNewFile *.go nnoremap tr :GoAlternate<cr>
 " ruby
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake} set ft=ruby
 autocmd BufRead,BufNewFile {*_spec.rb} nnoremap tt :!bundle exec rspec % \| grep -v '/gems/'<cr>
