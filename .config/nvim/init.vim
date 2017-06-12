@@ -101,8 +101,11 @@ vnoremap <SPACE> =
 " spelling
 nnoremap <Left> [s
 nnoremap <Right> ]s
-nnoremap <Down> :%s /
 nnoremap <BS> 1z=
+
+" replacing
+nnoremap <Down> :%s /
+nnoremap <leader>r "zyiw:exe "%s/".@z."//g"
 
 " insert mappings
 inoremap kj <esc>
