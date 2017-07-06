@@ -30,8 +30,8 @@ read -p "Install packages? y/n" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  wantedPackages=(apt-transport-https ca-certificates chromium-browser curl \
-  firefox git neovim silversearcher-ag software-properties-common tree vim)
+  wantedPackages=(apt-transport-https awscli ca-certificates chromium-browser \
+  curl firefox git neovim silversearcher-ag software-properties-common tree vim)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
@@ -72,12 +72,6 @@ if ! [[ -e /usr/bin/spotify ]]; then
   echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
   sudo apt-get update >> /dev/null
   sudo apt-get install -y spotify-client
-fi
-
-if ! [ -e ~/.local/bin/aws ]; then
-  sudo apt-get install -y python-pip python-dev build-essential
-  sudo pip install --upgrade pip
-  pip install --upgrade --user awscli
 fi
 
 if ! [ -e /usr/bin/psql ]; then
