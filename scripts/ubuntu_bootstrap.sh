@@ -44,7 +44,9 @@ fi
 ! [[ -e ~/.rvm ]] && \curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=bundler,rails,nokogiri
 ! [[ -e /usr/bin/go ]] && sudo apt-get install -y golang-go
 ! [[ -e /usr/local/bin/cargo ]] && curl -sSf https://static.rust-lang.org/rustup.sh | sh
-! [[ -e /usr/local/heroku ]] && curl https://toolbelt.heroku.com/install-ubuntu.sh | sh && git checkout .bashrc
+! [[ -e /usr/local/heroku ]] && curl https://toolbelt.heroku.com/install-ubuntu.sh | sh
+# clear junk added to bashrc
+[[ -e ~/.git ]] &&git checkout .bashrc
 
 ! [[ -e /usr/local/bin/terraform ]] && curl -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.9.6/terraform_0.9.6_linux_amd64.zip && \
   unzip /tmp/terraform.zip && \
