@@ -41,7 +41,8 @@ then
 fi
 
 # install things that don't come in boxes
-! [[ -e ~/.rvm ]] && \curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=bundler,rails,nokogiri
+rvmStable="https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/rvm-installer"
+! [[ -e ~/.rvm ]] && \curl -sSL $rvmStable | bash -s stable --ruby --gems=bundler,rails,nokogiri
 ! [[ -e /usr/bin/go ]] && sudo apt-get install -y golang-go
 ! [[ -e /usr/local/bin/cargo ]] && curl -sSf https://static.rust-lang.org/rustup.sh | sh
 ! [[ -e /usr/local/heroku ]] && curl https://toolbelt.heroku.com/install-ubuntu.sh | sh
