@@ -52,3 +52,7 @@ tags
 
 # python
 *.pyc
+
+# terraform config
+.terraform
+*.tfstate
