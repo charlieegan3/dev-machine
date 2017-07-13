@@ -43,11 +43,8 @@ function source_local_env_file() {
     cat $local_env_file
   fi
 }
-function local_env_cd() {
-  builtin cd $1
-  source_local_env_file
-}
-alias cd="local_env_cd"
+
+export PROMPT_COMMAND=source_local_env_file
 
 # tools
 [[ -e /usr/local/heroku/bin ]]  && export PATH="/usr/local/heroku/bin:$PATH"
