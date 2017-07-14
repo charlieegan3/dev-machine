@@ -58,4 +58,3 @@ export PATH=~/.local/bin:$PATH # awscli
 # welcome commander
 clear
 echo "hello."
-source_local_env_file
