@@ -3,7 +3,7 @@
 set -x
 set -e
 
-DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=noninteractive
 
 # remove unwanted software
 read -p "Remove packages? y/n" -n 1 -r
@@ -18,7 +18,7 @@ then
 
   for package in "${unwantedPackages[@]}"
   do
-    sudo apt-get remove -y --purge $package || true
+    sudo apt-get remove -y --purge "$package" || true
   done
 
   sudo apt-get clean
@@ -36,7 +36,7 @@ then
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
   do
-    sudo apt-get install -y $package
+    sudo apt-get install -y "$package"
   done
 fi
 
@@ -65,7 +65,7 @@ if ! [[ -e /usr/bin/docker ]]; then
     stable"
   sudo apt-get update >> /dev/null
   sudo apt-get -y install docker-ce
-  sudo usermod -aG docker $USER
+  sudo usermod -aG docker "$USER"
 fi
 
 if ! [[ -e /usr/bin/spotify ]]; then
@@ -79,11 +79,11 @@ if ! [ -e /usr/bin/psql ]; then
   sudo apt-get install -y postgresql postgresql-contrib postgresql-client libpq-dev
 
   PG_HBA=$(sudo ls /etc/postgresql/*/main/pg_hba.conf | sort | tail -n 1)
-  sudo sed -i.bak -e 's/peer\|md5/trust/g' $PG_HBA
+  sudo sed -i.bak -e 's/peer\|md5/trust/g' "$PG_HBA"
   sudo /etc/init.d/postgresql restart
 
-  sudo -u postgres createuser $(whoami) || true
-  sudo -u postgres createdb $(whoami) || true
+  sudo -u postgres createuser "$(whoami)" || true
+  sudo -u postgres createdb "$(whoami)" || true
   psql -U postgres -c "ALTER USER $(whoami) WITH SUPERUSER;"
 fi
 
