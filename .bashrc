@@ -37,10 +37,13 @@ function gitpb() {
   gitb | xclip -selection clipboard
 }
 function source_local_env_file() {
-  local_env_file=./local_env.sh
-  if [ -e $local_env_file ]; then
-    source $local_env_file
-    cat $local_env_file
+  if [[ "$PWD" != "$PWD_PREV" ]]; then
+    PWD_PREV="$PWD"
+    local_env_file=./local_env.sh
+    if [ -e $local_env_file ]; then
+      source $local_env_file
+      cat $local_env_file
+    fi
   fi
 }
 
