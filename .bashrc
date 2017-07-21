@@ -37,17 +37,12 @@ function gitpb() {
   gitb | xclip -selection clipboard
 }
 function source_local_env_file() {
-  if [[ "$PWD" != "$PWD_PREV" ]]; then
-    PWD_PREV="$PWD"
-    local_env_file=./local_env.sh
-    if [ -e $local_env_file ]; then
-      source $local_env_file
-      cat $local_env_file
-    fi
+  local_env_file=./local_env.sh
+  if [ -e $local_env_file ]; then
+    source $local_env_file
+    cat $local_env_file
   fi
 }
-
-export PROMPT_COMMAND=source_local_env_file
 
 # tools
 [[ -e /usr/local/heroku/bin ]]  && export PATH="/usr/local/heroku/bin:$PATH"
@@ -61,3 +56,4 @@ export PATH=~/.local/bin:$PATH # awscli
 # welcome commander
 clear
 echo "hello."
+source_local_env_file
