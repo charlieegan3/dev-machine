@@ -49,7 +49,7 @@ rvmStable="https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/
 # clear junk added to bashrc
 [[ -e ~/.git ]] &&git checkout .bashrc
 
-! [[ -e /usr/local/bin/terraform ]] && curl -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.9.6/terraform_0.9.6_linux_amd64.zip && \
+! [[ -e /usr/local/bin/terraform ]] && curl -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.10.0-beta2/terraform_0.10.0-beta2_linux_amd64.zip && unzip /tmp/terraform.zip && \
   unzip /tmp/terraform.zip && \
   sudo mv terraform /usr/local/bin
 
