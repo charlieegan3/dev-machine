@@ -23,6 +23,8 @@ shopt -s histappend
 alias vi="nvim"
 alias ls="ls -AG"
 alias dc="docker-compose"
+alias cd="clear; builtin cd"
+alias env="env | sort"
 if [[ $(uname) == "Linux" ]]; then
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
