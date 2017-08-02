@@ -23,7 +23,6 @@ shopt -s histappend
 alias vi="nvim"
 alias ls="ls -AG"
 alias dc="docker-compose"
-alias cd="clear; builtin cd"
 alias env="env | sort"
 if [[ $(uname) == "Linux" ]]; then
   alias pbcopy='xsel --clipboard --input'
@@ -38,12 +37,10 @@ function gitb() {
 function gitpb() {
   gitb | xclip -selection clipboard
 }
-function source_local_env_file() {
-  local_env_file=./local_env.sh
-  if [ -e $local_env_file ]; then
-    source $local_env_file
-    cat $local_env_file
-  fi
+function cd() {
+  clear
+  builtin cd $1
+  git s
 }
 
 # tools
@@ -55,7 +52,9 @@ export PATH="$PATH:$GOPATH/bin"
 export GOPATH=$HOME/Code/go
 export PATH=~/.local/bin:$PATH # awscli
 
+# direnv
+eval "$(direnv hook bash)"
+
 # welcome commander
 clear
 echo "hello."
-source_local_env_file

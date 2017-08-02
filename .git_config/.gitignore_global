@@ -56,3 +56,6 @@ tags
 # terraform config
 .terraform
 *.tfstate
+
+# direnv
+.envrc
