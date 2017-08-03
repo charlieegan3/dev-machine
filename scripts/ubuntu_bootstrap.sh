@@ -30,8 +30,9 @@ read -p "Install packages? y/n" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  wantedPackages=(apt-transport-https awscli ca-certificates chromium-browser \
-  curl firefox git neovim silversearcher-ag software-properties-common tree vim)
+  wantedPackages=(apt-transport-https awscli direnv ca-certificates \
+  chromium-browser curl firefox git neovim silversearcher-ag \
+  software-properties-common tree vim)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
