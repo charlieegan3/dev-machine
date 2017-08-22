@@ -32,7 +32,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   wantedPackages=(apt-transport-https awscli direnv ca-certificates \
   chromium-browser curl firefox git neovim silversearcher-ag \
-  software-properties-common tmux tree vim)
+  software-properties-common tree vim)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
@@ -49,6 +49,17 @@ rvmStable="https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/
 ! [[ -e /usr/local/heroku ]] && curl https://toolbelt.heroku.com/install-ubuntu.sh | sh
 # clear junk added to bashrc
 [[ -e ~/.git ]] &&git checkout .bashrc
+
+if ! [[ -e /usr/local/bin/tmux ]]; then
+  curl -L https://github.com/tmux/tmux/releases/download/2.5/tmux-2.5.tar.gz > /tmp/tmux.tar.gz
+  sudo apt-get install libevent-dev
+  tar xf /tmp/tmux.tar.gz
+  cd tmux-2.5
+  ./configure && make
+  sudo make install
+  cd ..
+  rm -rf tmux-2.5
+fi
 
 ! [[ -e /usr/local/bin/terraform ]] && curl -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.10.0-beta2/terraform_0.10.0-beta2_linux_amd64.zip && unzip /tmp/terraform.zip && \
   unzip /tmp/terraform.zip && \
