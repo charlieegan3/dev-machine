@@ -35,4 +35,4 @@
   undo = reset --soft HEAD^
   stash-all = stash save --include-untracked
 [credential]
-        helper = cache --timeout=9999999999999
+  helper = cache --timeout=2628000
