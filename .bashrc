@@ -4,6 +4,7 @@ export PS1="\W|"
 # use vim as the system editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
+set -o vi
 
 # set terminal env
 export COLORTERM=truecolor
