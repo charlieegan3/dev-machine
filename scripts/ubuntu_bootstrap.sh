@@ -31,7 +31,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   wantedPackages=(apt-transport-https awscli direnv ca-certificates \
-  chromium-browser curl firefox git silversearcher-ag \
+  chromium-browser curl firefox gconf2 git silversearcher-ag \
   redshift software-properties-common tree vim)
 
   sudo apt-get update >> /dev/null
@@ -133,8 +133,9 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot '<Shi
 gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '<Shift><Alt>sterling'
 gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Alt>Return'
 gsettings set org.gnome.settings-daemon.plugins.media-keys www '<Shift><Alt>Return'
-if ! [ -e ~/resources/theme-installed ]; then
-  # new terminal profile required
-  bash ~/resources/base16-londontube.light.sh
-  touch ~/resources/theme-installed
+
+if ! [ -e ~/themes/theme-installed ]; then
+  bash ~/themes/base16-tube.dark.sh
+  touch ~/themes/theme-installed
+  echo "Restart terminal to get new profile"
 fi
