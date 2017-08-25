@@ -21,7 +21,7 @@ export HISTCONTROL=ignorespace:ignoredups
 shopt -s histappend
 
 # aliases & functions
-alias vi="nvim"
+alias vi="vim"
 alias ls="ls -AG"
 alias dc="docker-compose"
 alias env="env | sort"

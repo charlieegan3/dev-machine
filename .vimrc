@@ -21,9 +21,9 @@ set lazyredraw " only redraw vim when required
 set autowrite " autowrite files allowing switching without saving
 set laststatus=0 " don't show the filename at the bottom of window (because it's at the top)
 
-set undodir=~/.config/nvim/.undo//
-set backupdir=~/.config/nvim/.backup//
-set directory=~/.config/nvim/.swp//
+set undodir=~/.vim/.undo//
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
 
 set foldenable " enable code folding
 set foldmethod=indent " use indentation to fold
@@ -152,16 +152,6 @@ autocmd BufEnter {*.md,*.txt} set spell spelllang=en_gb
 autocmd BufLeave {*.md,*.txt} set nospell
 " vim
 autocmd BufRead,BufNewFile {.vim_config} set ft=vim
-
-if has('nvim')
-  tnoremap <S-tab> <C-\><C-n>:bp<cr>
-
-  augroup terminal
-    autocmd TermOpen * set bufhidden=hide
-    autocmd TermOpen * setlocal nospell
-    nnoremap <leader>w <C-c>:bd!<cr>
-  augroup END
-endif
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }

@@ -31,7 +31,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   wantedPackages=(apt-transport-https awscli direnv ca-certificates \
-  chromium-browser curl firefox git neovim silversearcher-ag \
+  chromium-browser curl firefox git silversearcher-ag \
   redshift software-properties-common tree vim)
 
   sudo apt-get update >> /dev/null
@@ -107,13 +107,12 @@ if ! [ -e ~/.git ]; then
   git reset --hard origin/master
 fi
 
-# configure neovim
-if ! [ -e ~/.config/nvim/autoload/plug.vim ]; then
-  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+# configure vim
+if ! [ -e ~/.vim/autoload/plug.vim ]; then
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
           https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  nvim +PlugInstall +qall
-  nvim +GoInstallBinaries +qall
-  ln -sf .config/nvim/init.vim .vim_config
+  vim +PlugInstall +qall
+  vim +GoInstallBinaries +qall
 fi
 
 # config gnome
