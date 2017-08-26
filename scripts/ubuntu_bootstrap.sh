@@ -31,7 +31,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   wantedPackages=(apt-transport-https awscli direnv ca-certificates \
-  chromium-browser curl firefox gconf2 git silversearcher-ag \
+  google-chrome-stable curl firefox gconf2 git silversearcher-ag \
   redshift software-properties-common tree vim-gnome)
 
   sudo apt-get update >> /dev/null
