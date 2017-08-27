@@ -176,6 +176,7 @@ Plug 'rust-lang/rust.vim'           " rust
 Plug 'avakhov/vim-yaml'             " ya`ml
 Plug 'mxw/vim-jsx'                  " jsx & React
 Plug 'charlieegan3/vim-terraform'   " terraform fmt
+Plug 'tmux-plugins/vim-tmux'        " tmux formatting
 
 " currently unused
 " Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
