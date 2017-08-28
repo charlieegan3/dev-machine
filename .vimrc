@@ -140,8 +140,9 @@ autocmd InsertEnter * :setlocal nohlsearch
 
 " go
 autocmd BufRead,BufNewFile *.go set nolist
-autocmd BufRead,BufNewFile *.go nnoremap tt :! go test<cr>
+autocmd BufRead,BufNewFile *.go nnoremap tt :! clear; go test<cr>
 autocmd BufRead,BufNewFile *.go nnoremap tr :GoAlternate<cr>
+autocmd BufRead,BufNewFile *.go inoremap <tab> <C-x><C-o>
 " ruby
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.json.jbuilder} set ft=ruby
 autocmd BufRead,BufNewFile {*_spec.rb} nnoremap tt :!bundle exec rspec % \| grep -v '/gems/'<cr>
@@ -171,12 +172,13 @@ Plug 'vim-ruby/vim-ruby'            " ruby
 Plug 'tpope/vim-endwise'            " ruby end insertion
 Plug 'tpope/vim-haml'               " haml
 Plug 'kchmck/vim-coffee-script'     " coffeescript
-Plug 'fatih/vim-go'                 " golang
 Plug 'rust-lang/rust.vim'           " rust
 Plug 'avakhov/vim-yaml'             " ya`ml
 Plug 'mxw/vim-jsx'                  " jsx & React
 Plug 'charlieegan3/vim-terraform'   " terraform fmt
 Plug 'tmux-plugins/vim-tmux'        " tmux formatting
+Plug 'fatih/vim-go'                 " golang
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 " currently unused
 " Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
