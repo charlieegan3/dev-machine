@@ -148,6 +148,9 @@ autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,
 autocmd BufRead,BufNewFile {*_spec.rb} nnoremap tt :!bundle exec rspec % \| grep -v '/gems/'<cr>
 " conf
 autocmd BufRead,BufNewFile {*.conf} set ft=c
+" md
+autocmd BufEnter {*.md,*.markdown,*.html.md,*.html.markdown} set tw=80
+autocmd BufLeave {*.md,*.markdown,*.html.md,*.html.markdown} set tw=0
 " text
 autocmd BufEnter {*.md,*.txt} set spell spelllang=en_gb
 autocmd BufLeave {*.md,*.txt} set nospell
