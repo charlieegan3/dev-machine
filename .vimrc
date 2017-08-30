@@ -171,6 +171,8 @@ Plug 'terryma/vim-multiple-cursors' " something a little like sublime
 Plug 'tpope/vim-fugitive'           " git commands
 Plug 'airblade/vim-gitgutter'       " gutter git status
 
+Plug 'francoiscabrol/ranger.vim'    " file manager
+
 Plug 'vim-ruby/vim-ruby'            " ruby
 Plug 'tpope/vim-endwise'            " ruby end insertion
 Plug 'tpope/vim-haml'               " haml
