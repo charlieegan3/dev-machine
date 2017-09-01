@@ -145,7 +145,7 @@ autocmd BufRead,BufNewFile *.go nnoremap tr :GoAlternate<cr>
 autocmd BufRead,BufNewFile *.go inoremap <tab> <C-x><C-o>
 " ruby
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.json.jbuilder} set ft=ruby
-autocmd BufRead,BufNewFile {*_spec.rb} nnoremap tt :!bundle exec rspec % \| grep -v '/gems/'<cr>
+autocmd BufRead,BufNewFile {*_spec.rb} nnoremap tt :! clear; bundle exec rspec % \| grep -v '/gems/'<cr>
 " conf
 autocmd BufRead,BufNewFile {*.conf} set ft=c
 " md
