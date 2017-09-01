@@ -156,6 +156,8 @@ autocmd BufEnter {*.md,*.txt} set spell spelllang=en_gb
 autocmd BufLeave {*.md,*.txt} set nospell
 " vim
 autocmd BufRead,BufNewFile {.vim_config} set ft=vim
+" git
+autocmd FileType gitcommit setlocal spell
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
