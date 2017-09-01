@@ -56,9 +56,9 @@ highlight BufTabLineCurrent ctermbg=black
 highlight BufTabLineActive ctermbg=white
 highlight BufTabLineHidden ctermbg=darkgrey
 highlight BufTabLineFill ctermbg=grey
-highlight SpellBad ctermbg=237 ctermfg=white cterm=none
-highlight SpellLocal ctermbg=237 ctermfg=white cterm=none
-highlight SpellRare ctermbg=237 ctermfg=white cterm=none
+highlight SpellBad ctermbg=240 ctermfg=white cterm=none
+highlight SpellLocal ctermbg=240 ctermfg=white cterm=none
+highlight SpellRare ctermbg=240 ctermfg=white cterm=none
 highlight MatchParen ctermbg=black ctermfg=white cterm=underline
 syntax match TrailingWhitespace "\s+$"
 highlight TrailingWhitespace ctermbg=darkred
