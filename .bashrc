@@ -43,6 +43,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$GOPATH/bin"
 export GOPATH=$HOME/Code/go
 export PATH=~/.local/bin:$PATH # awscli
+export PATH="$HOME/.tfenv/bin:$PATH"
 export GPG_TTY=`tty`
 eval "$(direnv hook bash)"
 

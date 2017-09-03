@@ -64,9 +64,8 @@ if ! [[ -e /usr/local/bin/tmux ]]; then
   rm -rf tmux-2.5
 fi
 
-! [[ -e /usr/local/bin/terraform ]] && curl -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.10.0-beta2/terraform_0.10.0-beta2_linux_amd64.zip && unzip /tmp/terraform.zip && \
-  unzip /tmp/terraform.zip && \
-  sudo mv terraform /usr/local/bin
+! [[ -e ~/.tfenv/bin/tfenv ]] && git clone https://github.com/kamatama41/tfenv.git ~/.tfenv \
+  && tfenv install latest
 
 ! [[ -e /usr/local/bin/packer ]] && curl -o /tmp/packer.zip https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip && \
   unzip /tmp/packer.zip && \
