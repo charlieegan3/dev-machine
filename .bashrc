@@ -23,6 +23,7 @@ alias env='env | sort'
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'"
 alias ron='redshift -O 2000 -m randr'
 alias roff='redshift -x -m randr'
+alias serve='open http://localhost:8000 && ruby -run -ehttpd . -p8000'
 
 if [[ $(uname) == "Linux" ]]; then
   alias pbcopy='xsel --clipboard --input'
