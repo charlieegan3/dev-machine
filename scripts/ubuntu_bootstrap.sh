@@ -47,11 +47,15 @@ fi
 # install things that don't come in boxes
 rvmStable="https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/rvm-installer"
 ! [[ -e ~/.rvm ]] && \curl -sSL $rvmStable | bash -s stable --ruby --gems=bundler,rails,nokogiri
+! [[ -e /usr/bin/node ]] && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - \
+  && sudo apt-get install -y nodejs \
+  && mkdir ~/.npm-global && npm config set prefix '~/.npm-global' && export PATH=~/.npm-global/bin:$PATH
+! [[ -e /usr/bin/npm ]] && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - && sudo apt-get install -y nodejs
 ! [[ -e /usr/bin/go ]] && sudo apt-get install -y golang-go
 ! [[ -e /usr/local/bin/cargo ]] && curl -sSf https://static.rust-lang.org/rustup.sh | sh
 ! [[ -e /usr/local/heroku ]] && curl https://toolbelt.heroku.com/install-ubuntu.sh | sh
 # clear junk added to bashrc
-[[ -e ~/.git ]] &&git checkout .bashrc
+[[ -e ~/.git ]] && git checkout .bashrc
 
 if ! [[ -e /usr/local/bin/tmux ]]; then
   curl -L https://github.com/tmux/tmux/releases/download/2.5/tmux-2.5.tar.gz > /tmp/tmux.tar.gz

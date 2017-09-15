@@ -37,14 +37,14 @@ elif [[ $(uname) == "Darwin" ]]; then
 fi
 
 # tools
-[[ -e /usr/local/heroku/bin ]]  && export PATH="/usr/local/heroku/bin:$PATH"
+#[[ -e /usr/bin/heroku ]]  && export PATH="$PATH:/usr/bin/heroku"
 [[ -e $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 [[ -e $HOME/.cargo/env ]]       && source $HOME/.cargo/env
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$GOPATH/bin"
 export GOPATH=$HOME/Code/go
-export PATH=~/.local/bin:$PATH # awscli
-export PATH="$HOME/.tfenv/bin:$PATH"
+export PATH=$PATH:~/.local/bin # awscli
+export PATH="$PATH:$HOME/.tfenv/bin"
 export GPG_TTY=`tty`
 eval "$(direnv hook bash)"
 
