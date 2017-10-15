@@ -21,6 +21,7 @@ set lazyredraw " only redraw vim when required
 set autowrite " autowrite files allowing switching without saving
 set laststatus=0 " don't show the filename at the bottom of window (because it's at the top)
 
+set undofile " maintain undo history
 set undodir=~/.vim/.undo/
 set backupdir=~/.vim/backup/
 set directory=~/.vim/.swp/
