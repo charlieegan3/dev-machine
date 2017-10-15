@@ -5,7 +5,7 @@ export PS1="\W|"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 alias vi='vim'
-set -o vi
+# set -o vi
 
 # set terminal colors
 export COLORTERM=truecolor
