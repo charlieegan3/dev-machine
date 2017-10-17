@@ -41,6 +41,11 @@
       "type": "shell",
       "script": "./scripts/user.sh",
       "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
+    },
+    {
+      "type": "shell",
+      "script": "./scripts/keys.sh",
+      "execute_command": "echo 'packer' | sudo -S -H -u charlieegan3 sh -c '{{ .Vars }} {{ .Path }}'"
     }
   ]
 }
