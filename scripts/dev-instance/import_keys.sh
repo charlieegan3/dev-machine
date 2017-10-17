@@ -3,7 +3,7 @@
 set -x
 set -e
 
-curl https://github.com/charlieegan3.keys > /home/charlieegan3/.ssh/authorized_keys
+curl https://github.com/charlieegan3.keys > .ssh/authorized_keys
 
 mkdir -p gpg_keys
 
