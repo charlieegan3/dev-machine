@@ -15,6 +15,7 @@ wantedPackages=(
   direnv
   git
   gnupg-agent
+  libcurl4-gnutls-dev
   silversearcher-ag
   software-properties-common
   tree
