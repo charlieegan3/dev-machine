@@ -40,3 +40,6 @@ done
 
 # own it
 chown -R charlieegan3 ~
+
+# reset bashrc edits
+git checkout .bashrc
