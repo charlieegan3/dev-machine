@@ -14,11 +14,11 @@ wantedPackages=(
   curl
   direnv
   git
-  redshift
+  gnupg-agent
   silversearcher-ag
   software-properties-common
   tree
-  vim
+  vim-gnome
 )
 
 apt-get update -y
