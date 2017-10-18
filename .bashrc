@@ -45,6 +45,8 @@ export PATH="$PATH:$GOPATH/bin"
 export GOPATH=$HOME/Code/go
 export PATH=$PATH:~/.local/bin # awscli
 export PATH="$PATH:$HOME/.tfenv/bin"
+export PATH=$PATH:~/.npm-global/bin
+export GPG_TTY=`tty`
 eval "$(direnv hook bash)"
 
 gpg-agent --daemon
