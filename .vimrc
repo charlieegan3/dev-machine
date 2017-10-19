@@ -165,6 +165,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'ajh17/VimCompletesMe'         " completion
 Plug 'rking/ag.vim'                 " project search
 Plug 'luochen1990/rainbow'          " bracket highlighting
+Plug 'raimondi/delimitmate'         " bracket matching
 Plug 'ap/vim-buftabline'            " tabs for open buffers
 Plug 'danro/rename.vim'             " adds the :rename command
 Plug 'scrooloose/nerdcommenter'     " comment toggling
@@ -185,6 +186,7 @@ Plug 'avakhov/vim-yaml'             " ya`ml
 Plug 'mxw/vim-jsx'                  " jsx & React
 Plug 'charlieegan3/vim-terraform'   " terraform fmt
 Plug 'tmux-plugins/vim-tmux'        " tmux formatting
+Plug 'alvan/vim-closetag'           " html tag matching
 Plug 'fatih/vim-go'                 " golang
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
