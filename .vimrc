@@ -162,7 +162,7 @@ autocmd FileType gitcommit setlocal spell
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'ervandew/supertab'            " completion
+Plug 'ajh17/VimCompletesMe'         " completion
 Plug 'rking/ag.vim'                 " project search
 Plug 'luochen1990/rainbow'          " bracket highlighting
 Plug 'ap/vim-buftabline'            " tabs for open buffers
