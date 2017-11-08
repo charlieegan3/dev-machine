@@ -134,10 +134,14 @@ let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --hidden'
 " whitespace fixes
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre * :Tab2Space
+
 " clear search
 autocmd BufRead,BufEnter * :let @/ = ""
 autocmd InsertLeave * :setlocal hlsearch
 autocmd InsertEnter * :setlocal nohlsearch
+
+" create paths before save
+autocmd BufWritePre * :silent !mkdir -p %:p:h
 
 " go
 autocmd BufRead,BufNewFile *.go set nolist
