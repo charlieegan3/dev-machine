@@ -41,6 +41,7 @@ fi
 [[ -e $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 [[ -e $HOME/.cargo/env ]]       && source $HOME/.cargo/env
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.npm-global/bin"
 export PATH="$PATH:$GOPATH/bin"
 export GOPATH=$HOME/Code/go
 export PATH=$PATH:~/.local/bin # awscli
