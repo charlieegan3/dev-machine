@@ -61,6 +61,7 @@ highlight SpellBad ctermbg=240 ctermfg=white cterm=none
 highlight SpellLocal ctermbg=240 ctermfg=white cterm=none
 highlight SpellRare ctermbg=240 ctermfg=white cterm=none
 highlight MatchParen ctermbg=black ctermfg=white cterm=underline
+highlight Search ctermbg=240 ctermfg=148
 syntax match TrailingWhitespace "\s+$"
 highlight TrailingWhitespace ctermbg=darkred
 
