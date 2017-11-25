@@ -3,6 +3,7 @@ cask "google-chrome"
 cask "nordvpn"
 cask "paw"
 cask "spotify"
+cask "skype"
 
 brew "ansible"
 brew "awscli"
