@@ -1,5 +1,6 @@
 cask "firefox"
 cask "google-chrome"
+cask "nordvpn"
 cask "paw"
 cask "spotify"
 
