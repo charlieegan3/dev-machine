@@ -188,13 +188,14 @@ Plug 'tpope/vim-endwise'            " ruby end insertion
 Plug 'tpope/vim-haml'               " haml
 Plug 'kchmck/vim-coffee-script'     " coffeescript
 Plug 'rust-lang/rust.vim'           " rust
-Plug 'avakhov/vim-yaml'             " ya`ml
+Plug 'avakhov/vim-yaml'             " yaml
 Plug 'mxw/vim-jsx'                  " jsx & React
 Plug 'charlieegan3/vim-terraform'   " terraform fmt
 Plug 'tmux-plugins/vim-tmux'        " tmux formatting
 Plug 'alvan/vim-closetag'           " html tag matching
 Plug 'fatih/vim-go'                 " golang
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'elixir-editors/vim-elixir'    " elixir
 
 " currently unused
 " Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
