@@ -165,6 +165,9 @@ autocmd BufLeave {*.md,*.txt} set nospell
 autocmd BufRead,BufNewFile {.vim_config} set ft=vim
 " git
 autocmd FileType gitcommit setlocal spell
+" elixir
+autocmd BufRead,BufNewFile {*_test.exs} nnoremap tt :! clear; mix test %<cr>
+autocmd BufRead,BufNewFile {*.ex} nnoremap tt :! clear; mix test<cr>
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
