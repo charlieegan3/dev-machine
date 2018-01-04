@@ -5,6 +5,8 @@ cask "paw"
 cask "skype"
 cask "spotify"
 cask "teamviewer"
+cask "vagrant"
+cask "virtualbox"
 
 brew "ansible"
 brew "awscli"
