@@ -130,7 +130,7 @@ let g:NERDSpaceDelims = 1
 
 let g:terraform_fmt_on_save = 1
 
-let $FZF_DEFAULT_COMMAND = 'git ls-files'
+let $FZF_DEFAULT_COMMAND = '(git ls-files; git ls-files --others --exclude-standard)'
 
 " automatic commands
 " whitespace fixes
