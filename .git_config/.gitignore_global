@@ -5,7 +5,6 @@ local_env.sh
 *.backup
 
 # Compiled source
-*.com
 *.class
 *.dll
 *.exe
