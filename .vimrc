@@ -130,6 +130,9 @@ let g:NERDSpaceDelims = 1
 let g:terraform_fmt_on_save = 1
 
 let $FZF_DEFAULT_COMMAND = '(git ls-files; git ls-files --others --exclude-standard)'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " automatic commands
 " whitespace fixes
@@ -171,7 +174,7 @@ autocmd BufRead,BufNewFile {*.ex} nnoremap tt :! clear; mix test<cr>
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'ervandew/supertab'            " completion
-Plug 'rking/ag.vim'                 " project search
+Plug 'mileszs/ack.vim'              " project search
 Plug 'luochen1990/rainbow'          " bracket highlighting
 Plug 'raimondi/delimitmate'         " bracket matching
 Plug 'ap/vim-buftabline'            " tabs for open buffers
