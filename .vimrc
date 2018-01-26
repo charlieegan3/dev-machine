@@ -18,9 +18,7 @@ set colorcolumn=80 " draw a column to guide line length
 autocmd Filetype go setlocal colorcolumn=0
 set nowrap " don't wrap lines
 set lazyredraw " only redraw vim when required
-set autowrite " autowrite files allowing switching without saving
 set laststatus=0 " don't show the filename at the bottom of window (because it's at the top)
-set autowriteall " always save files
 set ff=unix
 
 set undofile " maintain undo history
@@ -79,8 +77,8 @@ noremap E $
 nnoremap <leader>w :bd!<cr>
 nnoremap <leader>t :terminal<cr>
 nnoremap <leader>n <C-w>v
-nnoremap <tab> :bn<cr>
-nnoremap <S-tab> :bp<cr>
+nnoremap <tab> :up\|bn<cr>
+nnoremap <S-tab> :up\|bp<cr>
 nnoremap <leader>v :vsp<cr>
 nnoremap <leader>rm :call delete(expand('%')) \| bdelete!<CR>
 
