@@ -1,5 +1,7 @@
 " Charlie's Vim Config
 
+let mapleader=";"
+
 " 'just the essentials'
 syntax enable " turn on syntax highlighting
 set background=dark " use a dark background
@@ -39,11 +41,6 @@ autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 set backspace=indent,eol,start " backspace behavior
 
-" set list " show invisibles, toggled later in autocmd
-set listchars=tab:>·,trail:~,extends:>,precedes:<
-
-let mapleader=";"
-
 " color UI elements
 highlight StatusLine ctermfg=black ctermbg=white
 highlight WildMenu ctermfg=white ctermbg=black
@@ -74,31 +71,23 @@ noremap B ^
 noremap E $
 
 " windows
-nnoremap <leader>w :bd!<cr>
-nnoremap <leader>t :terminal<cr>
-nnoremap <leader>n <C-w>v
+nnoremap <leader>q :silent exec "wa" \| silent exec "qall"<cr>
+nnoremap <leader>w :up\|bd!<cr>
 nnoremap <tab> :up\|bn<cr>
 nnoremap <S-tab> :up\|bp<cr>
-nnoremap <leader>v :vsp<cr>
-nnoremap <leader>rm :call delete(expand('%')) \| bdelete!<CR>
+nnoremap <leader>dd :call delete(expand('%')) \| bdelete!<CR>
 
 " shortcuts
 nnoremap <SPACE> :FZF<cr>
+nnoremap <leader>cc :NERDComToggleComment<cr>
 
 nnoremap <leader>T :!ctags -R .<cr>
 nnoremap <leader><tab> <C-]>
-nnoremap <leader>§ <C-t>
 
-nnoremap <leader>f :Autoformat<cr>
-nnoremap <leader>g :Gread<cr>
-
-nnoremap <cr> :w<cr>
-
-nnoremap <Up> mzgg=G`z
+nnoremap <cr> :up<cr>
 
 vnoremap <cr> "+y<cr>
 vnoremap <BS> "+p<cr>
-vnoremap <SPACE> =
 
 " spelling
 nnoremap <Left> [s
@@ -107,7 +96,6 @@ nnoremap <BS> 1z=
 
 " replacing
 nnoremap <Down> :%s /
-nnoremap <leader>r "zyiw:exe "%s/".@z."//g"
 
 " insert mappings
 inoremap kj <esc>
@@ -124,8 +112,6 @@ let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
 let g:go_metalinter_autosave = 1
 let g:go_doc_keywordprg_enabled = "0"
-
-let g:NERDSpaceDelims = 1
 
 let g:terraform_fmt_on_save = 1
 
@@ -176,17 +162,13 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'ervandew/supertab'            " completion
 Plug 'mileszs/ack.vim'              " project search
 Plug 'luochen1990/rainbow'          " bracket highlighting
-Plug 'raimondi/delimitmate'         " bracket matching
 Plug 'ap/vim-buftabline'            " tabs for open buffers
-Plug 'danro/rename.vim'             " adds the :rename command
+Plug 'danro/rename.vim'             " adds the :Rename command
 Plug 'scrooloose/nerdcommenter'     " comment toggling
 Plug 'rhlobo/vim-super-retab'       " command to convert tabs to spaces
-Plug 'terryma/vim-multiple-cursors' " something a little like sublime
 
 Plug 'tpope/vim-fugitive'           " git commands
 Plug 'airblade/vim-gitgutter'       " gutter git status
-
-Plug 'francoiscabrol/ranger.vim'    " file manager
 
 Plug 'vim-ruby/vim-ruby'            " ruby
 Plug 'tpope/vim-endwise'            " ruby end insertion
