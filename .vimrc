@@ -17,7 +17,6 @@ set smartcase " (Unless they contain a capital letter)
 set scrolloff=5 " keep 5 lines between top/bottom of screen and cursor
 set noerrorbells " i don't make mistakes, so I don't need the bells
 set colorcolumn=80 " draw a column to guide line length
-autocmd Filetype go setlocal colorcolumn=0
 set nowrap " don't wrap lines
 set lazyredraw " only redraw vim when required
 set laststatus=0 " don't show the filename at the bottom of window (because it's at the top)
@@ -37,7 +36,6 @@ set number numberwidth=3 " show numbers column
 
 set smarttab smartindent expandtab " sane tab settings
 set tabstop=8 softtabstop=8 shiftwidth=2 " indentation quantities
-autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 set backspace=indent,eol,start " backspace behavior
 
@@ -81,11 +79,14 @@ nnoremap <leader>dd :call delete(expand('%')) \| bdelete!<CR>
 nnoremap <SPACE> :FZF<cr>
 nnoremap <leader>cc :NERDComToggleComment<cr>
 
+" goto
 nnoremap <leader>T :!ctags -R .<cr>
 nnoremap <leader><tab> <C-]>
 
+" saving
 nnoremap <cr> :up<cr>
 
+" clipboard
 vnoremap <cr> "+y<cr>
 vnoremap <BS> "+p<cr>
 
@@ -105,15 +106,9 @@ inoremap jj <esc>
 inoremap JJ <esc>
 inoremap KK <esc>
 
-" plugin settings
+" global plugin settings
 let g:SuperTabCompleteCase = 'ignore'
-
-let g:go_fmt_command = "goimports"
-let g:go_fmt_autosave = 1
-let g:go_metalinter_autosave = 1
-let g:go_doc_keywordprg_enabled = "0"
-
-let g:terraform_fmt_on_save = 1
+let g:closetag_filenames = '*.html,*.html.erb'
 
 let $FZF_DEFAULT_COMMAND = '(git ls-files; git ls-files --others --exclude-standard)'
 if executable('ag')
@@ -133,29 +128,9 @@ autocmd InsertEnter * :setlocal nohlsearch
 " create paths before save
 autocmd BufWritePre * :silent !mkdir -p %:p:h
 
-" go
-autocmd BufRead,BufNewFile *.go set nolist
-autocmd BufRead,BufNewFile *.go nnoremap tt :! clear; go test<cr>
-autocmd BufRead,BufNewFile *.go nnoremap tr :GoAlternate<cr>
-autocmd BufRead,BufNewFile *.go inoremap <tab> <C-x><C-o>
-" ruby
+" filetype help
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,*.ru,*.rake,*.json.jbuilder} set ft=ruby
-autocmd BufRead,BufNewFile {*_spec.rb} nnoremap tt :! clear; bundle exec rspec % \| grep -v '/gems/'<cr>
-" conf
 autocmd BufRead,BufNewFile {*.conf} set ft=c
-" md
-autocmd BufEnter {*.md,*.markdown,*.html.md,*.html.markdown} set tw=80
-autocmd BufLeave {*.md,*.markdown,*.html.md,*.html.markdown} set tw=0
-" text
-autocmd BufEnter {*.md,*.txt} set spell spelllang=en_gb
-autocmd BufLeave {*.md,*.txt} set nospell
-" vim
-autocmd BufRead,BufNewFile {.vim_config} set ft=vim
-" git
-autocmd FileType gitcommit setlocal spell
-" elixir
-autocmd BufRead,BufNewFile {*_test.exs} nnoremap tt :! clear; mix test %<cr>
-autocmd BufRead,BufNewFile {*.ex} nnoremap tt :! clear; mix test<cr>
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -170,26 +145,25 @@ Plug 'rhlobo/vim-super-retab'       " command to convert tabs to spaces
 Plug 'tpope/vim-fugitive'           " git commands
 Plug 'airblade/vim-gitgutter'       " gutter git status
 
-Plug 'vim-ruby/vim-ruby'            " ruby
-Plug 'tpope/vim-endwise'            " ruby end insertion
-Plug 'tpope/vim-haml'               " haml
-Plug 'kchmck/vim-coffee-script'     " coffeescript
-Plug 'rust-lang/rust.vim'           " rust
-Plug 'avakhov/vim-yaml'             " yaml
-Plug 'mxw/vim-jsx'                  " jsx & React
-Plug 'charlieegan3/vim-terraform'   " terraform fmt
-Plug 'tmux-plugins/vim-tmux'        " tmux formatting
-Plug 'alvan/vim-closetag'           " html tag matching
-Plug 'fatih/vim-go'                 " golang
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'elixir-editors/vim-elixir'    " elixir
+Plug 'alvan/vim-closetag', { 'for': ['html', 'eruby'] }
 
-" currently unused
-" Plug 'nelstrom/vim-mac-classic-theme' " coolerrs
-" Plug 'nathanaelkane/vim-indent-guides' " show indent level
-" Plug 'slim-template/vim-slim'
-" Plug 'lervag/vimtex'
-" Plug 'pearofducks/ansible-vim'
-" Plug 'rhysd/vim-crystal'
-" Plug 'neo4j-contrib/cypher-vim-syntax'
+Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
+Plug 'pearofducks/ansible-vim', { 'for': 'yaml' }
+Plug 'charlieegan3/vim-terraform', { 'for': 'terraform' }
+Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
+
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+Plug 'tpope/vim-haml', { 'for': 'haml' }
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
+
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
+Plug 'mxw/vim-jsx', { 'for': 'jsa' }
+
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+
+Plug 'lervag/vimtex', { 'for': 'latex' }
 call plug#end()
