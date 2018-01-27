@@ -18,6 +18,7 @@ nnoremap <leader>dd :call delete(expand('%')) \| bdelete!<CR>
 " shortcuts
 nnoremap <SPACE> :FZF<cr>
 nnoremap <leader>cc :NERDComToggleComment<cr>
+nnoremap <leader>dd :call delete(expand('%')) \| bdelete!<cr>
 
 " goto
 nnoremap <leader>T :!ctags -R .<cr>
