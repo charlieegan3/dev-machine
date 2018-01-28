@@ -8,27 +8,41 @@ noremap K 5k
 noremap B ^
 noremap E $
 
-" windows
+" quit vim
 nnoremap <leader>q :silent exec "wa" \| silent exec "qall"<cr>
-nnoremap <leader>w :up\|bd!<cr>
-nnoremap <tab> :up\|bn<cr>
-nnoremap <S-tab> :up\|bp<cr>
-nnoremap <leader>dd :call delete(expand('%')) \| bdelete!<CR>
 
-" shortcuts
-nnoremap <SPACE> :FZF<cr>
-nnoremap <leader>cc :NERDComToggleComment<cr>
-nnoremap <leader>dd :call delete(expand('%')) \| bdelete!<cr>
-
-" goto
-nnoremap <leader>T :!ctags -R .<cr>
-nnoremap <leader><tab> <C-]>
-
-" saving
+" save file
 nnoremap <cr> :up<cr>
 
-" clipboard
+" write and close buffer
+nnoremap <leader>w :up\|bd!<cr>
+
+" open file finder
+nnoremap <SPACE> :FZF<cr>
+
+" toggle comments
+nnoremap <leader>cc :NERDComToggleComment<cr>
+
+" delete current file
+nnoremap <leader>dd :call delete(expand('%')) \| bdelete!<cr>
+
+" generate ctags for repo
+nnoremap <leader>T :!ctags -R .<cr>
+
+" go to definition
+nnoremap <leader><tab> <C-]>
+
+" buffer navigation
+nnoremap <tab> :up\|bn<cr>
+nnoremap <S-tab> :up\|bp<cr>
+
+" open file text replace
+nnoremap <Down> :%s /
+
+" copy to system clipboard
 vnoremap <cr> "+y<cr>
+
+" paste from system clipboard
 vnoremap <BS> "+p<cr>
 
 " spelling
@@ -36,13 +50,8 @@ nnoremap <Left> [s
 nnoremap <Right> ]s
 nnoremap <BS> 1z=
 
-" replacing
-nnoremap <Down> :%s /
-
-" insert mappings
+" exit insert mode
 inoremap kj <esc>
 inoremap jk <esc>
 inoremap kk <esc>
 inoremap jj <esc>
-inoremap JJ <esc>
-inoremap KK <esc>
