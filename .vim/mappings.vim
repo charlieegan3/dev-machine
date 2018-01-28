@@ -18,7 +18,7 @@ nnoremap <cr> :up<cr>
 nnoremap <leader>w :up\|bd!<cr>
 
 " open file finder
-nnoremap <SPACE> :FZF<cr>
+nnoremap <SPACE> :up \| :FZF<cr>
 
 " toggle comments
 nnoremap <leader>cc :NERDComToggleComment<cr>

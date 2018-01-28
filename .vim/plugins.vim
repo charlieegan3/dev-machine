@@ -19,6 +19,10 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'           " git commands
   Plug 'airblade/vim-gitgutter'       " gutter git status
 
+  Plug 'sheerun/vim-polyglot'         " syntax highlighting
+  Plug 'tpope/vim-sleuth'             " whitespace settings detection
+  Plug 'dietsche/vim-lastplace'       " remember last cursor position in file
+
   Plug 'alvan/vim-closetag', { 'for': ['html', 'eruby'] }
 
   Plug 'avakhov/vim-yaml', { 'for': 'yaml' }

@@ -1,6 +1,5 @@
 " whitespace fixes
 autocmd BufWritePre * :%s/\s\+$//e
-autocmd BufWritePre * :Tab2Space
 
 " clear search
 autocmd BufRead,BufEnter * :let @/ = ""
