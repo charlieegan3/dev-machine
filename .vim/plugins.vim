@@ -1,5 +1,6 @@
 let g:SuperTabCompleteCase = 'ignore'
 let g:closetag_filenames = '*.html,*.html.erb'
+let b:lion_squeeze_spaces = 1
 
 let $FZF_DEFAULT_COMMAND = '(git ls-files; git ls-files --others --exclude-standard)'
 if executable('ag')
@@ -8,20 +9,21 @@ endif
 
 call plug#begin()
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-  Plug 'ervandew/supertab'            " completion
-  Plug 'mileszs/ack.vim'              " project search
-  Plug 'luochen1990/rainbow'          " bracket highlighting
-  Plug 'ap/vim-buftabline'            " tabs for open buffers
-  Plug 'danro/rename.vim'             " adds the :Rename command
-  Plug 'scrooloose/nerdcommenter'     " comment toggling
-  Plug 'rhlobo/vim-super-retab'       " command to convert tabs to spaces
+  Plug 'ervandew/supertab'        " completion
+  Plug 'mileszs/ack.vim'          " project search
+  Plug 'luochen1990/rainbow'      " bracket highlighting
+  Plug 'ap/vim-buftabline'        " tabs for open buffers
+  Plug 'danro/rename.vim'         " adds the :Rename command
+  Plug 'scrooloose/nerdcommenter' " comment toggling
+  Plug 'rhlobo/vim-super-retab'   " command to convert tabs to spaces
 
-  Plug 'tpope/vim-fugitive'           " git commands
-  Plug 'airblade/vim-gitgutter'       " gutter git status
+  Plug 'tpope/vim-fugitive'     " git commands
+  Plug 'airblade/vim-gitgutter' " gutter git status
 
-  Plug 'sheerun/vim-polyglot'         " syntax highlighting
-  Plug 'tpope/vim-sleuth'             " whitespace settings detection
-  Plug 'dietsche/vim-lastplace'       " remember last cursor position in file
+  Plug 'sheerun/vim-polyglot'   " syntax highlighting
+  Plug 'tpope/vim-sleuth'       " whitespace settings detection
+  Plug 'dietsche/vim-lastplace' " remember last cursor position in file
+  Plug 'tommcdo/vim-lion'       " auto alignment
 
   Plug 'alvan/vim-closetag', { 'for': ['html', 'eruby'] }
 

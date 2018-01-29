@@ -55,3 +55,6 @@ inoremap kj <esc>
 inoremap jk <esc>
 inoremap kk <esc>
 inoremap jj <esc>
+
+" align
+nnoremap <leader>a :exe "normal ylglip\<c-r>\""<cr>
