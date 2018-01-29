@@ -2,7 +2,7 @@ let g:SuperTabCompleteCase = 'ignore'
 let g:closetag_filenames = '*.html,*.html.erb'
 let b:lion_squeeze_spaces = 1
 
-let $FZF_DEFAULT_COMMAND = '(git ls-files; git ls-files --others --exclude-standard)'
+let $FZF_DEFAULT_COMMAND = '(git ls-files; git ls-files --others --exclude-standard; git ls-files -d) | sort | uniq -u'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
