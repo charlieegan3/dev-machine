@@ -26,6 +26,9 @@ nnoremap <leader>cc :NERDComToggleComment<cr>
 " delete current file
 nnoremap <leader>dd :call delete(expand('%')) \| bdelete!<cr>
 
+" rename file
+nnoremap <expr> <leader>r ":Rename " . expand('%:t')
+
 " generate ctags for repo
 nnoremap <leader>T :!ctags -R .<cr>
 
