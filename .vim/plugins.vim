@@ -9,18 +9,16 @@ endif
 
 call plug#begin()
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-  Plug 'ervandew/supertab'        " completion
   Plug 'mileszs/ack.vim'          " project search
+  Plug 'ervandew/supertab'        " completion
   Plug 'luochen1990/rainbow'      " bracket highlighting
   Plug 'ap/vim-buftabline'        " tabs for open buffers
   Plug 'danro/rename.vim'         " adds the :Rename command
   Plug 'scrooloose/nerdcommenter' " comment toggling
-  Plug 'rhlobo/vim-super-retab'   " command to convert tabs to spaces
 
   Plug 'tpope/vim-fugitive'     " git commands
   Plug 'airblade/vim-gitgutter' " gutter git status
 
-  Plug 'sheerun/vim-polyglot'   " syntax highlighting
   Plug 'tpope/vim-sleuth'       " whitespace settings detection
   Plug 'dietsche/vim-lastplace' " remember last cursor position in file
   Plug 'tommcdo/vim-lion'       " auto alignment
@@ -33,16 +31,16 @@ call plug#begin()
   Plug 'charlieegan3/vim-terraform', { 'for': 'terraform' }
   Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 
-  Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+  " Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
   Plug 'tpope/vim-endwise', { 'for': 'ruby' }
   Plug 'tpope/vim-haml', { 'for': 'haml' }
   Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
-  Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
-  Plug 'mxw/vim-jsx', { 'for': 'jsa' }
-
   Plug 'fatih/vim-go', { 'for': 'go' }
   Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
+  Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
+  Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 
   Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 
