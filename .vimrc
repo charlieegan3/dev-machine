@@ -36,6 +36,7 @@ set smarttab smartindent
 
 set backspace=indent,eol,start " backspace behavior
 
+source ~/.vim/ft_overrides.vim
 source ~/.vim/mappings.vim
 source ~/.vim/plugins.vim
 source ~/.vim/autocommands.vim
