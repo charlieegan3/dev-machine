@@ -6,7 +6,7 @@ set -e
 export DEBIAN_FRONTEND=noninteractive
 
 # remove unwanted software
-read -p "Remove packages? y/n" -n 1 -r
+read -p "Remove packages? y/n" -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -25,17 +25,16 @@ then
   sudo apt-get autoremove
 fi
 
-# install wanted software
-read -p "Install packages? y/n" -n 1 -r
+read -p "Install packages? y/n" -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
-  wantedPackages=(apt-transport-https awscli direnv ca-certificates \
-  google-chrome-stable curl firefox gconf2 git silversearcher-ag \
-  redshift software-properties-common tree vim-gnome)
+  wantedPackages=(apt-transport-https direnv ca-certificates \
+  curl firefox gconf2 git silversearcher-ag \
+  redshift software-properties-common tree vim-gnome tmux)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
@@ -44,65 +43,38 @@ then
   done
 fi
 
-# install things that don't come in boxes
+read -p "Install snaps? y/n" -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  snaps=(chromium heroku go spotify aws-cli)
+
+  for snap in "${snaps[@]}"
+  do
+    sudo snap install --classic "$snap"
+  done
+fi
+
 rvmStable="https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/rvm-installer"
-! [[ -e ~/.rvm ]] && \curl -sSL $rvmStable | bash -s stable --ruby --gems=bundler,rails,nokogiri
-! [[ -e /usr/bin/node ]] && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - \
-  && sudo apt-get install -y nodejs \
-  && mkdir ~/.npm-global && npm config set prefix '~/.npm-global' && export PATH=~/.npm-global/bin:$PATH
-! [[ -e /usr/bin/npm ]] && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - && sudo apt-get install -y nodejs
-! [[ -e /usr/bin/go ]] && sudo apt-get install -y golang-go
-! [[ -e /usr/local/bin/cargo ]] && curl -sSf https://static.rust-lang.org/rustup.sh | sh
-! [[ -e /usr/local/heroku ]] && curl https://toolbelt.heroku.com/install-ubuntu.sh | sh
+! [[ -e ~/.rvm ]] && \curl -sSL $rvmStable | bash -s stable --ruby --gems=bundler
 # clear junk added to bashrc
 [[ -e ~/.git ]] && git checkout .bashrc
 
-if ! [[ -e /usr/local/bin/tmux ]]; then
-  curl -L https://github.com/tmux/tmux/releases/download/2.5/tmux-2.5.tar.gz > /tmp/tmux.tar.gz
-  sudo apt-get install libevent-dev
-  tar xf /tmp/tmux.tar.gz
-  cd tmux-2.5
-  ./configure && make
-  sudo make install
-  cd ..
-  rm -rf tmux-2.5
-fi
-
 ! [[ -e ~/.tfenv/bin/tfenv ]] && git clone https://github.com/kamatama41/tfenv.git ~/.tfenv \
-  && tfenv install latest
+  && ~/.tfenv/bin/tfenv install latest || true
 
-! [[ -e /usr/local/bin/packer ]] && curl -o /tmp/packer.zip https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip && \
+! [[ -e /usr/local/bin/packer ]] && curl -o /tmp/packer.zip https://releases.hashicorp.com/packer/1.2.1/packer_1.2.1_linux_amd64.zip && \
   unzip /tmp/packer.zip && \
   sudo mv packer /usr/local/bin
 
-if ! [[ -e /usr/bin/docker ]]; then
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  sudo add-apt-repository \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu yakkety stable \
-    $(lsb_release -cs) \
-    stable"
-  sudo apt-get update >> /dev/null
-  sudo apt-get -y install docker-ce
-  sudo usermod -aG docker "$USER"
-fi
-
-if ! [[ -e /usr/bin/spotify ]]; then
-  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-  echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-  sudo apt-get update >> /dev/null
-  sudo apt-get install -y spotify-client
-fi
-
-if ! [ -e /usr/bin/psql ]; then
-  sudo apt-get install -y postgresql postgresql-contrib postgresql-client libpq-dev
-
-  PG_HBA=$(sudo ls /etc/postgresql/*/main/pg_hba.conf | sort | tail -n 1)
-  sudo sed -i.bak -e 's/peer\|md5/trust/g' "$PG_HBA"
-  sudo /etc/init.d/postgresql restart
-
-  sudo -u postgres createuser "$(whoami)" || true
-  sudo -u postgres createdb "$(whoami)" || true
-  psql -U postgres -c "ALTER USER $(whoami) WITH SUPERUSER;"
+if ! [[ -e /snap/bin/docker ]]; then
+  sudo snap install docker
+  sudo snap connect docker:home
+  sudo addgroup --system docker
+  sudo adduser $USER docker
+  newgrp docker
+  sudo snap disable docker
+  sudo snap enable docker
 fi
 
 # configure dotfiles
