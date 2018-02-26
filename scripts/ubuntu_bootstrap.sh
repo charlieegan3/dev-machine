@@ -91,6 +91,8 @@ if ! [ -e ~/.vim/autoload/plug.vim ]; then
           https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   vim +PlugInstall +qall
   vim +GoInstallBinaries +qall
+  go get -u gopkg.in/alecthomas/gometalinter.v2
+  gometalinter --install
 fi
 
 # config gnome
