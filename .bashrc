@@ -42,6 +42,7 @@ fi
 [[ -e $HOME/.cargo/env ]]       && source $HOME/.cargo/env
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH="$PATH:$HOME/.npm-global/bin"
 export PATH="$PATH:$GOPATH/bin"
 export GOPATH=$HOME/Code/go
