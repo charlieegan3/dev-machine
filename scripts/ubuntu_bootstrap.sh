@@ -124,19 +124,15 @@ gsettings set org.gnome.desktop.interface clock-show-date true
 gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 gsettings set org.gnome.desktop.sound event-sounds false
-gsettings set org.gnome.desktop.wm.keybindings maximize "['<Alt>Up']"
-gsettings set org.gnome.desktop.wm.keybindings close "['<Alt>Q']"
-gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Primary><Alt>Up']"
-gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Alt>Escape']"
+gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.wm.preferences auto-raise true
 gsettings set org.gnome.desktop.wm.preferences focus-mode click
-gsettings set org.gnome.mutter.keybindings toggle-tiled-left "['<Alt>Left']"
-gsettings set org.gnome.mutter.keybindings toggle-tiled-right "['<Alt>Right']"
+gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Alt>Up']"
+gsettings set org.gnome.desktop.wm.keybindings close "['<Alt>Q']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Alt>l'
 gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot '<Shift><Alt>dollar'
 gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '<Shift><Alt>sterling'
-gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Alt>Return'
-gsettings set org.gnome.settings-daemon.plugins.media-keys www '<Shift><Alt>Return'
-gsettings set org.gnome.desktop.interface enable-animations false
+gsettings set org.gnome.desktop.background picture-uri aerial.jpg
 
 if ! [ -e ~/themes/theme-installed ]; then
   bash ~/themes/base16-tube.dark.sh
