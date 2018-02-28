@@ -5,6 +5,17 @@ set -e
 
 export DEBIAN_FRONTEND=noninteractive
 
+# install gnome
+read -p "Install GNOME? y/n" -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  sudo add-apt-repository ppa:gnome3-team/gnome3-staging
+  sudo add-apt-repository ppa:gnome3-team/gnome3
+  sudo apt update
+  sudo apt install gnome gnome-shell
+fi
+
 # remove unwanted software
 read -p "Remove packages? y/n" -r
 echo
@@ -34,7 +45,7 @@ then
 
   wantedPackages=(apt-transport-https direnv ca-certificates \
   curl firefox gconf2 git silversearcher-ag \
-  redshift software-properties-common tree vim-gnome tmux)
+  redshift software-properties-common tree vim-gnome)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
@@ -77,6 +88,18 @@ if ! [[ -e /snap/bin/docker ]]; then
   sudo snap enable docker
 fi
 
+if ! [[ -e /usr/local/bin/tmux ]]; then
+  sudo apt-get install libncurses5-dev libncursesw5-dev libevent-dev
+  curl -L https://github.com/tmux/tmux/releases/download/2.5/tmux-2.5.tar.gz > /tmp/tmux.tar.gz
+  sudo apt-get install libevent-dev
+  tar xf /tmp/tmux.tar.gz
+  cd tmux-2.5
+  ./configure && make
+  sudo make install
+  cd ..
+  rm -rf tmux-2.5
+fi
+
 # configure dotfiles
 if ! [ -e ~/.git ]; then
   git init .
@@ -113,6 +136,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot '<Shi
 gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '<Shift><Alt>sterling'
 gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Alt>Return'
 gsettings set org.gnome.settings-daemon.plugins.media-keys www '<Shift><Alt>Return'
+gsettings set org.gnome.desktop.interface enable-animations false
 
 if ! [ -e ~/themes/theme-installed ]; then
   bash ~/themes/base16-tube.dark.sh
