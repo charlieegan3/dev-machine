@@ -38,3 +38,5 @@
   helper = cache --timeout=2628000
 [fetch]
   fsckobjects = false
+[gpg]
+  program = gpg2
