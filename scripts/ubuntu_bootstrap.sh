@@ -116,6 +116,7 @@ if ! [ -e ~/.vim/autoload/plug.vim ]; then
   vim +GoInstallBinaries +qall
   go get -u gopkg.in/alecthomas/gometalinter.v2
   gometalinter --install
+  curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 fi
 
 # config gnome
