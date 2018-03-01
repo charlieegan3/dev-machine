@@ -127,7 +127,7 @@ gsettings set org.gnome.desktop.sound event-sounds false
 gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.wm.preferences auto-raise true
 gsettings set org.gnome.desktop.wm.preferences focus-mode click
-gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Alt>Up']"
+gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Alt>Enter']"
 gsettings set org.gnome.desktop.wm.keybindings close "['<Alt>Q']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Alt>l'
 gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot '<Shift><Alt>dollar'
