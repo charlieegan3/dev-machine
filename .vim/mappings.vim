@@ -12,7 +12,7 @@ noremap E $
 nnoremap <leader>q :silent exec "wa" \| silent exec "qall"<cr>
 
 " save file
-nnoremap <cr> :up<cr>
+nnoremap <cr> :w<cr>
 
 " write and close buffer
 nnoremap <leader>w :up\|bd!<cr>
@@ -36,8 +36,8 @@ nnoremap <leader>T :!ctags -R .<cr>
 nnoremap <leader><tab> <C-]>
 
 " buffer navigation
-nnoremap <tab> :up\|bn<cr>
-nnoremap <S-tab> :up\|bp<cr>
+nnoremap <tab> :only\|up\|bn<cr>
+nnoremap <S-tab> :only\|up\|bp<cr>
 
 " open file text replace
 nnoremap <Down> :%s /
