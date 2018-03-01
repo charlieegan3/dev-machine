@@ -5,6 +5,14 @@ set -e
 
 export DEBIAN_FRONTEND=noninteractive
 
+# dist upgrade
+read -p "Run dist upgrade? y/n" -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  sudo apt-get dist-upgrade
+fi
+
 # install gnome
 read -p "Install GNOME? y/n" -r
 echo
