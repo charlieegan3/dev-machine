@@ -79,6 +79,8 @@ rvmStable="https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/
 # clear junk added to bashrc
 [[ -e ~/.git ]] && git checkout .bashrc
 
+! [[ -e /usr/bin/node ]] && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - && sudo apt-get install -y nodejs
+
 ! [[ -e ~/.tfenv/bin/tfenv ]] && git clone https://github.com/kamatama41/tfenv.git ~/.tfenv \
   && ~/.tfenv/bin/tfenv install latest || true
 
