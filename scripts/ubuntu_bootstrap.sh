@@ -84,6 +84,8 @@ rvmStable="https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/
 ! [[ -e ~/.tfenv/bin/tfenv ]] && git clone https://github.com/kamatama41/tfenv.git ~/.tfenv \
   && ~/.tfenv/bin/tfenv install latest || true
 
+! [[ -e ~/Code/go/bin/vault ]] && go get -u github.com/hashicorp/vault
+
 ! [[ -e /usr/local/bin/packer ]] && curl -o /tmp/packer.zip https://releases.hashicorp.com/packer/1.2.1/packer_1.2.1_linux_amd64.zip && \
   unzip /tmp/packer.zip && \
   sudo mv packer /usr/local/bin
