@@ -54,6 +54,8 @@ gpg-agent --daemon
 export GPG_TTY=`tty`
 export GPG_AGENT_INFO
 
+source vault_env.sh || true
+
 # welcome
 clear
 echo "hello."
