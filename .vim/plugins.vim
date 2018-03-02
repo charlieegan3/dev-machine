@@ -31,7 +31,7 @@ call plug#begin()
 
   Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
   Plug 'pearofducks/ansible-vim', { 'for': 'yaml' }
-  Plug 'charlieegan3/vim-terraform', { 'for': 'terraform' }
+  Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
   Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 
   " Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
