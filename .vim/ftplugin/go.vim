@@ -9,4 +9,3 @@ setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 set nolist
 nnoremap tt :! clear; go test<cr>
 nnoremap tr :GoAlternate<cr>
-inoremap <tab> <C-x><C-o>
