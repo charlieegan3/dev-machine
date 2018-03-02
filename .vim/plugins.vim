@@ -20,7 +20,7 @@ call plug#begin()
   Plug 'scrooloose/nerdcommenter' " comment toggling
 
   Plug 'tpope/vim-fugitive'     " git commands
-  Plug 'airblade/vim-gitgutter' " gutter git status
+  Plug 'mhinz/vim-signify'      " gutter diff
 
   Plug 'tpope/vim-sleuth'       " whitespace settings detection
   Plug 'dietsche/vim-lastplace' " remember last cursor position in file
