@@ -1,10 +1,3 @@
-let g:SuperTabCompleteCase = 'ignore'
-let g:SuperTabDefaultCompletionType = 'context'
-autocmd FileType *
-  \ if &omnifunc != '' |
-  \   call SuperTabChain(&omnifunc, "<c-p>") |
-  \ endif
-
 let g:closetag_filenames = '*.html,*.html.erb'
 let b:lion_squeeze_spaces = 1
 
@@ -19,7 +12,14 @@ endif
 call plug#begin()
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
   Plug 'mileszs/ack.vim'          " project search
-  Plug 'ervandew/supertab'        " completion
+
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/context_filetype.vim'
+  Plug 'Shougo/neco-syntax'
+  Plug 'wellle/tmux-complete.vim'
+  Plug 'zchee/deoplete-go', { 'do': 'make'}
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 
   Plug 'w0rp/ale'
 

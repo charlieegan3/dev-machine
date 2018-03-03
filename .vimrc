@@ -39,6 +39,8 @@ set tabstop=4
 
 set backspace=indent,eol,start " backspace behavior
 
+let g:deoplete#enable_at_startup = 1 " must be in .vimrc
+
 source ~/.vim/ft_overrides.vim
 source ~/.vim/mappings.vim
 source ~/.vim/plugins.vim

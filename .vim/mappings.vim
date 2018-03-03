@@ -64,3 +64,6 @@ inoremap jj <esc>
 
 " align
 nnoremap <leader>a :exe "normal ylglip\<c-r>\""<cr>
+
+" completion
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
