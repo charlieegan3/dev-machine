@@ -67,7 +67,7 @@ read -p "Install snaps? y/n" -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  snaps=(chromium heroku go spotify aws-cli)
+  snaps=(chromium heroku go spotify aws-cli skype)
 
   for snap in "${snaps[@]}"
   do
