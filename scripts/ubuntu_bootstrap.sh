@@ -48,12 +48,13 @@ read -p "Install packages? y/n" -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-  sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+  sudo add-apt-repository ppa:jonathonf/vim
+  sudo apt-get update
 
   wantedPackages=(apt-transport-https direnv ca-certificates \
-  curl firefox gconf2 git silversearcher-ag \
-  redshift software-properties-common tree vim-gnome)
+    curl firefox gconf2 git silversearcher-ag \
+    redshift software-properties-common tree \
+    python-dev python3-dev python3-pip vim)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
@@ -129,6 +130,7 @@ if ! [ -e ~/.vim/autoload/plug.vim ]; then
   go get -u gopkg.in/alecthomas/gometalinter.v2
   gometalinter --install
   curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+  pip3 install --upgrade neovim
 fi
 
 # config gnome
