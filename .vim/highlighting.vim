@@ -24,3 +24,7 @@ highlight SignifySignChange ctermbg=black ctermfg=227
 
 highlight Pmenu ctermbg=238 ctermfg=white
 highlight PmenuSel ctermbg=234 ctermfg=178
+
+highlight ALEErrorLine ctermbg=52
+highlight ALEInfoLine ctermbg=17
+highlight ALEWarningLine ctermbg=94

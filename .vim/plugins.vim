@@ -20,6 +20,9 @@ call plug#begin()
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
   Plug 'mileszs/ack.vim'          " project search
   Plug 'ervandew/supertab'        " completion
+
+  Plug 'w0rp/ale'
+
   Plug 'luochen1990/rainbow'      " bracket highlighting
   Plug 'ap/vim-buftabline'        " tabs for open buffers
   Plug 'danro/rename.vim'         " adds the :Rename command
