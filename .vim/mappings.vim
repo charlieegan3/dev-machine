@@ -12,10 +12,10 @@ noremap E $
 nnoremap <leader>q :silent exec "wa" \| silent exec "qall"<cr>
 
 " save file
-nnoremap <leader>ss :only \|:w<cr>
+nnoremap <leader>s :only \|:w<cr>
 
 " write and close buffer
-nnoremap <leader>w :up\|bd!<cr>
+nnoremap <leader>w :only \| up \| bd!<cr>
 
 " open file finder
 nnoremap <SPACE> :up \| :FZF<cr>
