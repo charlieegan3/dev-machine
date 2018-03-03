@@ -1,4 +1,10 @@
 let g:SuperTabCompleteCase = 'ignore'
+let g:SuperTabDefaultCompletionType = 'context'
+autocmd FileType *
+  \ if &omnifunc != '' |
+  \   call SuperTabChain(&omnifunc, "<c-p>") |
+  \ endif
+
 let g:closetag_filenames = '*.html,*.html.erb'
 let b:lion_squeeze_spaces = 1
 
@@ -39,7 +45,7 @@ call plug#begin()
   Plug 'tpope/vim-haml', { 'for': 'haml' }
   Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
-  Plug 'fatih/vim-go', { 'for': 'go' }
+  Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
   Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }

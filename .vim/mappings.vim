@@ -12,7 +12,7 @@ noremap E $
 nnoremap <leader>q :silent exec "wa" \| silent exec "qall"<cr>
 
 " save file
-nnoremap <cr> :w<cr>
+nnoremap <leader>ss :only \|:w<cr>
 
 " write and close buffer
 nnoremap <leader>w :up\|bd!<cr>

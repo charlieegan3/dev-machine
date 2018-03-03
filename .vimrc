@@ -19,6 +19,8 @@ set lazyredraw " only redraw vim when required
 set laststatus=0 " don't show the filename at the bottom of window (because it's at the top)
 set ff=unix
 set complete-=i
+set autowrite " write when closing files, and running build commands
+set completeopt=longest,menuone
 
 set undofile " maintain undo history
 set undodir=~/.vim/.undo/

@@ -13,11 +13,14 @@ highlight Search ctermbg=240 ctermfg=148
 syntax match TrailingWhitespace "\s+$"
 highlight TrailingWhitespace ctermbg=darkred
 
-highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
-highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
-highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
+highlight DiffAdd           ctermbg=none ctermfg=119
+highlight DiffDelete        ctermbg=none ctermfg=167
+highlight DiffChange        ctermbg=none ctermfg=227
 
-highlight SignColumn                   ctermbg=black
-highlight SignifySignAdd    cterm=bold ctermbg=black ctermfg=119
-highlight SignifySignDelete cterm=bold ctermbg=black ctermfg=167
-highlight SignifySignChange cterm=bold ctermbg=black ctermfg=227
+highlight SignColumn        ctermbg=black
+highlight SignifySignAdd    ctermbg=black ctermfg=119
+highlight SignifySignDelete ctermbg=black ctermfg=167
+highlight SignifySignChange ctermbg=black ctermfg=227
+
+highlight Pmenu ctermbg=238 ctermfg=white
+highlight PmenuSel ctermbg=234 ctermfg=178
