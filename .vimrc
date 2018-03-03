@@ -35,6 +35,7 @@ set foldnestmax=10 " don't nest folds more than 10 times
 set number numberwidth=3 " show numbers column
 
 set smarttab smartindent
+set tabstop=4
 
 set backspace=indent,eol,start " backspace behavior
 
