@@ -48,13 +48,16 @@ read -p "Install packages? y/n" -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+  CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+  echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+  curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
   sudo add-apt-repository ppa:jonathonf/vim
   sudo apt-get update
 
   wantedPackages=(apt-transport-https direnv ca-certificates \
     curl firefox gconf2 git silversearcher-ag \
     redshift software-properties-common tree \
-    python-dev python3-dev python3-pip vim)
+    python-dev python3-dev python3-pip vim google-cloud-sdk)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
