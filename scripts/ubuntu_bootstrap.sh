@@ -57,7 +57,7 @@ then
   wantedPackages=(apt-transport-https direnv ca-certificates \
     curl firefox gconf2 git silversearcher-ag \
     redshift software-properties-common tree \
-    python-dev python3-dev python3-pip vim google-cloud-sdk)
+    python-dev python3-dev python3-pip vim google-cloud-sdk jq)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
@@ -70,7 +70,7 @@ read -p "Install snaps? y/n" -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  snaps=(chromium heroku go spotify aws-cli skype)
+  snaps=(chromium heroku go spotify aws-cli skype doctl)
 
   for snap in "${snaps[@]}"
   do
