@@ -36,6 +36,7 @@ set number numberwidth=3 " show numbers column
 
 set smarttab smartindent
 set tabstop=4
+set list listchars=tab:>-
 
 set backspace=indent,eol,start " backspace behavior
 

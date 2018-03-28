@@ -28,3 +28,5 @@ highlight PmenuSel ctermbg=234 ctermfg=178
 highlight ALEErrorLine ctermbg=52
 highlight ALEInfoLine ctermbg=17
 highlight ALEWarningLine ctermbg=94
+
+highlight SpecialKey ctermfg=236
