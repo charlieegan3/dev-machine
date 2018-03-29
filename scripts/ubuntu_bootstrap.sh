@@ -58,7 +58,8 @@ then
   wantedPackages=(apt-transport-https direnv ca-certificates \
     curl firefox gconf2 git silversearcher-ag \
     redshift software-properties-common tree \
-    python-dev python3-dev python3-pip vim google-cloud-sdk jq with)
+    python-dev python3-dev python3-pip vim google-cloud-sdk jq with \
+    libvirt-bin libvirt-dev virtinst)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
