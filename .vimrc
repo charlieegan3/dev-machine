@@ -40,7 +40,9 @@ set list listchars=tab:>-
 
 set backspace=indent,eol,start " backspace behavior
 
-let g:deoplete#enable_at_startup = 1 " must be in .vimrc
+" must be in .vimrc :(
+let g:deoplete#enable_at_startup = 1
+let g:terraform_fmt_on_save = 1
 
 source ~/.vim/ft_overrides.vim
 source ~/.vim/mappings.vim
