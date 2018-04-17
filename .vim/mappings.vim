@@ -35,7 +35,7 @@ nnoremap <expr> <leader>r ":Rename " . expand('%:t')
 nnoremap <leader>T :!ctags -R .<cr>
 
 " go to definition
-nnoremap <leader><tab> <C-]>
+nnoremap <tab> <C-]>
 
 " open file text replace
 nnoremap <Down> :%s /

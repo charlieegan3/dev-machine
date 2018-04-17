@@ -28,7 +28,7 @@ setlocal syntax=on
 setlocal noexpandtab tabstop=4 softtabstop=4
 nnoremap tt :! clear; go test<cr>
 nnoremap tr :GoAlternate<cr>
-nnoremap <leader>f :GoDef<cr>
+nnoremap <tab> :GoDef<cr>
 nnoremap <leader>g :GoDeclsDir<cr>
 nnoremap <leader>d :GoDoc<cr>
 nnoremap <leader>i :GoInfo<cr>
