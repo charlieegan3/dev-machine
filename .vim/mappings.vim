@@ -6,6 +6,13 @@ noremap k gk
 noremap B 0
 noremap E $
 
+" buffer navigation
+nnoremap L :only\|up\|bn<cr>
+nnoremap H :only\|up\|bp<cr>
+
+" open file finder
+nnoremap <SPACE> :up \| :FZF<cr>
+
 " quit vim
 nnoremap <leader>q :silent exec "wa" \| silent exec "qall"<cr>
 
@@ -14,9 +21,6 @@ nnoremap <leader>s :only \|:w<cr>
 
 " write and close buffer
 nnoremap <leader>w :only \| up \| bd!<cr>
-
-" open file finder
-nnoremap <SPACE> :up \| :FZF<cr>
 
 " toggle comments
 nnoremap <leader>cc :NERDComToggleComment<cr>
@@ -32,10 +36,6 @@ nnoremap <leader>T :!ctags -R .<cr>
 
 " go to definition
 nnoremap <leader><tab> <C-]>
-
-" buffer navigation
-nnoremap <tab> :only\|up\|bn<cr>
-nnoremap <S-tab> :only\|up\|bp<cr>
 
 " open file text replace
 nnoremap <Down> :%s /
