@@ -25,7 +25,7 @@ let g:go_highlight_methods = 1
 
 setlocal nolist
 setlocal syntax=on
-setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+setlocal noexpandtab tabstop=4 softtabstop=4
 nnoremap tt :! clear; go test<cr>
 nnoremap tr :GoAlternate<cr>
 nnoremap <leader>f :GoDef<cr>

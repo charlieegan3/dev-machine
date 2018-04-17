@@ -31,7 +31,6 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'     " git commands
   Plug 'mhinz/vim-signify'      " gutter diff
 
-  Plug 'tpope/vim-sleuth'       " whitespace settings detection
   Plug 'dietsche/vim-lastplace' " remember last cursor position in file
   Plug 'tommcdo/vim-lion'       " auto alignment
   Plug 'wellle/targets.vim'     " additional change-inside targets

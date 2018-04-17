@@ -34,6 +34,8 @@ set foldnestmax=10 " don't nest folds more than 10 times
 
 set number numberwidth=3 " show numbers column
 
+set shiftwidth=4 " the default is 8?
+
 set smarttab smartindent
 set tabstop=4
 set list listchars=tab:>-
