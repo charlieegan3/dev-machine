@@ -26,31 +26,28 @@ call plug#begin()
   Plug 'luochen1990/rainbow'      " bracket highlighting
   Plug 'ap/vim-buftabline'        " tabs for open buffers
   Plug 'danro/rename.vim'         " adds the :Rename command
-  Plug 'scrooloose/nerdcommenter' " comment toggling
 
   Plug 'tpope/vim-fugitive'     " git commands
   Plug 'mhinz/vim-signify'      " gutter diff
 
   Plug 'dietsche/vim-lastplace' " remember last cursor position in file
-  Plug 'tommcdo/vim-lion'       " auto alignment
   Plug 'wellle/targets.vim'     " additional change-inside targets
 
-  Plug 'alvan/vim-closetag', { 'for': ['html', 'eruby'] }
+  " language plugins
+  Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+  Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
   Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
   Plug 'pearofducks/ansible-vim', { 'for': 'yaml' }
   Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
   Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 
-  " Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
   Plug 'tpope/vim-endwise', { 'for': 'ruby' }
   Plug 'tpope/vim-haml', { 'for': 'haml' }
   Plug 'slim-template/vim-slim', { 'for': 'slim' }
+  Plug 'alvan/vim-closetag', { 'for': ['html', 'eruby'] }
 
   Plug 'rodjek/vim-puppet', { 'for': 'puppet' }
-
-  Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
-  Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
   Plug 'mxw/vim-jsx', { 'for': 'jsx' }
