@@ -32,7 +32,3 @@ nnoremap <leader>f :GoDef<cr>
 nnoremap <leader>g :GoDeclsDir<cr>
 nnoremap <leader>d :GoDoc<cr>
 nnoremap <leader>i :GoInfo<cr>
-
-let g:go_auto_type_info = 1
-let g:go_auto_sameids = 1
-setlocal updatetime=200
