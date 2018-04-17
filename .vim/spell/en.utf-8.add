@@ -149,3 +149,5 @@ config
 Instagram
 kubelet
 jenkins
+popup
+autozoom
