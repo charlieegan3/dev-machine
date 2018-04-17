@@ -3,9 +3,7 @@ let mapleader=";"
 " movement
 noremap j gj
 noremap k gk
-noremap J 5j
-noremap K 5k
-noremap B ^
+noremap B 0
 noremap E $
 
 " quit vim
