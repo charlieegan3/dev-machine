@@ -59,4 +59,6 @@ call plug#begin()
   Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 
   Plug 'lervag/vimtex', { 'for': 'latex' }
+
+  Plug 'martinda/Jenkinsfile-vim-syntax', { 'for': 'jenkins' }
 call plug#end()
