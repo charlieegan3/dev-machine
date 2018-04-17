@@ -53,9 +53,6 @@ nnoremap <Left> [s
 nnoremap <Right> ]s
 nnoremap <BS> 1z=
 
-" folds
-nnoremap § za
-
 " exit insert mode
 inoremap kj <esc>
 inoremap jk <esc>
