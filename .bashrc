@@ -15,6 +15,7 @@ export TERM=xterm-256color
 shopt -s checkwinsize
 
 # history
+export HISTSIZE=1000000
 export HISTCONTROL=ignorespace:ignoredups
 shopt -s histappend
 
