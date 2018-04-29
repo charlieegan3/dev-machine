@@ -118,6 +118,13 @@ if ! [[ -e /usr/local/bin/tmux ]]; then
   rm -rf tmux-2.5
 fi
 
+if ! [[ -e /usr/local/bin/ngrok ]]; then
+	curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngrok.zip
+	unzip ngrok.zip
+	sudo mv ngrok /usr/local/bin/ngrok
+	rm ngrok.zip
+fi
+
 # configure dotfiles
 if ! [ -e ~/.git ]; then
   git init .
