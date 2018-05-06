@@ -3,8 +3,6 @@
 set -x
 set -e
 
-export DEBIAN_FRONTEND=noninteractive
-
 # dist upgrade
 read -p "Run dist upgrade? y/n" -r
 echo
@@ -48,18 +46,16 @@ read -p "Install packages? y/n" -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
-  echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-  curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+  wget -O - https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
   sudo add-apt-repository ppa:jonathonf/vim
-  sudo add-apt-repository ppa:mchav/with
   sudo apt-get update
 
   wantedPackages=(apt-transport-https direnv ca-certificates \
     curl firefox gconf2 git silversearcher-ag \
     redshift software-properties-common tree \
-    python-dev python3-dev python3-pip vim google-cloud-sdk jq with \
-    libvirt-bin libvirt-dev virtinst openvpn autojump)
+    python-dev python3-dev python3-pip vim-gnome google-cloud-sdk jq \
+    libvirt-bin libvirt-dev virtinst openvpn autojump \
+	compizconfig-settings-manager)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
@@ -81,7 +77,7 @@ then
 fi
 
 rvmStable="https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/rvm-installer"
-! [[ -e ~/.rvm ]] && \curl -sSL $rvmStable | bash -s stable --ruby --gems=bundler
+! [[ -e ~/.rvm ]] && command curl -sSL https://rvm.io/mpapis.asc | gpg2 --import - && \curl -sSL $rvmStable | bash -s stable --ruby --gems=bundler
 # clear junk added to bashrc
 [[ -e ~/.git ]] && git checkout .bashrc
 
@@ -107,7 +103,7 @@ if ! [[ -e /snap/bin/docker ]]; then
 fi
 
 if ! [[ -e /usr/local/bin/tmux ]]; then
-  sudo apt-get install libncurses5-dev libncursesw5-dev libevent-dev
+  sudo apt-get install -y libncurses5-dev libncursesw5-dev libevent-dev
   curl -L https://github.com/tmux/tmux/releases/download/2.5/tmux-2.5.tar.gz > /tmp/tmux.tar.gz
   sudo apt-get install libevent-dev
   tar xf /tmp/tmux.tar.gz
@@ -132,6 +128,8 @@ if ! [ -e ~/.git ]; then
   git fetch origin
   git reset --hard origin/master
 fi
+
+source ~/.bashrc
 
 # configure vim
 if ! [ -e ~/.vim/autoload/plug.vim ]; then
