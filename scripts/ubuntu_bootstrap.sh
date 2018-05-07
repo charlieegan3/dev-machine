@@ -128,6 +128,13 @@ if ! [[ -e /usr/local/bin/hyper ]]; then
   rm hyper.tar.gz
 fi
 
+if ! [[ -e /usr/local/bin/hugo ]]; then
+  curl -o hugo.tar.gz -L https://github.com/gohugoio/hugo/releases/download/v0.40.2/hugo_0.40.2_Linux-64bit.tar.gz
+  tar xzf hugo.tar.gz
+  sudo mv hugo /usr/local/bin/hugo
+  rm hugo.tar.gz
+fi
+
 # configure dotfiles
 if ! [ -e ~/.git ]; then
   git init .
