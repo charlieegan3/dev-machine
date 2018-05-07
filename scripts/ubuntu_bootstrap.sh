@@ -55,7 +55,7 @@ then
     redshift software-properties-common tree \
     python-dev python3-dev python3-pip vim-gnome google-cloud-sdk jq \
     libvirt-bin libvirt-dev virtinst openvpn autojump \
-	compizconfig-settings-manager gnome-tweaks)
+	compizconfig-settings-manager gnome-tweaks xsel)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
@@ -119,6 +119,13 @@ if ! [[ -e /usr/local/bin/ngrok ]]; then
 	unzip ngrok.zip
 	sudo mv ngrok /usr/local/bin/ngrok
 	rm ngrok.zip
+fi
+
+if ! [[ -e /usr/local/bin/hyper ]]; then
+  curl -o hyper.tar.gz https://hyper-install.s3.amazonaws.com/hyper-linux-x86_64.tar.gz
+  tar xzf hyper.tar.gz
+  sudo mv hyper /usr/local/bin/hyper
+  rm hyper.tar.gz
 fi
 
 # configure dotfiles
