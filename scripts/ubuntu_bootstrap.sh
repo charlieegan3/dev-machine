@@ -55,7 +55,7 @@ then
     redshift software-properties-common tree \
     python-dev python3-dev python3-pip vim-gnome google-cloud-sdk jq \
     libvirt-bin libvirt-dev virtinst openvpn autojump \
-	compizconfig-settings-manager gnome-tweaks xsel)
+    compizconfig-settings-manager gnome-tweaks xsel ubuntu-restricted-extras)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
@@ -115,10 +115,17 @@ if ! [[ -e /usr/local/bin/tmux ]]; then
 fi
 
 if ! [[ -e /usr/local/bin/ngrok ]]; then
-	curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngrok.zip
-	unzip ngrok.zip
-	sudo mv ngrok /usr/local/bin/ngrok
-	rm ngrok.zip
+  curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngrok.zip
+  unzip ngrok.zip
+  sudo mv ngrok /usr/local/bin/ngrok
+  rm ngrok.zip
+fi
+
+if ! [[ -e /usr/local/bin/bat ]]; then
+  curl -L -o bat.tar.gz https://github.com/sharkdp/bat/releases/download/v0.2.3/bat-v0.2.3-x86_64-unknown-linux-gnu.tar.gz
+  tar -xzf bat.tar.gz
+  sudo mv bat-v0.2.3-x86_64-unknown-linux-gnu/bat /usr/local/bin
+  rm -r bat-v0.2.3-x86_64-unknown-linux-gnu bat.tar.gz
 fi
 
 if ! [[ -e /usr/local/bin/hyper ]]; then
