@@ -108,6 +108,7 @@ if ! [[ -e /snap/bin/docker ]]; then
   sudo addgroup --system docker
   sudo adduser $USER docker
   newgrp docker
+  sudo chmod 666 /var/run/docker.sock
   sudo snap disable docker
   sudo snap enable docker
 fi
