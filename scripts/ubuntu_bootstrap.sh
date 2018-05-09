@@ -55,7 +55,8 @@ then
     redshift software-properties-common tree \
     python-dev python3-dev python3-pip vim-gnome google-cloud-sdk jq \
     libvirt-bin libvirt-dev virtinst openvpn autojump \
-    compizconfig-settings-manager gnome-tweaks xsel ubuntu-restricted-extras)
+    compizconfig-settings-manager gnome-tweaks xsel ubuntu-restricted-extras \
+	vagrant)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
@@ -74,6 +75,15 @@ then
   do
     sudo snap install --classic "$snap"
   done
+fi
+
+read -p "Install vagrant? y/n" -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	sudo apt-get install vagrant qemu libvirt-bin ebtables dnsmasq
+	sudo apt-get install libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev
+	vagrant plugin install vagrant-libvirt
 fi
 
 rvmStable="https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/rvm-installer"
