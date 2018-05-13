@@ -113,6 +113,18 @@ if ! [[ -e /snap/bin/docker ]]; then
   sudo snap enable docker
 fi
 
+if ! [ -e ~/usr/bin/psql ]; then
+  sudo apt-get install -y postgresql postgresql-contrib postgresql-client libpq-dev
+
+  PG_HBA=$(sudo ls /etc/postgresql/*/main/pg_hba.conf | sort | tail -n 1)
+  sudo sed -i.bak -e 's/peer\|md5/trust/g' $PG_HBA
+  sudo /etc/init.d/postgresql restart
+
+  sudo -u postgres createuser $(whoami) || true
+  sudo -u postgres createdb $(whoami) || true
+  psql -U postgres -c "ALTER USER $(whoami) WITH SUPERUSER;"
+fi
+
 if ! [[ -e /usr/local/bin/tmux ]]; then
   sudo apt-get install -y libncurses5-dev libncursesw5-dev libevent-dev
   curl -L https://github.com/tmux/tmux/releases/download/2.5/tmux-2.5.tar.gz > /tmp/tmux.tar.gz
