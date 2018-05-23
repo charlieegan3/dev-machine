@@ -27,4 +27,6 @@ highlight PmenuSel ctermbg=234 ctermfg=178
 
 highlight SpecialKey ctermfg=236
 
-highlight Visual ctermbg=238
+highlight Visual ctermbg=237
+
+highlight ColorColumn ctermbg=235
