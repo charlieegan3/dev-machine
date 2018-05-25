@@ -29,7 +29,7 @@ alias serve='firefox http://localhost:8000 && ruby -run -ehttpd . -p8000'
 if [[ $(uname) == "Linux" ]]; then
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
-  alias ls='ls -ABht --color=always --file-type'
+  alias ls='ls --color=always --file-type'
   open() {
     nautilus "$1" &> /dev/null
   }
