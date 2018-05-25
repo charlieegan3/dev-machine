@@ -203,8 +203,8 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot '<Shi
 gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '<Shift><Alt>sterling'
 gsettings set org.gnome.desktop.background picture-uri ~/Pictures/aerial.jpg
 
-if ! [ -e ~/themes/theme-installed ]; then
-  bash ~/themes/base16-tube.dark.sh
-  touch ~/themes/theme-installed
+if ! [ -e ~/.assets/theme-installed ]; then
+  bash ~/.assets/base16-tube.dark.sh
+  touch ~/.assets/theme-installed
   echo "Restart terminal to get new profile"
 fi
