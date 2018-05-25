@@ -201,7 +201,7 @@ gsettings set org.gnome.desktop.wm.keybindings close "['<Alt>Q']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver '<Alt>l'
 gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot '<Shift><Alt>dollar'
 gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '<Shift><Alt>sterling'
-gsettings set org.gnome.desktop.background picture-uri aerial.jpg
+gsettings set org.gnome.desktop.background picture-uri ~/Pictures/aerial.jpg
 
 if ! [ -e ~/themes/theme-installed ]; then
   bash ~/themes/base16-tube.dark.sh
