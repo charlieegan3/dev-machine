@@ -56,7 +56,7 @@ then
     python-dev python3-dev python3-pip vim-gnome google-cloud-sdk jq \
     libvirt-bin libvirt-dev virtinst openvpn autojump \
     compizconfig-settings-manager gnome-tweaks xsel ubuntu-restricted-extras \
-	vagrant)
+	vagrant vlc browser-plugin-vlc)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
