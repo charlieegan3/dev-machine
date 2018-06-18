@@ -151,3 +151,6 @@ kubelet
 jenkins
 popup
 autozoom
+gcloud
+kubectl
+GCR
