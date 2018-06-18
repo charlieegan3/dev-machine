@@ -33,6 +33,9 @@ if [[ $(uname) == "Linux" ]]; then
   open() {
     nautilus "$1" &> /dev/null
   }
+  replace_in_folder() {
+	find $PWD -type f -exec sed -i "s/$1/$2/g" {} \;
+  }
 elif [[ $(uname) == "Darwin" ]]; then
   alias ls='ls -AGt'
 fi
