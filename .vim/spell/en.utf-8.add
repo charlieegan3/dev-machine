@@ -154,3 +154,5 @@ autozoom
 gcloud
 kubectl
 GCR
+CronJobs
+CronJob

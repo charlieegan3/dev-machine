@@ -58,3 +58,6 @@ tags
 
 # direnv
 .envrc
+
+# make
+*.make
