@@ -24,7 +24,6 @@ alias env='env | sort'
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'"
 alias ron='redshift -O 2000 -m randr'
 alias roff='redshift -x -m randr'
-alias serve='firefox http://localhost:8000 && ruby -run -ehttpd . -p8000'
 
 if [[ $(uname) == "Linux" ]]; then
   alias pbcopy='xsel --clipboard --input'
@@ -39,6 +38,11 @@ if [[ $(uname) == "Linux" ]]; then
 elif [[ $(uname) == "Darwin" ]]; then
   alias ls='ls -AGt'
 fi
+
+serve() {
+	firefox http://localhost:8000
+	ruby -run -ehttpd "$1" -p8000
+}
 
 # tools
 #[[ -e /usr/bin/heroku ]]  && export PATH="$PATH:/usr/bin/heroku"
