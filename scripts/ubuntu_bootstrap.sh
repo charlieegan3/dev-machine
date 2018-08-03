@@ -56,7 +56,7 @@ then
     python-dev python3-dev python3-pip vim-gnome google-cloud-sdk jq \
     libvirt-bin libvirt-dev virtinst openvpn autojump \
     compizconfig-settings-manager gnome-tweaks xsel ubuntu-restricted-extras \
-	vagrant vlc browser-plugin-vlc)
+	vagrant vlc browser-plugin-vlc libmagick++-dev)
 
   sudo apt-get update >> /dev/null
   for package in "${wantedPackages[@]}"
@@ -111,6 +111,11 @@ if ! [[ -e /snap/bin/docker ]]; then
   sudo chmod 666 /var/run/docker.sock
   sudo snap disable docker
   sudo snap enable docker
+fi
+
+if ! [[ -e /usr/local/bin/docker-compose ]]; then
+  sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
 fi
 
 if ! [ -e ~/usr/bin/psql ]; then
