@@ -54,7 +54,7 @@ then
     curl firefox gconf2 git silversearcher-ag \
     redshift software-properties-common tree \
     python-dev python3-dev python3-pip vim-gnome google-cloud-sdk jq \
-    libvirt-bin libvirt-dev virtinst openvpn autojump \
+    libvirt-bin libvirt-dev virtinst openvpn \
     compizconfig-settings-manager gnome-tweaks xsel ubuntu-restricted-extras \
 	vagrant vlc browser-plugin-vlc libmagick++-dev)
 
@@ -168,6 +168,15 @@ if ! [[ -e /usr/local/bin/hugo ]]; then
   tar xzf hugo.tar.gz
   sudo mv hugo /usr/local/bin/hugo
   rm hugo.tar.gz
+fi
+
+if ! [[ -e /usr/local/bin/fasd ]]; then
+  curl -o fasd.zip -L https://github.com/clvv/fasd/zipball/1.0.1
+  unzip fasd.zip
+  cd clvv-fasd-4822024
+  sudo make install
+  cd ..
+  rm -rf clvv-fasd-4822024 fasd.zip
 fi
 
 # configure dotfiles

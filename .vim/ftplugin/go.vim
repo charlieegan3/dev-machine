@@ -32,3 +32,4 @@ nnoremap <tab> :GoDef<cr>
 nnoremap <leader>g :GoDeclsDir<cr>
 nnoremap <leader>d :GoDoc<cr>
 nnoremap <leader>i :GoInfo<cr>
+nnoremap <leader>e :GoIfErr<cr>
