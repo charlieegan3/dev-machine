@@ -64,7 +64,14 @@ export GPG_AGENT_INFO
 
 source ~/vault_env.sh || true
 eval "$(fasd --init auto)"
-alias j='fasd -d'
+j() {
+  cd $(fasd -dlR | grep $1 | head -n 1)
+  pwd
+}
+jj() {
+  cd $(fasd -dlR | fzf)
+  pwd
+}
 
 # welcome
 clear
