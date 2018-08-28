@@ -58,7 +58,7 @@ export PATH="$PATH:$HOME/.tfenv/bin"
 export GPG_TTY=`tty`
 eval "$(direnv hook bash)"
 
-gpg-agent --daemon
+gpg-agent --daemon || true
 export GPG_TTY=`tty`
 export GPG_AGENT_INFO
 
@@ -73,6 +73,11 @@ jj() {
   pwd
 }
 
+# Completion Scripts
+source '/home/charlieegan3/google-cloud-sdk/completion.bash.inc'
+source <(kubectl completion bash)
+
 # welcome
 clear
 echo "hello."
+
