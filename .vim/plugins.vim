@@ -9,6 +9,9 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+let g:UltiSnipsSnippetDirectories=["my-snippets"]
+let g:UltiSnipsExpandTrigger="<leader><Tab>"
+
 call plug#begin()
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
   Plug 'mileszs/ack.vim'          " project search
@@ -32,6 +35,8 @@ call plug#begin()
 
   Plug 'dietsche/vim-lastplace' " remember last cursor position in file
   Plug 'wellle/targets.vim'     " additional change-inside targets
+
+  Plug 'SirVer/ultisnips'       " snippet engine
 
   " language plugins
   Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
