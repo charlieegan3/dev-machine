@@ -63,6 +63,7 @@ export GPG_TTY=`tty`
 export GPG_AGENT_INFO
 
 source ~/vault_env.sh || true
+
 eval "$(fasd --init auto)"
 j() {
   cd $(fasd -dlR | grep $1 | head -n 1)
@@ -72,6 +73,33 @@ jj() {
   cd $(fasd -dlR | fzf)
   pwd
 }
+
+# kubectx
+current_namespace() {
+  local cur_ctx
+  cur_ctx="$(current_context)"
+  ns="$(kubectl config view -o=jsonpath="{.contexts[?(@.name==\"${cur_ctx}\")].context.namespace}")"
+  if [[ -z "${ns}" ]]; then
+    echo "default"
+  else
+    if [ "${ns}" != "default" ]; then
+      echo "${ns}"
+    fi
+  fi
+}
+current_context() {
+  kubectl config view -o=jsonpath='{.current-context}'
+}
+namespace_string() {
+  txtgrn='\e[0;32m'
+  txtrst='\e[0m'
+  cur_ns="$(current_namespace)"
+  if [ "${cur_ns}" != "" ]; then
+    echo -en "$txtgrn$cur_ns$txtrst "
+  fi
+}
+
+export PS1="\$(namespace_string)\W|"
 
 # Completion Scripts
 source '/home/charlieegan3/google-cloud-sdk/completion.bash.inc'

@@ -179,6 +179,13 @@ if ! [[ -e /usr/local/bin/fasd ]]; then
   rm -rf clvv-fasd-4822024 fasd.zip
 fi
 
+if ! [[ -e /usr/local/bin/kubectx ]]; then
+  curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
+  curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
+  chmod +x kubectx kubens
+  sudo mv kubectx kubens /usr/local/bin/
+fi
+
 # configure dotfiles
 if ! [ -e ~/.git ]; then
   git init .
