@@ -98,8 +98,18 @@ namespace_string() {
     echo -en "$txtgrn$cur_ns$txtrst "
   fi
 }
+last_status_string() {
+  last_exit="$?"
 
-export PS1="\$(namespace_string)\W|"
+  txtylw='\e[0;33m'
+  txtrst='\e[0m'
+
+  if [ "$last_exit" != "0" ]; then
+    echo -en "$txtylw$last_exit$txtrst "
+  fi
+}
+
+export PS1="\$(last_status_string)\$(namespace_string)\W|"
 
 # Completion Scripts
 source '/home/charlieegan3/google-cloud-sdk/completion.bash.inc'
