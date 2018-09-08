@@ -109,7 +109,7 @@ last_status_string() {
   fi
 }
 
-export PS1="\$(last_status_string)\$(namespace_string)\W|"
+export PS1="\$(last_status_string)\$(namespace_string)\W $ "
 
 # Completion Scripts
 source '/home/charlieegan3/google-cloud-sdk/completion.bash.inc'
