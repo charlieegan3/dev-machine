@@ -58,7 +58,7 @@ export PATH="$PATH:$HOME/.tfenv/bin"
 export GPG_TTY=`tty`
 eval "$(direnv hook bash)"
 
-gpg-agent --daemon || true
+# gpg-agent --daemon || true
 export GPG_TTY=`tty`
 export GPG_AGENT_INFO
 
@@ -75,26 +75,14 @@ jj() {
 }
 
 # kubectx
-current_namespace() {
-  local cur_ctx
-  cur_ctx="$(current_context)"
-  ns="$(kubectl config view -o=jsonpath="{.contexts[?(@.name==\"${cur_ctx}\")].context.namespace}")"
-  if [[ -z "${ns}" ]]; then
-    echo "default"
-  else
-    if [ "${ns}" != "default" ]; then
-      echo "${ns}"
-    fi
-  fi
-}
-current_context() {
-  kubectl config view -o=jsonpath='{.current-context}'
+kns() {
+  kubens $1 && echo $1 > ~/.kube/namespace
 }
 namespace_string() {
   txtgrn='\e[0;32m'
   txtrst='\e[0m'
-  cur_ns="$(current_namespace)"
-  if [ "${cur_ns}" != "" ]; then
+  cur_ns=$(cat ~/.kube/namespace)
+  if [ "${cur_ns}" != "" ] && [ "${cur_ns}" != "default" ]; then
     echo -en "$txtgrn$cur_ns$txtrst "
   fi
 }
