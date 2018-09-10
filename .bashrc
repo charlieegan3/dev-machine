@@ -1,10 +1,10 @@
 # colors
-bldwht='\e[1;37m'
-txtblu='\e[0;34m'
-txtcyn='\e[0;36m'
-txtgrn='\e[0;32m'
-txtylw='\e[0;33m'
-txtrst='\e[0m'
+COLOR_RESET="\[$(tput sgr0)\]"
+COLOR_BOLD="\[$(tput bold)\]"
+COLOR_BLUE="\[$(tput setaf 4)\]"
+COLOR_CYAN="\[$(tput setaf 6)\]"
+COLOR_GREEN="\[$(tput setaf 2)\]"
+COLOR_YELLOW="\[$(tput setaf 3)\]"
 
 # use vim as the system editor
 export VISUAL=vim
@@ -49,26 +49,26 @@ kns() {
 namespace_string() {
   cur_ns=$(cat ~/.kube/namespace)
   if [ "${cur_ns}" != "" ] && [ "${cur_ns}" != "default" ]; then
-    echo -en "$txtgrn$cur_ns$txtrst "
+    echo -n "[$cur_ns]"
   fi
 }
 last_status_string() {
   last_exit="$?"
-  if [ "$last_exit" != "0" ]; then echo -en "$txtylw$last_exit$txtrst "; fi
+  if [ "$last_exit" != "0" ]; then echo -n "[$last_exit]"; fi
 }
 relative_path_to_git_root() {
   path1=$(git root) path2=$(pwd)
   common=$(printf '%s\x0%s' "${path1}" "${path2}" | sed 's/\(.*\).*\x0\1.*/\1/')
   relative_path="${path2/$common/}"
   if  [ $path1 == "$HOME" ]; then
-    echo -en "$bldwht${PWD##*/}$txtrst";
+    echo -n "${PWD##*/}";
   elif [ "${#relative_path}" == "0" ]; then
-    echo -en "$txtblu${PWD##*/}$txtrst";
+    echo -n "${PWD##*/}";
   else
     if [ ${#relative_path} -ge 20 ]; then
       relative_path="...$(echo $relative_path | rev | cut -c 1-20 | rev)"
     fi
-    echo -en "$txtcyn$relative_path$txtrst";
+    echo -n "$relative_path";
   fi
 }
 
@@ -97,7 +97,7 @@ source '/home/charlieegan3/google-cloud-sdk/completion.bash.inc'
 source <(kubectl completion bash)
 
 # set prompt
-export PS1="\$(last_status_string)\$(namespace_string)\$(relative_path_to_git_root) $ "
+export PS1="$COLOR_YELLOW\$(last_status_string)$COLOR_GREEN\$(namespace_string)$COLOR_CYAN\$(relative_path_to_git_root)$COLOR_RESET $ "
 
 # welcome
 clear
