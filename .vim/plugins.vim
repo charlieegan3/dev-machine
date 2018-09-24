@@ -52,6 +52,8 @@ call plug#begin()
   Plug 'slim-template/vim-slim', { 'for': 'slim' }
   Plug 'alvan/vim-closetag', { 'for': ['html', 'eruby'] }
 
+  Plug 'idris-hackers/idris-vim', { 'for': ['idris'] }
+
   Plug 'rodjek/vim-puppet', { 'for': 'puppet' }
 
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
