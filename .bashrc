@@ -17,10 +17,6 @@ export COLORTERM=truecolor TERM=xterm-256color
 # use correct window size
 shopt -s checkwinsize
 
-# history
-export HISTSIZE=1000000 HISTCONTROL=ignoreboth:ignoredups
-shopt -s histappend
-
 # aliases & functions
 alias env='env | sort'
 alias ls='ls --color=always --file-type'
@@ -86,7 +82,19 @@ export PATH="$PATH:$HOME/.tfenv/bin"
 eval "$(direnv hook bash)"
 eval "$(fasd --init auto)"
 source ~/vault_env.sh || true
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# hstr
+export HSTR_CONFIG=hicolor
+export HISTSIZE=1000000 HISTCONTROL=ignoreboth:ignoredups
+shopt -s histappend
+export HISTFILESIZE=100000
+export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
+# ensure synchronization between Bash memory and history file
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
+# if this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
+# if this is interactive shell, then bind 'kill last command' to Ctrl-x k
+if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 
 # GPG
 export GPG_TTY=`tty`
