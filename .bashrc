@@ -23,6 +23,7 @@ alias ls='ls --color=always --file-type'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'"
+alias c="clear"
 
 open() {
   xdg-open "$1"
