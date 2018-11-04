@@ -192,6 +192,13 @@ if ! [[ -e /usr/local/bin/kubectx ]]; then
   sudo mv kubectx kubens /usr/local/bin/
 fi
 
+if ! [[ -e /usr/local/bin/helm ]]; then
+  curl https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz > helm.tar.gz
+  tar -xzf helm.tar.gz
+  sudo mv linux-amd64/helm /usr/local/bin/helm
+  sudo chmod +x /usr/local/bin/helm
+fi
+
 if ! [[ -e /usr/local/bin/hstr ]]; then
   git clone https://github.com/dvorka/hstr.git
   cd hstr
