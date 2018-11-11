@@ -85,7 +85,8 @@ eval "$(fasd --init auto)"
 source ~/vault_env.sh || true
 
 # hstr
-export HSTR_CONFIG=hicolor
+export HSTR_CONFIG=hicolor,rawhistory,prompt-bottom
+export HSTR_PROMPT="$ "
 export HISTSIZE=1000000 HISTCONTROL=ignoreboth:ignoredups
 shopt -s histappend
 export HISTFILESIZE=100000
