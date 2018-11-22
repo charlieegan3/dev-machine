@@ -199,6 +199,12 @@ if ! [[ -e /usr/local/bin/helm ]]; then
   sudo chmod +x /usr/local/bin/helm
 fi
 
+if ! [[ -e /usr/bin/rg ]]; then
+  curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
+  sudo dpkg -i ripgrep_0.10.0_amd64.deb
+  rm ripgrep_0.10.0_amd64.deb
+fi
+
 # configure dotfiles
 if ! [ -e ~/.git ]; then
   git init .

@@ -1,9 +1,7 @@
 let g:closetag_filenames = '*.html,*.html.erb'
 let b:lion_squeeze_spaces = 1
 
-let git_search = "(git ls-files; git ls-files --others --exclude-standard) | grep -v \"$([ -z \"$(git ls-files -d)\" ] && echo \"^$\")\" | grep -v '\\(jpg\\|png\\)$' | awk '!x[$0]++\' | grep -v vendor"
-let other_search = 'ag -l -g "" --hidden'
-let $FZF_DEFAULT_COMMAND = 'if [[ -e .git ]]; then' . git_search . '; else ' . other_search . '; fi'
+let $FZF_DEFAULT_COMMAND = "rg --files --glob '!vendor*'"
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
