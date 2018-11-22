@@ -199,15 +199,6 @@ if ! [[ -e /usr/local/bin/helm ]]; then
   sudo chmod +x /usr/local/bin/helm
 fi
 
-if ! [[ -e /usr/local/bin/hstr ]]; then
-  git clone https://github.com/dvorka/hstr.git
-  cd hstr
-  cd ./build/tarball && ./tarball-automake.sh && cd ../..
-  ./configure
-  make
-  sudo make install
-fi
-
 # configure dotfiles
 if ! [ -e ~/.git ]; then
   git init .
