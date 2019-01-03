@@ -89,12 +89,8 @@ export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
 export HISTFILESIZE=100000
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
-export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-bind -x '"\C-p": vim $(fzf);'
-__fzf_history__() {
-  cat ~/.bash_history | tac | awk '!x[$0]++' | fzf
-}
+alias exit="history -a; exit"
 
 # GPG
 export GPG_TTY=`tty`
