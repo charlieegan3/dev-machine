@@ -43,6 +43,12 @@ jj() {
 kns() {
   kubens $1 && echo $1 > ~/.kube/namespace
 }
+kcs() {
+	gcloud container clusters get-credentials $1
+}
+gcs() {
+	gcloud config configurations activate $1
+}
 namespace_string() {
   cur_ns=$(cat ~/.kube/namespace)
   if [ "${cur_ns}" != "" ] && [ "${cur_ns}" != "default" ]; then
