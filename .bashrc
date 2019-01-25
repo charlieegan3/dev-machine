@@ -74,6 +74,13 @@ relative_path_to_git_root() {
     echo -n "$relative_path";
   fi
 }
+envrc() {
+	sudo cat .envrc
+	sudo chattr -i .envrc
+	vi .envrc
+	direnv allow
+	sudo chattr +i .envrc
+}
 
 # Environments
 [[ -e $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
