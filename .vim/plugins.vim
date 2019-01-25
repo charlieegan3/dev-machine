@@ -62,4 +62,6 @@ call plug#begin()
   Plug 'lervag/vimtex', { 'for': 'latex' }
 
   Plug 'martinda/Jenkinsfile-vim-syntax', { 'for': 'jenkins' }
+
+  Plug 'lepture/vim-jinja', { 'for': 'jinja' }
 call plug#end()
