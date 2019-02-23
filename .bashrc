@@ -85,8 +85,10 @@ envrc() {
 # Environments
 [[ -e $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 [[ -e $HOME/.cargo/env ]]       && source $HOME/.cargo/env
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/Code/go
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$GOROOT/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH="$PATH:$HOME/.npm-global/bin"
