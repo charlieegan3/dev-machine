@@ -158,6 +158,17 @@ data:
   name: things
 endsnippet
 
+snippet secret "Secret Template"
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: default
+  name: mysecret
+type: Opaque
+data:
+  username: base64data
+endsnippet
+
 snippet job "Job Template"
 apiVersion: batch/v1
 kind: Job
