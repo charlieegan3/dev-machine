@@ -8,3 +8,4 @@ autocmd BufRead,BufNewFile {*Jenkinsfile*} set ft=jenkins
 autocmd BufRead,BufNewFile {*.yaml.tpl} set ft=yaml
 autocmd BufRead,BufNewFile {*.sh.tpl} set ft=sh
 autocmd BufRead,BufNewFile {*.json.tpl} set ft=json
+autocmd BufRead,BufNewFile {*.md} set ft=markdown
