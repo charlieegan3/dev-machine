@@ -1,11 +1,3 @@
-# colors
-COLOR_RESET="\[$(tput sgr0)\]"
-COLOR_BOLD="\[$(tput bold)\]"
-COLOR_BLUE="\[$(tput setaf 4)\]"
-COLOR_CYAN="\[$(tput setaf 6)\]"
-COLOR_GREEN="\[$(tput setaf 2)\]"
-COLOR_YELLOW="\[$(tput setaf 3)\]"
-
 # use vim as the system editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -118,6 +110,7 @@ source '/home/charlieegan3/google-cloud-sdk/completion.bash.inc'
 source <(kubectl completion bash)
 
 # set prompt
+COLOR_RESET="\[$(tput sgr0)\]" COLOR_CYAN="\[$(tput setaf 6)\]" COLOR_GREEN="\[$(tput setaf 2)\]" COLOR_YELLOW="\[$(tput setaf 3)\]"
 export PS1="$COLOR_YELLOW\$(last_status_string)$COLOR_GREEN\$(namespace_string)$COLOR_CYAN\$(relative_path_to_git_root)$COLOR_RESET $ "
 
 # welcome
