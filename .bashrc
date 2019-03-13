@@ -81,6 +81,7 @@ envrc() {
 	direnv allow
 	sudo chattr +i .envrc
 }
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 # Environments
 [[ -e $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
