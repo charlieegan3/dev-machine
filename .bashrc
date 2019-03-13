@@ -98,7 +98,8 @@ export PATH="$PATH:$HOME/.tfenv/bin"
 # Tools
 eval "$(direnv hook bash)"
 eval "$(fasd --init auto)"
-source ~/vault_env.sh || true
+. "$HOME/google-cloud-sdk/path.bash.inc"
+. "$HOME/google-cloud-sdk/completion.bash.inc"
 
 export HISTSIZE=1000000
 export HISTCONTROL=ignoreboth:erasedups
