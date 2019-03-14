@@ -33,16 +33,18 @@ jj() {
   cd $(fasd -dlR | fzf) && pwd
 }
 kns() {
-  kubens $1 && echo $1 > ~/.kube/namespace
+  local ns=$(kubectl get ns --output=custom-columns=name:.metadata.name --no-headers=true | fzf)
+  kubens $ns && echo $ns > ~/.kube/namespace
 }
 kcs() {
-	gcloud container clusters get-credentials $1
+  local args=$(gcloud container clusters list "--format=get(name, location)" | awk '{ print $1 " --region=" $2 }' | fzf)
+  gcloud container clusters get-credentials $args
 }
 gcs() {
-	gcloud config configurations activate $1
+  gcloud config configurations activate $(gcloud config configurations list "--format=get(name)" | fzf)
 }
 namespace_string() {
-  cur_ns=$(cat ~/.kube/namespace)
+  local cur_ns=$(cat ~/.kube/namespace)
   if [ "${cur_ns}" != "" ] && [ "${cur_ns}" != "default" ]; then
     echo -n "[$cur_ns]"
   fi
