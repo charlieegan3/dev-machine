@@ -44,6 +44,10 @@ kcs() {
 gcs() {
   gcloud config configurations activate $(gcloud config configurations list "--format=get(name)" | fzf)
 }
+gcr() {
+  local args=$(gcloud container clusters list "--format=get(name, location)" | awk '{ print $1 " --region=" $2 }' | fzf)
+  gcloud container clusters resize $args --size=$1
+}
 namespace_string() {
   local cur_ns=$(cat ~/.kube/namespace)
   if [ "${cur_ns}" != "" ] && [ "${cur_ns}" != "default" ]; then
