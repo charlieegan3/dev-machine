@@ -73,6 +73,10 @@ relative_path_to_git_root() {
     echo -n "$relative_path";
   fi
 }
+bran() {
+  echo "Current: " $(gitb)
+  git checkout $(git b | fzf)
+}
 envrc() {
 	sudo cat .envrc
 	sudo chattr -i .envrc

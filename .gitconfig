@@ -35,6 +35,7 @@
   undo = reset --soft HEAD^
   stash-all = stash save --include-untracked
   root = !pwd
+  b = branch --sort=-committerdate
 [fetch]
   fsckobjects = false
 [gpg]
