@@ -17,6 +17,10 @@ spec:
   - name: hello
     image: nginx
     imagePullPolicy: Always
+    ports:
+    - containerPort: 80
+      protocol: TCP
+      name: http
     livenessProbe:
       httpGet:
       port: admin
@@ -61,6 +65,10 @@ spec:
       - name: hello
         image: nginx
         imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          protocol: TCP
+          name: http
         livenessProbe:
           httpGet:
             port: admin
