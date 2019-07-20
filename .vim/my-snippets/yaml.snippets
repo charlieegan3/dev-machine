@@ -16,7 +16,6 @@ spec:
   containers:
   - name: hello
     image: nginx
-    imagePullPolicy: Always
     ports:
     - containerPort: 80
       protocol: TCP
@@ -64,7 +63,6 @@ spec:
       containers:
       - name: hello
         image: nginx
-        imagePullPolicy: Always
         ports:
         - containerPort: 80
           protocol: TCP
