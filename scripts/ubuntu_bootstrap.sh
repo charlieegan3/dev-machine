@@ -102,26 +102,19 @@ rvmStable="https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/
   unzip /tmp/packer.zip && \
   sudo mv packer /usr/local/bin
 
-if ! [[ -e /snap/bin/docker ]]; then
-  sudo snap install docker
-  sudo snap connect docker:home
-  sudo addgroup --system docker
-  sudo adduser $USER docker
-  newgrp docker
-  sudo chmod 666 /var/run/docker.sock
-  sudo snap disable docker
-  sudo snap enable docker
+if ! [[ -e /usr/bin/docker ]]; then
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  sudo add-apt-repository \
+     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+     $(lsb_release -cs) \
+     stable"
+  sudo apt-get update
+  sudo apt-get install docker-ce docker-ce-cli containerd.io
 fi
 
 if ! [[ -e /usr/local/bin/with ]]; then
   sudo curl -s https://raw.githubusercontent.com/mchav/with/master/with -o /usr/local/bin/with
   sudo chmod +x /usr/local/bin/with
-fi
-
-
-if ! [[ -e /usr/local/bin/docker-compose ]]; then
-  sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-  sudo chmod +x /usr/local/bin/docker-compose
 fi
 
 if ! [ -e ~/usr/bin/psql ]; then
