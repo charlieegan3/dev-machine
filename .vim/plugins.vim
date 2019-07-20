@@ -64,4 +64,9 @@ call plug#begin()
   Plug 'martinda/Jenkinsfile-vim-syntax', { 'for': 'jenkins' }
 
   Plug 'lepture/vim-jinja', { 'for': 'jinja' }
+
+  Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+
+  Plug 'tsandall/vim-rego', { 'for': 'rego' }
+  Plug 'posva/vim-vue', { 'for': 'vue' }
 call plug#end()
