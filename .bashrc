@@ -48,6 +48,9 @@ gcr() {
   local args=$(gcloud container clusters list "--format=get(name, location)" | awk '{ print $1 " --region=" $2 }' | fzf)
   gcloud container clusters resize $args --size=$1
 }
+heic_jpg() {
+  for f in *.heic; do heif-convert $f $f.jpg; done
+}
 namespace_string() {
   local cur_ns=$(cat ~/.kube/namespace)
   if [ "${cur_ns}" != "" ] && [ "${cur_ns}" != "default" ]; then
