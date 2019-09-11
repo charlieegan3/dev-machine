@@ -96,6 +96,14 @@ spec:
         emptyDir: {}
 endsnippet
 
+snippet serviceaccount "Service Template"
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: name
+  namespace: default
+endsnippet
+
 snippet service "Service Template"
 apiVersion: v1
 kind: Service
@@ -109,10 +117,10 @@ spec:
   selector:
     app: hello
   ports:
-    - name: http
-      protocol: TCP
-      port: 80
-      targetPort: http
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: http
 endsnippet
 
 snippet cronjob "CronJob Template"
