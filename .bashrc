@@ -40,6 +40,7 @@ kns() {
 kcs() {
   local args=$(gcloud container clusters list "--format=get(name, location)" | awk '{ print $1 " --region=" $2 }' | fzf)
   gcloud container clusters get-credentials $args
+  echo "" > ~/.kube/namespace
 }
 gcs() {
   gcloud config configurations activate $(gcloud config configurations list "--format=get(name)" | fzf)
