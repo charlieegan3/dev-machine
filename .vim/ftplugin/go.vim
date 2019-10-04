@@ -2,8 +2,10 @@ let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
 let g:go_doc_keywordprg_enabled = "0"
 let g:go_metalinter_autosave = 1
-let g:go_metalinter_command = "--enable=gotype --enable=vet --enable=golint -t"
-let g:go_metalinter_autosave_enabled = [ 'golint', 'gotype', 'vet' ]
+" let g:go_metalinter_command = "--enable=gotype --enable=vet --enable=golint -t"
+" let g:go_metalinter_autosave_enabled = [ 'golint', 'gotype', 'vet' ]
+let g:go_metalinter_command = "--enable=vet --enable=golint -t"
+let g:go_metalinter_autosave_enabled = [ 'golint', 'vet' ]
 
 highlight Type        ctermfg=220
 highlight Statement   ctermfg=197
