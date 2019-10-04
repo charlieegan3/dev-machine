@@ -101,6 +101,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH="$PATH:$HOME/.npm-global/bin"
 export PATH="$PATH:$HOME/.tfenv/bin"
+export PATH="$PATH:$HOME/.local/bin" # python
+export PATH=$PATH:/usr/local/kubebuilder/bin
 
 # Tools
 eval "$(direnv hook bash)"
