@@ -69,4 +69,6 @@ call plug#begin()
 
   Plug 'tsandall/vim-rego', { 'for': 'rego' }
   Plug 'posva/vim-vue', { 'for': 'vue' }
+
+  Plug 'qpkorr/vim-renamer'
 call plug#end()
