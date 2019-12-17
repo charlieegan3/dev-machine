@@ -81,6 +81,15 @@ bran() {
   echo "Current: " $(gitb)
   git checkout $(git b | fzf)
 }
+permissions() {
+  sudo find . -type d -exec chmod 0755 {} \;
+  sudo find . -type f -exec chmod 0644 {} \;
+  sudo find . -type f -iname "*.sh" -exec chmod +x {} \;
+}
+morning() {
+  new_date="$(date -d now +"%a %d %b %Y 07:19:43 %Z")"
+  GIT_COMMITTER_DATE=$new_date git commit --date "$new_date"
+}
 envrc() {
 	sudo cat .envrc
 	sudo chattr -i .envrc
