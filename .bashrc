@@ -79,7 +79,7 @@ relative_path_to_git_root() {
 }
 bran() {
   echo "Current: " $(gitb)
-  git checkout $(git b | fzf)
+  git checkout $(git b | sed -e 's/^..//' | fzf)
 }
 permissions() {
   sudo find . -type d -exec chmod 0755 {} \;
