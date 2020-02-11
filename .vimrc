@@ -27,11 +27,6 @@ set undodir=~/.vim/.undo/
 set backupdir=~/.vim/backup/
 set directory=~/.vim/.swp/
 
-set foldenable " enable code folding
-set foldmethod=indent " use indentation to fold
-set foldlevelstart=2 " start folding after 2 levels of nesting
-set foldnestmax=10 " don't nest folds more than 10 times
-
 set number numberwidth=3 " show numbers column
 
 set shiftwidth=4 " the default is 8?
