@@ -97,6 +97,9 @@ envrc() {
 	direnv allow
 	sudo chattr +i .envrc
 }
+gitcd() {
+	cd $(git rev-parse --show-toplevel)
+}
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 # Environments
