@@ -21,19 +21,21 @@ jobs:
             --build-arg="password=${{ secrets.PASSWORD }}" \
             --build-arg="github_token=${{ secrets.GITHUB_ACCESS_TOKEN }}" \
             --build-arg="id_rsa=${{ secrets.B64_ID_RSA }}" \
+            --build-arg="gpg_pub=${{ secrets.B64_GPG_PUB }}" \
+            --build-arg="gpg_priv=${{ secrets.B64_GPG_PRIV }}" \
             --tag="$IMAGE" .
-      
+
       - name: Save Image
         run: |
           docker run --name=blueprint $IMAGE sh -c 'exit'
           docker export blueprint > blueprint.tar
-      
+
       - name: Build machine image
         run: |
           curl -LO https://releases.hashicorp.com/packer/1.5.5/packer_1.5.5_linux_amd64.zip
           unzip *.zip
           sudo mv packer /usr/local/bin/packer
-          
+
           export DIGITALOCEAN_API_TOKEN=${{ secrets.DIGITALOCEAN_API_TOKEN }}
           export COMMIT_SHA=${{ github.sha }}
           export PASSWORD=${{ secrets.PASSWORD }}
@@ -46,7 +48,7 @@ jobs:
           tar -zxf doctl-1.39.0-linux-amd64.tar.gz
           sudo mv doctl /usr/local/bin/doctl
           sudo apt-get install -y moreutils
-          
+
           doctl auth init -t ${{ secrets.DIGITALOCEAN_API_TOKEN }}
           doctl compute image list -o json \
             | jq -r '[.[] | .id][0:-3] | .[]' \
