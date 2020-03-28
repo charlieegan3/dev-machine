@@ -60,5 +60,5 @@ COPY --chown=charlieegan3:charlieegan3 dotfiles $HOME
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
       vim +PlugInstall +qall
 RUN export PATH=$PATH:/usr/local/go/bin && \
-      vim +GoInstallBinaries +qall
+      vim main.go +GoInstallBinaries +qall
 RUN pip3 install --upgrade neovim
