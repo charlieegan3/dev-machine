@@ -38,7 +38,5 @@
   b = branch --sort=-committerdate
 [fetch]
   fsckobjects = false
-[gpg]
-  program = gpg2
 [credential]
   helper = store
