@@ -53,9 +53,11 @@ heic_jpg() {
   for f in *.heic; do heif-convert $f $f.jpg; done
 }
 namespace_string() {
-  local cur_ns=$(cat ~/.kube/namespace)
-  if [ "${cur_ns}" != "" ] && [ "${cur_ns}" != "default" ]; then
-    echo -n "[$cur_ns]"
+  if [ -f ~/.kube/namespace ]; then
+    local cur_ns=$(cat ~/.kube/namespace)
+    if [ "${cur_ns}" != "" ] && [ "${cur_ns}" != "default" ]; then
+      echo -n "[$cur_ns]"
+    fi
   fi
 }
 last_status_string() {
