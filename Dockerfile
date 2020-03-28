@@ -42,6 +42,14 @@ RUN echo $id_rsa | base64 -d > $HOME/.ssh/id_rsa
 RUN chmod 600 $HOME/.ssh/id_rsa
 RUN cat $HOME/.ssh/id_rsa.pub > $HOME/.ssh/authorized_keys
 
+# Configure GPG keys
+ARG gpg_pub
+ARG gpg_priv
+RUN echo gpg_pub | base64 -d > pub
+RUN echo gpg_priv | base64 -d > priv
+RUN gpg --import --batch pub
+RUN gpg --import --batch priv
+
 # Configure github access
 ARG github_token
 RUN echo "https://$USERNAME:$github_token@github.com" > $HOME/.git-credentials
