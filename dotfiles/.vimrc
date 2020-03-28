@@ -1,8 +1,6 @@
 " Charlie's Vim Config
 
 syntax enable " turn on syntax highlighting
-set background=dark " use a dark background
-colorscheme base16-default-dark " use the base16 colorscheme, irrelevant which as inherits from terminal
 set path=$PWD/** " use the current working directory as the path
 set nocompatible " disable compatibility features
 set wildmenu " show command suggestions
