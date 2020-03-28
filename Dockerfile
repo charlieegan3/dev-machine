@@ -11,7 +11,7 @@ RUN usermod -aG sudo $USERNAME
 
 # Install things
 RUN apt-get update
-RUN apt-get install -y silversearcher-ag tmux direnv jq tree mosh git
+RUN apt-get install -y silversearcher-ag tmux direnv jq tree mosh git make
 
 # User things (recreated created in packer build later)
 USER $USERNAME
