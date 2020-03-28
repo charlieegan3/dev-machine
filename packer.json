@@ -1,0 +1,43 @@
+{
+  "variables": {
+    "token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
+    "commit_sha": "{{env `COMMIT_SHA`}}",
+    "username": "charlieegan3",
+    "password": "{{env `PASSWORD`}}"
+  },
+  "builders": [
+    {
+      "droplet_name": "dev",
+      "snapshot_name": "dev-machine-{{user `commit_sha`}}",
+      "type": "digitalocean",
+      "api_token": "{{user `token`}}",
+      "image": "ubuntu-18-04-x64",
+      "region": "nyc3",
+      "size": "2gb",
+      "ssh_username": "root"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "blueprint.tar",
+      "destination": "/tmp/blueprint.tar"
+    },
+    {
+      "type": "shell",
+      "inline": "sudo tar -xf /tmp/blueprint.tar -C / --skip-old-files"
+    },
+    {
+      "type": "shell",
+      "inline": "adduser --disabled-password --gecos \"\" {{user `username`}}"
+    },
+    {
+      "type": "shell",
+      "inline": "echo {{user `username`}}:{{user `password`}} | chpasswd"
+    },
+    {
+      "type": "shell",
+      "inline": "usermod -aG sudo {{user `username`}}"
+    }
+  ]
+}
