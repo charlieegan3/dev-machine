@@ -8,7 +8,7 @@ set -exuo pipefail
 : "${GPG_PRIV:?Need to set GPG_PRIV non-empty}"
 : "${ID_RSA_PUB:?Need to set GPG_PRIV non-empty}"
 : "${ID_RSA:?Need to set ID_RSA non-empty}"
-: "${GITHUB_TOKEN:?Need to set GITHUB_TOKEN non-empty}"
+: "${GITHUB_ACCESS_TOKEN:?Need to set GITHUB_ACCESS_TOKEN non-empty}"
 
 HOME=/home/$USERNAME
 
@@ -32,4 +32,4 @@ gpg --import --batch priv
 rm pub priv
 
 # git access
-echo "https://$USERNAME:$GITHUB_TOKEN@github.com" > $HOME/.git-credentials
+echo "https://$USERNAME:$GITHUB_ACCESS_TOKEN@github.com" > $HOME/.git-credentials

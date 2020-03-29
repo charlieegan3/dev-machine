@@ -1,13 +1,13 @@
 {
   "variables": {
-    "token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
+    "digitalocean_api_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
     "commit_sha": "{{env `COMMIT_SHA`}}",
-    "username": "charlieegan3",
-    "password": "{{env `PASSWORD`}}",
+    "gpg_priv": "{{env `B64_GPG_PRIV`}}",
+    "gpg_pub": "{{env `B64_GPG_PUB`}}",
     "id_rsa": "{{env `B64_ID_RSA`}}",
     "id_rsa_pub": "{{env `B64_ID_RSA_PUB`}}",
-    "gpg_pub": "{{env `B64_GPG_PUB`}}",
-    "gpg_priv": "{{env `B64_GPG_PRIV`}}",
+    "password": "{{env `PASSWORD`}}",
+    "username": "charlieegan3",
     "github_token": "{{env `GITHUB_ACCESS_TOKEN`}}"
   },
   "builders": [
@@ -15,7 +15,7 @@
       "droplet_name": "dev",
       "snapshot_name": "dev-machine-{{user `commit_sha`}}",
       "type": "digitalocean",
-      "api_token": "{{user `token`}}",
+      "api_token": "{{user `digitalocean_api_token`}}",
       "image": "ubuntu-18-04-x64",
       "region": "nyc3",
       "size": "2gb",
