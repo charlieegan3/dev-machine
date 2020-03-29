@@ -30,7 +30,7 @@
     {
       "type": "shell",
       "script": "scripts/config_user.sh",
-      "environment": {
+      "environment_vars": {
         "USERNAME": "{{ user `username`}}",
         "PASSWORD": "{{ user `password`}}",
         "ID_RSA": "{{ user `id_rsa`}}",
@@ -51,7 +51,7 @@
     {
       "type": "shell",
       "script": "scripts/install_docker.sh",
-      "environment": {
+      "environment_vars": {
         "USERNAME": "{{ user `username`}}"
       }
     },
