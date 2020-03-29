@@ -24,6 +24,11 @@
   ],
   "provisioners": [
     {
+      "type": "file",
+      "source": "dotfiles",
+      "destination": "/tmp/dotfiles"
+    },
+    {
       "type": "shell",
       "script": "scripts/install_ufw.sh"
     },

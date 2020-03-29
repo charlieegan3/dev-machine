@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 HOME=/home/$USERNAME
 
-adduser --disabled-password --gecos \"\" $USERNAME
+adduser --disabled-password --gecos "" $USERNAME
 echo $USERNAME:$PASSWORD | chpasswd
 usermod -aG sudo $USERNAME
 

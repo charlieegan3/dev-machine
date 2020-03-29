@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -exo pipefail
+
 # setup dotfiles
 cd /home/$USERNAME
 find /dotfiles -maxdepth 1 -mindepth 1 -exec mv {} . \;
