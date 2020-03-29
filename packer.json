@@ -40,13 +40,13 @@
       "type": "shell",
       "script": "scripts/config_user.sh",
       "environment_vars": [
-        "USERNAME={{ user `username`}}",
-        "PASSWORD={{ user `password`}}",
+        "B64_GPG_PRIV={{user `b64_gpg_priv`}}",
+        "B64_GPG_PUB={{user `b64_gpg_pub`}}",
         "B64_ID_RSA={{ user `b64_id_rsa`}}",
         "B64_ID_RSA_PUB={{ user `b64_id_rsa_pub`}}",
-        "B64_GPG_PUB={{user `b64_gpg_pub`}}",
-        "B64_GPG_PRIV={{user `b64_gpg_priv`}}",
-        "GITHUB_ACCESS_TOKEN={{user `github_access_token`}}"
+        "GITHUB_ACCESS_TOKEN={{user `github_access_token`}}",
+        "PASSWORD={{ user `password`}}",
+        "USERNAME={{ user `username`}}"
       ]
     },
     {
@@ -68,6 +68,20 @@
       "type": "shell",
       "script": "scripts/config_dotfiles.sh",
       "environment_vars": [
+        "USERNAME={{ user `username`}}"
+      ]
+    },
+    {
+      "type": "shell",
+      "script": "scripts/config_dev_machine_repo.sh",
+      "environment_vars": [
+        "B64_GPG_PRIV={{user `b64_gpg_priv`}}",
+        "B64_GPG_PUB={{user `b64_gpg_pub`}}",
+        "B64_ID_RSA={{ user `b64_id_rsa`}}",
+        "B64_ID_RSA_PUB={{ user `b64_id_rsa_pub`}}",
+        "DIGITALOCEAN_API_TOKEN={{user `digitalocean_api_token`}}",
+        "GITHUB_ACCESS_TOKEN={{user `github_access_token`}}",
+        "PASSWORD={{ user `password`}}",
         "USERNAME={{ user `username`}}"
       ]
     }
