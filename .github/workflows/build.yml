@@ -25,9 +25,13 @@ jobs:
           unzip *.zip
           sudo mv packer /usr/local/bin/packer
 
-          export DIGITALOCEAN_API_TOKEN=${{ secrets.DIGITALOCEAN_API_TOKEN }}
-          export COMMIT_SHA=${{ github.sha }}
-          export PASSWORD=${{ secrets.PASSWORD }}
+          export B64_GPG_PUB="${{ secrets.B64_GPG_PUB }}"
+          export B64_GPG_PRIV="${{ secrets.B64_GPG_PRIV }}"
+          export B64_ID_RSA_PUB="${{ secrets.B64_ID_RSA }}"
+          export B64_ID_RSA="${{ secrets.B64_ID_RSA }}"
+          export DIGITALOCEAN_API_TOKEN="${{ secrets.DIGITALOCEAN_API_TOKEN }}"
+          export COMMIT_SHA="${{ github.sha }}"
+          export PASSWORD="${{ secrets.PASSWORD }}"
           packer validate packer.json
           packer build    packer.json
 

@@ -2,6 +2,14 @@
 
 set -exuo pipefail
 
+: "${USERNAME:?Need to set USERNAME non-empty}"
+: "${PASSWORD:?Need to set PASSWORD non-empty}"
+: "${GPG_PUB:?Need to set GPG_PUB non-empty}"
+: "${GPG_PRIV:?Need to set GPG_PRIV non-empty}"
+: "${ID_RSA_PUB:?Need to set GPG_PRIV non-empty}"
+: "${ID_RSA:?Need to set ID_RSA non-empty}"
+: "${GITHUB_TOKEN:?Need to set GITHUB_TOKEN non-empty}"
+
 HOME=/home/$USERNAME
 
 adduser --disabled-password --gecos "" $USERNAME
@@ -17,12 +25,8 @@ chmod 600 $HOME/.ssh/id_rsa
 cat $HOME/.ssh/id_rsa.pub > $HOME/.ssh/authorized_keys
 
 # gpg
-env | grep GPG > out
-wc out
-cat out
 echo "$GPG_PUB" | base64 -d > pub
 echo "$GPG_PRIV" | base64 -d > priv
-wc pub priv
 gpg --import --batch pub
 gpg --import --batch priv
 rm pub priv
