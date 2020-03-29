@@ -25,8 +25,12 @@
   "provisioners": [
     {
       "type": "file",
-      "source": "dotfiles",
-      "destination": "/tmp/dotfiles"
+      "source": "dotfiles.tar",
+      "destination": "/tmp/dotfiles.tar"
+    },
+    {
+      "type": "shell",
+      "inline": "tar -xvf /tmp/dotfiles.tar -C /tmp/"
     },
     {
       "type": "shell",

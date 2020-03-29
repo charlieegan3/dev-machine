@@ -4,8 +4,8 @@ set -exo pipefail
 
 # setup dotfiles
 cd /home/$USERNAME
-find /dotfiles -maxdepth 1 -mindepth 1 -exec mv {} . \;
-rm -r /dotfiles
+find /tmp/dotfiles -maxdepth 1 -mindepth 1 -exec mv {} . \;
+rm -r /tmp/dotfiles
 ls -al
 chown -R $USERNAME:$USERNAME /home/$USERNAME
 
