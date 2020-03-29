@@ -51,5 +51,5 @@ jobs:
 
           doctl auth init -t ${{ secrets.DIGITALOCEAN_API_TOKEN }}
           doctl compute image list -o json \
-            | jq -r '[.[] | .id][0:-3] | .[]' \
+            | jq -r '[.[] | .id][0:-2] | .[]' \
             | ifne xargs -n 1 doctl compute image delete -f
