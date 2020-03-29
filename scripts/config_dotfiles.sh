@@ -2,6 +2,8 @@
 
 set -exo pipefail
 
+: "${USERNAME:?Need to set USERNAME non-empty}"
+
 # setup dotfiles
 cd /home/$USERNAME
 find /tmp/dotfiles -maxdepth 1 -mindepth 1 -exec mv {} . \;

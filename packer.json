@@ -2,10 +2,10 @@
   "variables": {
     "digitalocean_api_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
     "commit_sha": "{{env `COMMIT_SHA`}}",
-    "gpg_priv": "{{env `B64_GPG_PRIV`}}",
-    "gpg_pub": "{{env `B64_GPG_PUB`}}",
-    "id_rsa": "{{env `B64_ID_RSA`}}",
-    "id_rsa_pub": "{{env `B64_ID_RSA_PUB`}}",
+    "b64_gpg_priv": "{{env `B64_GPG_PRIV`}}",
+    "b64_gpg_pub": "{{env `B64_GPG_PUB`}}",
+    "b64_id_rsa": "{{env `B64_ID_RSA`}}",
+    "b64_id_rsa_pub": "{{env `B64_ID_RSA_PUB`}}",
     "password": "{{env `PASSWORD`}}",
     "username": "charlieegan3",
     "github_access_token": "{{env `GITHUB_ACCESS_TOKEN`}}"
@@ -42,10 +42,10 @@
       "environment_vars": [
         "USERNAME={{ user `username`}}",
         "PASSWORD={{ user `password`}}",
-        "ID_RSA={{ user `id_rsa`}}",
-        "ID_RSA_PUB={{ user `id_rsa_pub`}}",
-        "GPG_PUB={{user `gpg_pub`}}",
-        "GPG_PRIV={{user `gpg_priv`}}",
+        "B64_ID_RSA={{ user `b64_id_rsa`}}",
+        "B64_ID_RSA_PUB={{ user `b64_id_rsa_pub`}}",
+        "B64_GPG_PUB={{user `b64_gpg_pub`}}",
+        "B64_GPG_PRIV={{user `b64_gpg_priv`}}",
         "GITHUB_ACCESS_TOKEN={{user `github_access_token`}}"
       ]
     },
