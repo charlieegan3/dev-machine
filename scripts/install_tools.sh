@@ -26,3 +26,8 @@ curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
 curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
 chmod +x kubectx kubens
 mv kubectx kubens /usr/local/bin/
+
+curl -LO https://releases.hashicorp.com/packer/1.5.5/packer_1.5.5_linux_amd64.zip && \
+unzip *.zip && \
+sudo mv packer /usr/local/bin/packer
+rm *.zip
