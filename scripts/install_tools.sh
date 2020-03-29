@@ -17,3 +17,12 @@ curl -o fasd.zip -L https://github.com/clvv/fasd/zipball/1.0.1 && \
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb && \
   dpkg -i ripgrep_0.10.0_amd64.deb && \
   rm ripgrep_0.10.0_amd64.deb
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
+curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
+chmod +x kubectx kubens
+mv kubectx kubens /usr/local/bin/
