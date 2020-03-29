@@ -17,8 +17,11 @@ chmod 600 $HOME/.ssh/id_rsa
 cat $HOME/.ssh/id_rsa.pub > $HOME/.ssh/authorized_keys
 
 # gpg
-echo $GPG_PUB | base64 -d > pub
-echo $GPG_PRIV | base64 -d > priv
+env | grep GPG > out
+wc out
+cat out
+echo "$GPG_PUB" | base64 -d > pub
+echo "$GPG_PRIV" | base64 -d > priv
 wc pub priv
 gpg --import --batch pub
 gpg --import --batch priv
