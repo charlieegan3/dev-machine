@@ -78,7 +78,8 @@
       "script": "scripts/install_login_notification.sh",
       "environment_vars": [
         "PUSHOVER_TOKEN={{ user `pushover_token`}}",
-        "PUSHOVER_USER={{ user `pushover_user`}}"
+        "PUSHOVER_USER={{ user `pushover_user`}}",
+        "USERNAME={{ user `username`}}"
       ]
     },
     {

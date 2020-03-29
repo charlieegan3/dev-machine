@@ -2,6 +2,7 @@
 
 : "${PUSHOVER_TOKEN:?Need to set PUSHOVER_TOKEN non-empty}"
 : "${PUSHOVER_USER:?Need to set PUSHOVER_USER non-empty}"
+: "${USERNAME:?Need to set USERNAME non-empty}"
 
 message='Login at $(date)'
 
