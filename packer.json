@@ -8,7 +8,7 @@
     "id_rsa_pub": "{{env `B64_ID_RSA_PUB`}}",
     "password": "{{env `PASSWORD`}}",
     "username": "charlieegan3",
-    "github_token": "{{env `GITHUB_ACCESS_TOKEN`}}"
+    "github_access_token": "{{env `GITHUB_ACCESS_TOKEN`}}"
   },
   "builders": [
     {
@@ -46,7 +46,7 @@
         "ID_RSA_PUB={{ user `id_rsa_pub`}}",
         "GPG_PUB={{user `gpg_pub`}}",
         "GPG_PRIV={{user `gpg_priv`}}",
-        "GITHUB_TOKEN={{user `github_token`}}"
+        "GITHUB_ACCESS_TOKEN={{user `github_access_token`}}"
       ]
     },
     {
