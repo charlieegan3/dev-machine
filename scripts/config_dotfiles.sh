@@ -11,6 +11,7 @@ rm -r /tmp/dotfiles
 ls -al
 chown -R $USERNAME:$USERNAME /home/$USERNAME
 
+# Install vim requiremnts
 sudo -i -u $USERNAME bash << EOF
 # install vim-plug
 curl -fLo /home/$USERNAME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -20,6 +21,10 @@ vim +PlugInstall +qall
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Code/go
 vim main.go +GoInstallBinaries +qall # main.go to load the plugin
+EOF
+
+# install other editor requiremnts
+sudo -i -u $USERNAME bash << EOF
 go get -u github.com/visualfc/gocode
 pip3 install --upgrade neovim
 EOF
