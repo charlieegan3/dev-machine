@@ -24,6 +24,9 @@ RUN curl -o fasd.zip -L https://github.com/clvv/fasd/zipball/1.0.1 && \
       make install && \
       cd .. && \
       rm -rf clvv-fasd-4822024 fasd.zip
+RUN curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb && \
+      dpkg -i ripgrep_0.10.0_amd64.deb && \
+      rm ripgrep_0.10.0_amd64.deb
 
 # Install languages/runtimes
 RUN curl -LO https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz && \
