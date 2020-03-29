@@ -17,10 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build dotfile archive
-        run: |
-          make archive_dotfiles
-
       - name: Install packer
         run: |
           make install_packer

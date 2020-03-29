@@ -1,4 +1,4 @@
-build:
+build: archive_dotfiles
 	packer validate packer.json
 	packer build packer.json
 
