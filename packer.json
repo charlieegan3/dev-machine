@@ -95,6 +95,13 @@
         "PASSWORD={{ user `password`}}",
         "USERNAME={{ user `username`}}"
       ]
+    },
+    {
+      "type": "shell",
+      "script": "scripts/cleanup.sh",
+      "environment_vars": [
+        "USERNAME={{ user `username`}}"
+      ]
     }
   ]
 }
