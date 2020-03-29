@@ -12,11 +12,12 @@ RUN usermod -aG sudo $USERNAME
 # Install tools
 RUN apt-get update
 RUN apt-get install -y silversearcher-ag tmux direnv jq tree mosh git make curl gpg \
-      software-properties-common unzip vim python3-pip
+      software-properties-common unzip vim python3-pip apt-transport-https ca-certificates
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
       add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && \
-      apt-get update && \
+      apt update && \
       apt-get install -y docker-ce docker-ce-cli containerd.io
+RUN usermod -aG docker $USERNAME
 RUN curl -o fasd.zip -L https://github.com/clvv/fasd/zipball/1.0.1 && \
       unzip fasd.zip && \
       cd clvv-fasd-4822024 && \
@@ -62,3 +63,6 @@ RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubuserconte
 RUN export PATH=$PATH:/usr/local/go/bin && export GOPATH=$HOME/Code/go && \
      vim main.go +GoInstallBinaries +qall
 RUN pip3 install --upgrade neovim
+
+
+
