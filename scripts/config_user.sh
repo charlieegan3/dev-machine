@@ -27,8 +27,8 @@ cat $HOME/.ssh/id_rsa.pub > $HOME/.ssh/authorized_keys
 # gpg
 echo "$B64_GPG_PUB" | base64 -d > pub
 echo "$B64_GPG_PRIV" | base64 -d > priv
-gpg --import --batch pub
-gpg --import --batch priv
+gpg2 --import --batch pub # gpg2 needed for batch, only used here
+gpg2 --import --batch priv # gpg2 needed for batch, only used here
 rm pub priv
 
 # git access
