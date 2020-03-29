@@ -30,15 +30,15 @@
     {
       "type": "shell",
       "script": "scripts/config_user.sh",
-      "environment_vars": {
-        "USERNAME": "{{ user `username`}}",
-        "PASSWORD": "{{ user `password`}}",
-        "ID_RSA": "{{ user `id_rsa`}}",
-        "ID_RSA_PUB": "{{ user `id_rsa_pub`}}",
-        "GPG_PUB": "{{user `gpg_pub`}}",
-        "GPG_PRIV": "{{user `gpg_priv`}}",
-        "GITHUB_TOKEN": "{{user `github_token`}}"
-      }
+      "environment_vars": [
+        "USERNAME={{ user `username`}}",
+        "PASSWORD={{ user `password`}}",
+        "ID_RSA={{ user `id_rsa`}}",
+        "ID_RSA_PUB={{ user `id_rsa_pub`}}",
+        "GPG_PUB={{user `gpg_pub`}}",
+        "GPG_PRIV={{user `gpg_priv`}}",
+        "GITHUB_TOKEN={{user `github_token`}}"
+      ]
     },
     {
       "type": "shell",
@@ -51,9 +51,9 @@
     {
       "type": "shell",
       "script": "scripts/install_docker.sh",
-      "environment_vars": {
-        "USERNAME": "{{ user `username`}}"
-      }
+      "environment_vars": [
+        "USERNAME={{ user `username`}}"
+      ]
     },
     {
       "type": "file",
