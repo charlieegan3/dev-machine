@@ -43,7 +43,7 @@
     {
       "type": "file",
       "source": "dotfiles",
-      "destination": "/home/{{user `username`}}/dotfiles"
+      "destination": "/dotfiles"
     },
     {
       "type": "shell",

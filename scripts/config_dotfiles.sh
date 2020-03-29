@@ -2,8 +2,8 @@
 
 # setup dotfiles
 cd /home/$USERNAME
-find dotfiles -maxdepth 1 -mindepth 1 -exec mv {} . \;
-rm -r dotfiles
+find /dotfiles -maxdepth 1 -mindepth 1 -exec mv {} . \;
+rm -r /dotfiles
 ls -al
 chown -R $USERNAME:$USERNAME /home/$USERNAME
 
