@@ -38,6 +38,10 @@
     },
     {
       "type": "shell",
+      "script": "scripts/install_tools.sh"
+    },
+    {
+      "type": "shell",
       "script": "scripts/config_user.sh",
       "environment_vars": [
         "B64_GPG_PRIV={{user `b64_gpg_priv`}}",
@@ -48,10 +52,6 @@
         "PASSWORD={{ user `password`}}",
         "USERNAME={{ user `username`}}"
       ]
-    },
-    {
-      "type": "shell",
-      "script": "scripts/install_tools.sh"
     },
     {
       "type": "shell",
