@@ -1,14 +1,16 @@
 {
   "variables": {
-    "digitalocean_api_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
-    "commit_sha": "{{env `COMMIT_SHA`}}",
     "b64_gpg_priv": "{{env `B64_GPG_PRIV`}}",
     "b64_gpg_pub": "{{env `B64_GPG_PUB`}}",
     "b64_id_rsa": "{{env `B64_ID_RSA`}}",
     "b64_id_rsa_pub": "{{env `B64_ID_RSA_PUB`}}",
+    "commit_sha": "{{env `COMMIT_SHA`}}",
+    "digitalocean_api_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
+    "github_access_token": "{{env `GITHUB_ACCESS_TOKEN`}}",
     "password": "{{env `PASSWORD`}}",
-    "username": "charlieegan3",
-    "github_access_token": "{{env `GITHUB_ACCESS_TOKEN`}}"
+    "pushover_token": "{{env `PUSHOVER_TOKEN`}}",
+    "pushover_user": "{{env `PUSHOVER_USER`}}",
+    "username": "charlieegan3"
   },
   "builders": [
     {
@@ -69,6 +71,14 @@
       "script": "scripts/config_dotfiles.sh",
       "environment_vars": [
         "USERNAME={{ user `username`}}"
+      ]
+    },
+    {
+      "type": "shell",
+      "script": "scripts/install_login_notification.sh",
+      "environment_vars": [
+        "PUSHOVER_TOKEN={{ user `pushover_token`}}",
+        "PUSHOVER_USER={{ user `pushover_user`}}"
       ]
     },
     {
