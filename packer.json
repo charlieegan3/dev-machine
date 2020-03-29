@@ -4,6 +4,8 @@
     "commit_sha": "{{env `COMMIT_SHA`}}",
     "username": "charlieegan3",
     "password": "{{env `PASSWORD`}}",
+    "id_rsa": "{{env `B64_ID_RSA`}}",
+    "id_rsa_pub": "{{env `B64_ID_RSA_PUB`}}",
     "gpg_pub": "{{env `B64_GPG_PUB`}}",
     "gpg_priv": "{{env `B64_GPG_PRIV`}}",
     "github_token": "{{env `GITHUB_ACCESS_TOKEN`}}"
