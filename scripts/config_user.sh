@@ -19,6 +19,7 @@ cat $HOME/.ssh/id_rsa.pub > $HOME/.ssh/authorized_keys
 # gpg
 echo $GPG_PUB | base64 -d > pub
 echo $GPG_PRIV | base64 -d > priv
+wc pub priv
 gpg --import --batch pub
 gpg --import --batch priv
 rm pub priv
