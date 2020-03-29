@@ -50,11 +50,6 @@
       ]
     },
     {
-      "type": "file",
-      "source": "dotfiles",
-      "destination": "/dotfiles"
-    },
-    {
       "type": "shell",
       "script": "scripts/install_tools.sh"
     },
