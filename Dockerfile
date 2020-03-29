@@ -3,36 +3,6 @@ FROM ubuntu:18.04
 ENV USERNAME=charlieegan3
 ENV HOME=/home/$USERNAME
 
-# Create user (recreated created in packer build later)
-RUN adduser --disabled-password --gecos "" $USERNAME
-ARG password
-RUN echo $USERNAME:$password | chpasswd
-RUN usermod -aG sudo $USERNAME
-
-# Install tools
-RUN apt-get update
-RUN apt-get install -y silversearcher-ag tmux direnv jq tree mosh git make curl gpg \
-      software-properties-common unzip vim python3-pip apt-transport-https ca-certificates
-RUN curl -o fasd.zip -L https://github.com/clvv/fasd/zipball/1.0.1 && \
-      unzip fasd.zip && \
-      cd clvv-fasd-4822024 && \
-      make install && \
-      cd .. && \
-      rm -rf clvv-fasd-4822024 fasd.zip
-RUN curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb && \
-      dpkg -i ripgrep_0.10.0_amd64.deb && \
-      rm ripgrep_0.10.0_amd64.deb
-
-# Install languages/runtimes
-RUN curl -LO https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz && \
-      tar -C /usr/local -xzf go1.14.1.linux-amd64.tar.gz && \
-      rm go1.14.1.linux-amd64.tar.gz
-
-# User things (recreated created in packer build later)
-RUN apt-get install -y build-essential
-USER $USERNAME
-WORKDIR $HOME
-
 # Configure SSH access
 RUN mkdir $HOME/.ssh
 COPY id_rsa.pub $HOME/.ssh/

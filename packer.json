@@ -19,13 +19,8 @@
   ],
   "provisioners": [
     {
-      "type": "file",
-      "source": "blueprint.tar",
-      "destination": "/tmp/blueprint.tar"
-    },
-    {
       "type": "shell",
-      "inline": "sudo tar -xf /tmp/blueprint.tar -C / --skip-old-files"
+      "script": "scripts/install_ufw.sh"
     },
     {
       "type": "shell",
@@ -37,7 +32,11 @@
     },
     {
       "type": "shell",
-      "script": "scripts/install_ufw.sh"
+      "script": "scripts/install_tools.sh"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/install_runtimes.sh"
     },
     {
       "type": "shell",
@@ -45,6 +44,15 @@
       "environment": {
         "USERNAME": "{{ user `username`}}"
       }
+    },
+    {
+      "type": "file",
+      "source": "blueprint.tar",
+      "destination": "/tmp/blueprint.tar"
+    },
+    {
+      "type": "shell",
+      "inline": "sudo tar -xf /tmp/blueprint.tar -C / --skip-old-files"
     }
   ]
 }
