@@ -42,6 +42,10 @@
     {
       "type": "shell",
       "inline": "ufw default deny incoming && ufw default allow outgoing && ufw allow ssh && ufw allow 60000:61000/udp && ufw enable"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/install_docker.sh"
     }
   ]
 }
