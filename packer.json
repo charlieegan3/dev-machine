@@ -3,7 +3,10 @@
     "token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
     "commit_sha": "{{env `COMMIT_SHA`}}",
     "username": "charlieegan3",
-    "password": "{{env `PASSWORD`}}"
+    "password": "{{env `PASSWORD`}}",
+    "gpg_pub": "{{env `B64_GPG_PUB`}}",
+    "gpg_priv": "{{env `B64_GPG_PRIV`}}",
+    "github_token": "{{env `GITHUB_ACCESS_TOKEN`}}"
   },
   "builders": [
     {
@@ -27,7 +30,12 @@
       "script": "scripts/config_user.sh",
       "environment": {
         "USERNAME": "{{ user `username`}}",
-        "PASSWORD": "{{ user `password`}}"
+        "PASSWORD": "{{ user `password`}}",
+        "ID_RSA": "{{ user `id_rsa`}}",
+        "ID_RSA_PUB": "{{ user `id_rsa_pub`}}",
+        "GPG_PUB": "{{user `gpg_pub`}}",
+        "GPG_PRIV": "{{user `gpg_priv`}}",
+        "GITHUB_TOKEN": "{{user `github_token`}}"
       }
     },
     {
@@ -47,12 +55,20 @@
     },
     {
       "type": "file",
-      "source": "blueprint.tar",
-      "destination": "/tmp/blueprint.tar"
+      "source": "dotfiles",
+      "destination": "/home/{{user `username`}}/"
     },
     {
       "type": "shell",
-      "inline": "sudo tar -xf /tmp/blueprint.tar -C / --skip-old-files"
+      "inline": "cp /home/{{user `username`}}/dotfiles /home/{{user `username`}}"
+    },
+    {
+      "type": "shell",
+      "inline": "cp /home/{{user `username`}}/dotfiles /home/{{user `username`}}"
+    },
+    {
+      "type": "shell",
+      "inline": "chown -R {{user `username`}}:{{user `username`}} /home/{{user `username`}}"
     }
   ]
 }
