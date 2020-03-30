@@ -37,7 +37,7 @@ rm *.zip
 
 # hugo
 HUGO_VERSION=0.68.3
-curl -o hugo.tar.gz -L https://github.com/gohugoio/hugo/releases/download/v$HUGO_VERSION/hugo_$HUGO_VERSION_Linux-64bit.tar.gz
+curl -o hugo.tar.gz -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
   tar xzf hugo.tar.gz
   sudo mv hugo /usr/local/bin/hugo
   rm hugo.tar.gz
