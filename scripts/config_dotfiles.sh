@@ -28,3 +28,10 @@ sudo -i -u $USERNAME bash << EOF
 go get -u github.com/visualfc/gocode
 pip3 install --upgrade neovim
 EOF
+
+# install other editor requiremnts
+# TODO try this here as the user
+sudo -i -u $USERNAME bash << EOF
+gpg2 --import --batch pub # gpg2 needed for batch, only used here
+gpg2 --import --batch priv # gpg2 needed for batch, only used here
+EOF
