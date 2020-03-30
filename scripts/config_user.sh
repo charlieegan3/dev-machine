@@ -28,9 +28,11 @@ cat $HOME/.ssh/id_rsa.pub > $HOME/.ssh/authorized_keys
 cd $HOME
 echo "$B64_GPG_PUB" | base64 -d > pub
 echo "$B64_GPG_PRIV" | base64 -d > priv
+sudo -i -u $USERNAME bash << EOF
 gpg2 --import --batch pub # gpg2 needed for batch, only used here
 gpg2 --import --batch priv # gpg2 needed for batch, only used here
-# TODO rm pub priv
+EOF
+rm pub priv
 
 # git access
 echo "https://$USERNAME:$GITHUB_ACCESS_TOKEN@github.com" > $HOME/.git-credentials
