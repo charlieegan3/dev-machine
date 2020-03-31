@@ -20,6 +20,9 @@ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_
   dpkg -i ripgrep_0.10.0_amd64.deb && \
   rm ripgrep_0.10.0_amd64.deb
 
+# rclone
+curl https://rclone.org/install.sh | sudo bash
+
 # kubectl etc
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 chmod +x ./kubectl
