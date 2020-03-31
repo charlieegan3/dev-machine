@@ -44,3 +44,9 @@ curl -o hugo.tar.gz -L https://github.com/gohugoio/hugo/releases/download/v${HUG
   tar xzf hugo.tar.gz
   sudo mv hugo /usr/local/bin/hugo
   rm hugo.tar.gz
+
+# gcloud
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt-get update
+sudo apt-get install -y google-cloud-sdk
