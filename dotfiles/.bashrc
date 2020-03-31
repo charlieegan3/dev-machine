@@ -1,4 +1,4 @@
-if [ -z "$TMUX" ] && [ -e "$(command -v tmux)" ]; then
+if [ -t 1 ] && [ -z "$TMUX" ] && [ -e "$(command -v tmux)" ]; then
   exec tmux
 fi
 
@@ -149,5 +149,4 @@ COLOR_RESET="\[$(tput sgr0)\]" COLOR_CYAN="\[$(tput setaf 6)\]" COLOR_GREEN="\[$
 export PS1="$COLOR_YELLOW\$(last_status_string)$COLOR_GREEN\$(namespace_string)$COLOR_CYAN\$(relative_path_to_git_root)$COLOR_RESET $ "
 
 # welcome
-clear
 echo "hello."
