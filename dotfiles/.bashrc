@@ -108,19 +108,18 @@ gitcd() {
 }
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
-# Environments
-[[ -e $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-[[ -e $HOME/.cargo/env ]]       && source $HOME/.cargo/env
+# PATH vars
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/Code/go
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$GOROOT/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
+export GEM_HOME=$HOME/.gem
+export GEM_PATH=$HOME/.gem
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH="$PATH:$HOME/.npm-global/bin"
 export PATH="$PATH:$HOME/.tfenv/bin"
 export PATH="$PATH:$HOME/.local/bin" # python
-export PATH=$PATH:/usr/local/kubebuilder/bin
 
 # Tools
 eval "$(direnv hook bash)"
@@ -133,7 +132,7 @@ export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
 export HISTFILESIZE=100000
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source ~/.fzf.bash
 alias exit="history -a; exit"
 
 # GPG
