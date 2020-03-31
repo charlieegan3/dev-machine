@@ -19,7 +19,7 @@
       "type": "digitalocean",
       "api_token": "{{user `digitalocean_api_token`}}",
       "image": "ubuntu-18-04-x64",
-      "region": "nyc3",
+      "region": "lon1",
       "size": "2gb",
       "ssh_username": "root"
     }
