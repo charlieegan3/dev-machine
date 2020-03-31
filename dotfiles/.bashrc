@@ -1,3 +1,7 @@
+if [ -z "$TMUX" ] && [ -e "$(command -v tmux)" ]; then
+  exec tmux
+fi
+
 # use vim as the system editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
