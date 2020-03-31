@@ -40,9 +40,8 @@ jobs:
           curl -LO https://github.com/digitalocean/doctl/releases/download/v1.39.0/doctl-1.39.0-linux-amd64.tar.gz
           tar -zxf doctl-1.39.0-linux-amd64.tar.gz
           sudo mv doctl /usr/local/bin/doctl
-          sudo apt-get install -y moreutils
 
           doctl auth init -t ${{ secrets.DIGITALOCEAN_API_TOKEN }}
           doctl compute image list -o json \
-            | jq -r '[.[] | .id][0:-2] | .[]' \
-            | ifne xargs -n 1 doctl compute image delete -f
+            | jq -r '.[0:-2] | .[] | "doctl compute image delete -f \(.id)"' \
+            | bash
