@@ -21,6 +21,7 @@ alias pbpaste='xsel --clipboard --output'
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'"
 alias c="clear"
 alias temp="vim \$(mktemp)"
+alias exit="history -a; exit"
 
 open() {
   xdg-open "$1"
@@ -114,26 +115,24 @@ export GOPATH=$HOME/Code/go
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$GOROOT/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
-export GEM_HOME=$HOME/.gem
-export GEM_PATH=$HOME/.gem
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH="$PATH:$HOME/.npm-global/bin"
 export PATH="$PATH:$HOME/.tfenv/bin"
 export PATH="$PATH:$HOME/.local/bin" # python
+
 
 # Tools
 eval "$(direnv hook bash)"
 eval "$(fasd --init auto)"
 source <(kubectl completion bash)
 source $HOME/.completion/gcloud.inc
+source ~/.fzf.bash
 
 export HISTSIZE=1000000
 export HISTCONTROL=ignoreboth:erasedups
-shopt -s histappend
 export HISTFILESIZE=100000
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
-source ~/.fzf.bash
-alias exit="history -a; exit"
+shopt -s histappend
 
 # GPG
 export GPG_TTY=`tty`
