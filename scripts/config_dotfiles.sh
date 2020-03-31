@@ -13,6 +13,8 @@ chown -R $USERNAME:$USERNAME /home/$USERNAME
 
 # Install vim requiremnts
 sudo -i -u $USERNAME bash << EOF
+set -exo pipefail
+
 # install vim-plug
 curl -fLo /home/$USERNAME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall
@@ -25,6 +27,8 @@ EOF
 
 # install other editor requiremnts
 sudo -i -u $USERNAME bash << EOF
+set -exo pipefail
+
 go get -u github.com/visualfc/gocode
 pip3 install --upgrade neovim
 EOF
