@@ -124,8 +124,8 @@ export PATH="$PATH:$HOME/.local/bin" # python
 # Tools
 eval "$(direnv hook bash)"
 eval "$(fasd --init auto)"
-. "$HOME/google-cloud-sdk/path.bash.inc"
-. "$HOME/google-cloud-sdk/completion.bash.inc"
+source <(kubectl completion bash)
+source $HOME/.completion/gcloud.inc
 
 export HISTSIZE=1000000
 export HISTCONTROL=ignoreboth:erasedups
@@ -138,10 +138,6 @@ alias exit="history -a; exit"
 # GPG
 export GPG_TTY=`tty`
 export GPG_AGENT_INFO
-
-# Completion Scripts
-source '/home/charlieegan3/google-cloud-sdk/completion.bash.inc'
-source <(kubectl completion bash)
 
 # set prompt
 COLOR_RESET="\[$(tput sgr0)\]" COLOR_CYAN="\[$(tput setaf 6)\]" COLOR_GREEN="\[$(tput setaf 2)\]" COLOR_YELLOW="\[$(tput setaf 3)\]"
