@@ -96,6 +96,8 @@
         "DIGITALOCEAN_API_TOKEN={{user `digitalocean_api_token`}}",
         "GITHUB_ACCESS_TOKEN={{user `github_access_token`}}",
         "PASSWORD={{ user `password`}}",
+        "PUSHOVER_TOKEN={{ user `pushover_token`}}",
+        "PUSHOVER_USER={{ user `pushover_user`}}",
         "USERNAME={{ user `username`}}"
       ]
     },

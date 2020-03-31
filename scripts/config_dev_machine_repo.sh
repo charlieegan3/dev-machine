@@ -9,6 +9,8 @@ set -exo pipefail
 : "${DIGITALOCEAN_API_TOKEN:?Need to set DIGITALOCEAN_API_TOKEN non-empty}"
 : "${GITHUB_ACCESS_TOKEN:?Need to set GITHUB_ACCESS_TOKEN non-empty}"
 : "${PASSWORD:?Need to set PASSWORD non-empty}"
+: "${PUSHOVER_TOKEN:?Need to set PUSHOVER_TOKEN non-empty}"
+: "${PUSHOVER_USER:?Need to set PUSHOVER_USER non-empty}"
 : "${USERNAME:?Need to set USERNAME non-empty}"
 
 export REPO_PATH=/home/$USERNAME/Code/dev-machine
@@ -26,6 +28,8 @@ export B64_ID_RSA_PUB=$B64_ID_RSA_PUB
 export DIGITALOCEAN_API_TOKEN="$DIGITALOCEAN_API_TOKEN"
 export GITHUB_ACCESS_TOKEN="$GITHUB_ACCESS_TOKEN"
 export PASSWORD="$PASSWORD"
+export PUSHOVER_TOKEN="$PUSHOVER_TOKEN"
+export PUSHOVER_USER="$PUSHOVER_USER"
 EOFF
 
 direnv allow
