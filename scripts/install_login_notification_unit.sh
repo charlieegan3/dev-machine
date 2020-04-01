@@ -15,6 +15,9 @@ Type=oneshot
 ExecStart=/etc/set-sshrc.sh
 EOF
 
+sudo chmod 644 /etc/systemd/system/set-sshrc.service
+systemctl enable set-sshrc
+
 # this is being set in a oneshot unit as it seems to block
 # packer from continuing to later steps on the instance
 cat << EOF > /etc/set-sshrc.sh

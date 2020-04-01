@@ -18,6 +18,9 @@ Environment=PUSHOVER_USER=$PUSHOVER_USER
 Restart=Always
 EOF
 
+sudo chmod 644 /etc/systemd/system/inactive-termination.service
+systemctl enable inactive-termination
+
 cat << 'EOF' > /etc/inactive-termination.sh
 #!/usr/bin/env bash
 

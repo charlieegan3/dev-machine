@@ -6,7 +6,7 @@ set -exo pipefail
 
 export REPO_PATH=/home/$USERNAME/Code/secrets-history
 
-cat << EOF > /etc/systemd/system/inactive-termination.service
+cat << EOF > /etc/systemd/system/history-sync.service
 [Unit]
 Description=History Sync Unit
 After=systemd-user-sessions.service
@@ -17,6 +17,9 @@ ExecStart=/etc/history-sync.sh
 Restart=Always
 User=$USERNAME
 EOF
+
+sudo chmod 644 /etc/systemd/system/history-sync.service
+systemctl enable history-sync
 
 cat << EOF > /etc/history-sync.sh
 #!/usr/bin/env bash
