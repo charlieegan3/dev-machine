@@ -115,7 +115,7 @@
     },
     {
       "type": "shell",
-      "script": "scripts/install_history_sync.sh",
+      "script": "scripts/install_history_sync_unit.sh",
       "environment_vars": [
         "USERNAME={{ user `username`}}"
       ]
