@@ -115,6 +115,13 @@
     },
     {
       "type": "shell",
+      "script": "scripts/install_history_sync.sh",
+      "environment_vars": [
+        "USERNAME={{ user `username`}}"
+      ]
+    },
+    {
+      "type": "shell",
       "script": "scripts/cleanup.sh",
       "environment_vars": [
         "USERNAME={{ user `username`}}"
