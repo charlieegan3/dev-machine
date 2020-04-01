@@ -35,6 +35,11 @@
       "inline": "tar -xvf /tmp/dotfiles.tar -C /tmp/"
     },
     {
+      "type": "file",
+      "source": "sshd_config",
+      "destination": "/etc/ssh/sshd_config"
+    },
+    {
       "type": "shell",
       "script": "scripts/install_ufw.sh"
     },
