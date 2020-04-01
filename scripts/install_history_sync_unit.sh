@@ -9,7 +9,7 @@ export REPO_PATH=/home/$USERNAME/Code/secrets-history
 cat << EOF > /etc/systemd/system/inactive-termination.service
 [Unit]
 Description=History Sync Unit
-After=history-sync.service
+After=systemd-user-sessions.service
 
 [Service]
 Type=simple

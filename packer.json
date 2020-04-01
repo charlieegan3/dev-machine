@@ -27,7 +27,7 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "scripts/install_inactive_termination_unit.sh",
+      "script": "scripts/install_login_notification_unit.sh",
       "environment_vars": [
         "PUSHOVER_TOKEN={{ user `pushover_token`}}",
         "PUSHOVER_USER={{ user `pushover_user`}}"
@@ -91,14 +91,6 @@
     },
     {
       "type": "shell",
-      "script": "scripts/install_login_notification.sh",
-      "environment_vars": [
-        "PUSHOVER_TOKEN={{ user `pushover_token`}}",
-        "PUSHOVER_USER={{ user `pushover_user`}}"
-      ]
-    },
-    {
-      "type": "shell",
       "script": "scripts/config_dev_machine_repo.sh",
       "environment_vars": [
         "B64_GPG_PRIV={{user `b64_gpg_priv`}}",
@@ -118,6 +110,14 @@
       "script": "scripts/install_history_sync_unit.sh",
       "environment_vars": [
         "USERNAME={{ user `username`}}"
+      ]
+    },
+    {
+      "type": "shell",
+      "script": "scripts/install_inactive_termination_unit.sh",
+      "environment_vars": [
+        "PUSHOVER_TOKEN={{ user `pushover_token`}}",
+        "PUSHOVER_USER={{ user `pushover_user`}}"
       ]
     },
     {
