@@ -2,11 +2,10 @@
 
 : "${PUSHOVER_TOKEN:?Need to set PUSHOVER_TOKEN non-empty}"
 : "${PUSHOVER_USER:?Need to set PUSHOVER_USER non-empty}"
-: "${USERNAME:?Need to set USERNAME non-empty}"
 
 message='Login at $(date)'
 
-cat << EOF > /home/$USERNAME/.ssh/rc
+cat << EOF > /etc/ssh/sshrc
 curl -X POST https://api.pushover.net/1/messages.json \
   -d message="$message" \
   -d token="$PUSHOVER_TOKEN" \
