@@ -13,6 +13,7 @@ env:
 jobs:
   x86:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v2
 
