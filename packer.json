@@ -26,6 +26,14 @@
   ],
   "provisioners": [
     {
+      "type": "shell",
+      "script": "scripts/install_inactive_termination_unit.sh",
+      "environment_vars": [
+        "PUSHOVER_TOKEN={{ user `pushover_token`}}",
+        "PUSHOVER_USER={{ user `pushover_user`}}"
+      ]
+    },
+    {
       "type": "file",
       "source": "dotfiles.tar",
       "destination": "/tmp/dotfiles.tar"
@@ -84,14 +92,6 @@
     {
       "type": "shell",
       "script": "scripts/install_login_notification.sh",
-      "environment_vars": [
-        "PUSHOVER_TOKEN={{ user `pushover_token`}}",
-        "PUSHOVER_USER={{ user `pushover_user`}}"
-      ]
-    },
-    {
-      "type": "shell",
-      "script": "scripts/install_inactive_termination_unit.sh",
       "environment_vars": [
         "PUSHOVER_TOKEN={{ user `pushover_token`}}",
         "PUSHOVER_USER={{ user `pushover_user`}}"

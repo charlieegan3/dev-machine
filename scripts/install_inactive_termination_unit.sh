@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -exo pipefail
+
 : "${PUSHOVER_TOKEN:?Need to set PUSHOVER_TOKEN non-empty}"
 : "${PUSHOVER_USER:?Need to set PUSHOVER_USER non-empty}"
 

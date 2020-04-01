@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -exo pipefail
+
 : "${USERNAME:?Need to set USERNAME non-empty}"
 
 export REPO_PATH=/home/$USERNAME/Code/secrets-history
