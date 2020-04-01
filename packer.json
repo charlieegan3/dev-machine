@@ -26,14 +26,6 @@
   ],
   "provisioners": [
     {
-      "type": "shell",
-      "script": "scripts/install_login_notification_unit.sh",
-      "environment_vars": [
-        "PUSHOVER_TOKEN={{ user `pushover_token`}}",
-        "PUSHOVER_USER={{ user `pushover_user`}}"
-      ]
-    },
-    {
       "type": "file",
       "source": "dotfiles.tar",
       "destination": "/tmp/dotfiles.tar"
@@ -107,9 +99,10 @@
     },
     {
       "type": "shell",
-      "script": "scripts/install_history_sync_unit.sh",
+      "script": "scripts/install_login_notification_unit.sh",
       "environment_vars": [
-        "USERNAME={{ user `username`}}"
+        "PUSHOVER_TOKEN={{ user `pushover_token`}}",
+        "PUSHOVER_USER={{ user `pushover_user`}}"
       ]
     },
     {
@@ -118,6 +111,13 @@
       "environment_vars": [
         "PUSHOVER_TOKEN={{ user `pushover_token`}}",
         "PUSHOVER_USER={{ user `pushover_user`}}"
+      ]
+    },
+    {
+      "type": "shell",
+      "script": "scripts/install_history_sync_unit.sh",
+      "environment_vars": [
+        "USERNAME={{ user `username`}}"
       ]
     },
     {
