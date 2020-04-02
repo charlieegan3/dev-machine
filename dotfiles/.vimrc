@@ -19,6 +19,7 @@ set ff=unix
 set complete-=i
 set autowrite " write when closing files, and running build commands
 set completeopt=longest,menuone
+set encoding=utf-8
 
 set undofile " maintain undo history
 set undodir=~/.vim/.undo/
