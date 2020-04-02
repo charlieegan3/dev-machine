@@ -19,14 +19,11 @@ alias c="clear"
 alias temp="vim \$(mktemp)"
 alias exit="history -a; exit"
 
-open() {
-  xdg-open "$1"
-}
 replace_in_folder() {
   find $PWD -type f -not -iwholename '*.git*' -exec sed -i "s/$1/$2/g" {} \;
 }
 serve() {
-  firefox http://localhost:8000 && ruby -run -ehttpd "$1" -p8000
+  ruby -run -ehttpd "$1" -p 8080
 }
 j() {
   cd $(fasd -dlR | grep $1 | head -n 1) && pwd
@@ -84,25 +81,17 @@ bran() {
   echo "Current: " $(gitb)
   git checkout $(git b | sed -e 's/^..//' | fzf)
 }
-permissions() {
-  sudo find . -type d -exec chmod 0755 {} \;
-  sudo find . -type f -exec chmod 0644 {} \;
-  sudo find . -type f -iname "*.sh" -exec chmod +x {} \;
-}
-morning() {
-  new_date="$(date -d now +"%a %d %b %Y 07:19:43 %Z")"
-  GIT_COMMITTER_DATE=$new_date git commit --date "$new_date"
-}
 envrc() {
-	sudo cat .envrc
-	sudo chattr -i .envrc
-	vi .envrc
-	direnv allow
-	sudo chattr +i .envrc
+  sudo cat .envrc
+  sudo chattr -i .envrc
+  vi .envrc
+  direnv allow
+  sudo chattr +i .envrc
 }
 gitcd() {
-	cd $(git rev-parse --show-toplevel)
+  cd $(git rev-parse --show-toplevel)
 }
+
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 # PATH vars
