@@ -15,7 +15,10 @@ Type=simple
 ExecStart=/etc/inactive-termination.sh
 Environment=PUSHOVER_TOKEN=$PUSHOVER_TOKEN
 Environment=PUSHOVER_USER=$PUSHOVER_USER
-Restart=Always
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 EOF
 
 sudo chmod 644 /etc/systemd/system/inactive-termination.service

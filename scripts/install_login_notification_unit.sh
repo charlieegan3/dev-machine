@@ -13,6 +13,9 @@ After=systemd-user-sessions.service
 [Service]
 Type=oneshot
 ExecStart=/etc/set-sshrc.sh
+
+[Install]
+WantedBy=multi-user.target
 EOF
 
 sudo chmod 644 /etc/systemd/system/set-sshrc.service
