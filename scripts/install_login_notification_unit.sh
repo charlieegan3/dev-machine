@@ -28,7 +28,7 @@ cat << EOF > /etc/set-sshrc.sh
 
 cat << EOFF > /etc/ssh/sshrc
 curl -X POST https://api.pushover.net/1/messages.json \
-  -d message="$message" \
+  -d message="login event" \
   -d token="$PUSHOVER_TOKEN" \
   -d user="$PUSHOVER_USER"
 EOFF
