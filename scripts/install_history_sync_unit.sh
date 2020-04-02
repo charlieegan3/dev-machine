@@ -24,16 +24,21 @@ EOF
 sudo chmod 644 /etc/systemd/system/history-sync.service
 systemctl enable history-sync
 
+sudo -i -u $USERNAME bash << EOF
+git clone https://github.com/charlieegan3/secrets-history $REPO_PATH
+
+# update to the latest repo data
+make -C $REPO_PATH write
+EOF
+
 cat << EOF > /etc/history-sync.sh
-# todo needs loop and run as user
 #!/usr/bin/env bash
 
-make -C $REPO_PATH sync
-sleep 100
+# continue to sync the files
+while true; do
+  make -C $REPO_PATH sync
+  sleep 100
+done
 EOF
 
 chmod +x /etc/history-sync.sh
-
-sudo -i -u $USERNAME bash << EOF
-git clone https://github.com/charlieegan3/secrets-history $REPO_PATH
-EOF
