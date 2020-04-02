@@ -99,7 +99,10 @@
     },
     {
       "type": "shell",
-      "script": "scripts/configure_secrets_repo.sh"
+      "script": "scripts/configure_secrets_repo.sh",
+      "environment_vars": [
+        "USERNAME={{ user `username`}}"
+      ]
     },
     {
       "type": "shell",
