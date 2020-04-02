@@ -49,6 +49,7 @@ while true; do
     (( inactive_seconds++ ))
   else
     inactive_seconds=0
+    warning_sent=false
   fi
 
   if (( $inactive_seconds > 30 )); then
