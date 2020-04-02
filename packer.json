@@ -99,6 +99,10 @@
     },
     {
       "type": "shell",
+      "script": "scripts/configure_secrets_repo.sh"
+    },
+    {
+      "type": "shell",
       "script": "scripts/install_login_notification_unit.sh",
       "environment_vars": [
         "PUSHOVER_TOKEN={{ user `pushover_token`}}",
