@@ -91,6 +91,9 @@ envrc() {
 gitcd() {
   cd $(git rev-parse --show-toplevel)
 }
+pitunnel() {
+  ssh -L 6443:localhost:6443 pi@charlieegan3.co.uk -p 2200
+}
 
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
