@@ -1,15 +1,8 @@
 {
   "variables": {
-    "b64_gpg_priv": "{{env `B64_GPG_PRIV`}}",
-    "b64_gpg_pub": "{{env `B64_GPG_PUB`}}",
-    "b64_id_rsa": "{{env `B64_ID_RSA`}}",
-    "b64_id_rsa_pub": "{{env `B64_ID_RSA_PUB`}}",
     "commit_sha": "{{env `COMMIT_SHA`}}",
     "digitalocean_api_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
-    "github_access_token": "{{env `GITHUB_ACCESS_TOKEN`}}",
     "password": "{{env `PASSWORD`}}",
-    "pushover_token": "{{env `PUSHOVER_TOKEN`}}",
-    "pushover_user": "{{env `PUSHOVER_USER`}}",
     "username": "charlieegan3"
   },
   "builders": [
@@ -51,11 +44,6 @@
       "type": "shell",
       "script": "scripts/config_user.sh",
       "environment_vars": [
-        "B64_GPG_PRIV={{user `b64_gpg_priv`}}",
-        "B64_GPG_PUB={{user `b64_gpg_pub`}}",
-        "B64_ID_RSA={{ user `b64_id_rsa`}}",
-        "B64_ID_RSA_PUB={{ user `b64_id_rsa_pub`}}",
-        "GITHUB_ACCESS_TOKEN={{user `github_access_token`}}",
         "PASSWORD={{ user `password`}}",
         "USERNAME={{ user `username`}}"
       ]
@@ -77,52 +65,6 @@
     {
       "type": "shell",
       "script": "scripts/config_dotfiles.sh",
-      "environment_vars": [
-        "USERNAME={{ user `username`}}"
-      ]
-    },
-    {
-      "type": "shell",
-      "script": "scripts/config_dev_machine_repo.sh",
-      "environment_vars": [
-        "B64_GPG_PRIV={{user `b64_gpg_priv`}}",
-        "B64_GPG_PUB={{user `b64_gpg_pub`}}",
-        "B64_ID_RSA={{ user `b64_id_rsa`}}",
-        "B64_ID_RSA_PUB={{ user `b64_id_rsa_pub`}}",
-        "DIGITALOCEAN_API_TOKEN={{user `digitalocean_api_token`}}",
-        "GITHUB_ACCESS_TOKEN={{user `github_access_token`}}",
-        "PASSWORD={{ user `password`}}",
-        "PUSHOVER_TOKEN={{ user `pushover_token`}}",
-        "PUSHOVER_USER={{ user `pushover_user`}}",
-        "USERNAME={{ user `username`}}"
-      ]
-    },
-    {
-      "type": "shell",
-      "script": "scripts/configure_secrets_repo.sh",
-      "environment_vars": [
-        "USERNAME={{ user `username`}}"
-      ]
-    },
-    {
-      "type": "shell",
-      "script": "scripts/install_login_notification_unit.sh",
-      "environment_vars": [
-        "PUSHOVER_TOKEN={{ user `pushover_token`}}",
-        "PUSHOVER_USER={{ user `pushover_user`}}"
-      ]
-    },
-    {
-      "type": "shell",
-      "script": "scripts/install_inactive_termination_unit.sh",
-      "environment_vars": [
-        "PUSHOVER_TOKEN={{ user `pushover_token`}}",
-        "PUSHOVER_USER={{ user `pushover_user`}}"
-      ]
-    },
-    {
-      "type": "shell",
-      "script": "scripts/install_history_sync_unit.sh",
       "environment_vars": [
         "USERNAME={{ user `username`}}"
       ]
