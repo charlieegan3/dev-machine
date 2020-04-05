@@ -1,19 +1,19 @@
 {
   "variables": {
     "commit_sha": "{{env `COMMIT_SHA`}}",
-    "digitalocean_api_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
+    "hetzner_token": "{{env `HETZNER_TOKEN`}}",
     "password": "{{env `PASSWORD`}}",
     "username": "charlieegan3"
   },
   "builders": [
     {
-      "droplet_name": "dev",
+      "type": "hcloud",
+      "server_name": "dev-{{user `commit_sha`}}",
       "snapshot_name": "dev-machine-{{user `commit_sha`}}",
-      "type": "digitalocean",
-      "api_token": "{{user `digitalocean_api_token`}}",
-      "image": "ubuntu-18-04-x64",
-      "region": "lon1",
-      "size": "8gb",
+      "token": "{{ user `hetzner_token` }}",
+      "image": "ubuntu-18.04",
+      "location": "nbg1",
+      "server_type": "cx31",
       "ssh_username": "root"
     }
   ],
