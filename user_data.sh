@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# script pasted into userdata field, set the variables below.
+
 set -exuo pipefail
 
 : "${B64_GPG_PRIV:?Need to set B64_GPG_PRIV non-empty}"
