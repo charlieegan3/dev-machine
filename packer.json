@@ -41,6 +41,11 @@
       "script": "scripts/install_tools.sh"
     },
     {
+      "type": "file",
+      "source": "id_rsa.pub",
+      "destination": "/etc/id_rsa.pub"
+    },
+    {
       "type": "shell",
       "script": "scripts/config_user.sh",
       "environment_vars": [
