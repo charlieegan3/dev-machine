@@ -29,6 +29,7 @@ echo $B64_ID_RSA_PUB | base64 -d > $HOME/.ssh/id_rsa.pub
 echo $B64_ID_RSA     | base64 -d > $HOME/.ssh/id_rsa
 chmod 600 $HOME/.ssh/id_rsa
 cat $HOME/.ssh/id_rsa.pub > $HOME/.ssh/authorized_keys
+chown -R $USERNAME $HOME/.ssh
 
 # -----------------------------------------------------------------------------
 # configure gpg keys
