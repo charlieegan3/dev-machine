@@ -9,3 +9,4 @@ autocmd BufRead,BufNewFile {*.yaml.tpl} set ft=yaml
 autocmd BufRead,BufNewFile {*.sh.tpl} set ft=sh
 autocmd BufRead,BufNewFile {*.json.tpl} set ft=json
 autocmd BufRead,BufNewFile {*.md} set ft=markdown
+autocmd BufRead,BufNewFile {*.html.erb} set ft=eruby

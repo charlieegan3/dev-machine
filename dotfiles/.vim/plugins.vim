@@ -1,18 +1,10 @@
-let g:closetag_filenames = '*.html,*.html.erb'
-let b:lion_squeeze_spaces = 1
-
 let $FZF_DEFAULT_COMMAND = "rg --files --glob '!vendor*'"
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 
 let g:UltiSnipsSnippetDirectories=["my-snippets"]
 let g:UltiSnipsExpandTrigger="<leader><Tab>"
 
 call plug#begin()
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-  Plug 'mileszs/ack.vim'          " project search
 
   Plug 'Shougo/deoplete.nvim'
   Plug 'Shougo/context_filetype.vim'
@@ -22,11 +14,11 @@ call plug#begin()
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 
-  Plug 'w0rp/ale'
+  Plug 'w0rp/ale'               " syntax checking
 
-  Plug 'luochen1990/rainbow'      " bracket highlighting
-  Plug 'ap/vim-buftabline'        " tabs for open buffers
-  Plug 'danro/rename.vim'         " adds the :Rename command
+  Plug 'ap/vim-buftabline'      " tabs for open buffers
+  Plug 'qpkorr/vim-renamer'     " bulk renaming
+  Plug 'danro/rename.vim'       " adds the :Rename file command
 
   Plug 'tpope/vim-fugitive'     " git commands
   Plug 'mhinz/vim-signify'      " gutter diff
@@ -71,6 +63,4 @@ call plug#begin()
   Plug 'posva/vim-vue', { 'for': 'vue' }
 
   Plug 'google/vim-jsonnet', { 'for': 'jsonnet' }
-
-  Plug 'qpkorr/vim-renamer'
 call plug#end()

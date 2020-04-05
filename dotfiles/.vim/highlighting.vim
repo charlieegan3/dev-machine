@@ -1,15 +1,12 @@
-highlight StatusLine ctermfg=black ctermbg=white
+highlight StatusLine ctermfg=197 ctermbg=darkred
 highlight WildMenu ctermfg=white ctermbg=black
-highlight LineNr ctermfg=darkgrey ctermbg=black
-highlight BufTabLineCurrent ctermbg=black
-highlight BufTabLineActive ctermbg=white
-highlight BufTabLineHidden ctermbg=darkgrey
-highlight BufTabLineFill ctermbg=grey
+highlight LineNr ctermfg=darkgrey ctermbg=white
 highlight SpellBad ctermbg=240 ctermfg=white cterm=none
 highlight SpellLocal ctermbg=240 ctermfg=white cterm=none
 highlight SpellRare ctermbg=240 ctermfg=white cterm=none
-highlight MatchParen ctermbg=black ctermfg=white cterm=underline
+highlight MatchParen ctermbg=248 ctermfg=white cterm=underline
 highlight Search ctermbg=240 ctermfg=148
+
 syntax match TrailingWhitespace "\s+$"
 highlight TrailingWhitespace ctermbg=darkred
 
@@ -25,8 +22,13 @@ highlight SignifySignChange ctermbg=black ctermfg=227
 highlight Pmenu ctermbg=238 ctermfg=white
 highlight PmenuSel ctermbg=234 ctermfg=178
 
-highlight SpecialKey ctermfg=236
+highlight SpecialKey ctermfg=248
 
-highlight Visual ctermbg=237
+highlight Visual ctermbg=252
 
-highlight ColorColumn ctermbg=235
+highlight ColorColumn ctermbg=250
+
+highlight BufTabLineCurrent ctermbg=black ctermfg=250
+highlight BufTabLineActive ctermbg=white
+highlight BufTabLineHidden ctermbg=grey
+highlight BufTabLineFill ctermbg=grey
