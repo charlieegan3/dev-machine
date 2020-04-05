@@ -8,6 +8,7 @@ set -exuo pipefail
 HOME=/home/$USERNAME
 
 adduser --disabled-password --gecos "" $USERNAME
+echo $USERNAME:$PASSWORD | chpasswd
 usermod -aG sudo $USERNAME
 touch ~/.sudo_as_admin_successful # hide sudo login hint
 mkdir -p /home/$USERNAME/.ssh
