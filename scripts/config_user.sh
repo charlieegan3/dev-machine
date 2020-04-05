@@ -10,3 +10,5 @@ HOME=/home/$USERNAME
 adduser --disabled-password --gecos "" $USERNAME
 usermod -aG sudo $USERNAME
 touch ~/.sudo_as_admin_successful # hide sudo login hint
+mkdir -p /home/$USERNAME/.ssh
+cat /etc/id_rsa.pub >> /home/$USERNAME/.ssh/authorized_keys
