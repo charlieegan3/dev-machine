@@ -37,7 +37,7 @@ HELM_VERSION=3.1.2
 curl -LO https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz
 tar -zxvf helm-v${HELM_VERSION}-linux-amd64.tar.gz
 mv linux-amd64/helm /usr/local/bin/helm
-rm -r linux-amd64
+rm -r linux-amd64 helm-v${HELM_VERSION}-linux-amd64.tar.gz
 
 # packer
 curl -LO https://releases.hashicorp.com/packer/1.5.5/packer_1.5.5_linux_amd64.zip && \
