@@ -1,4 +1,4 @@
-highlight StatusLine ctermfg=197 ctermbg=darkred
+highlight StatusLine ctermfg=white ctermbg=black
 highlight WildMenu ctermfg=white ctermbg=black
 highlight LineNr ctermfg=darkgrey ctermbg=white
 highlight SpellBad ctermbg=240 ctermfg=white cterm=none
