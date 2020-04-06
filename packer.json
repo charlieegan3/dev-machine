@@ -29,21 +29,13 @@
     },
     {
       "type": "file",
-      "source": "sshd_config",
-      "destination": "/etc/ssh/sshd_config"
-    },
-    {
-      "type": "shell",
-      "script": "scripts/install_ufw.sh"
-    },
-    {
-      "type": "shell",
-      "script": "scripts/install_tools.sh"
+      "source": "id_rsa.pub",
+      "destination": "/etc/id_rsa.pub"
     },
     {
       "type": "file",
-      "source": "id_rsa.pub",
-      "destination": "/etc/id_rsa.pub"
+      "source": "sshd_config",
+      "destination": "/etc/ssh/sshd_config"
     },
     {
       "type": "shell",
@@ -55,10 +47,18 @@
     },
     {
       "type": "shell",
+      "script": "scripts/install_ufw.sh"
+    },
+    {
+      "type": "shell",
       "script": "scripts/install_runtimes.sh",
       "environment_vars": [
         "USERNAME={{ user `username`}}"
       ]
+    },
+    {
+      "type": "shell",
+      "script": "scripts/install_tools.sh"
     },
     {
       "type": "shell",
