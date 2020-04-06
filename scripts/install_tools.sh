@@ -58,3 +58,11 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update
 sudo apt-get install -y google-cloud-sdk
+
+# install jsonnet
+git clone https://github.com/google/jsonnet
+cd jsonnet/
+make
+sudo mv jsonnet /usr/local/bin/
+sudo mv jsonnetfmt /usr/local/bin/
+cd .. && rm -r jsonnet
