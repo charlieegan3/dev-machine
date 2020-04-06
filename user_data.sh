@@ -211,4 +211,6 @@ REPO_PATH=/home/$USERNAME/.password-store
 [[ -d $REPO_PATH ]] || sudo -i -u $USERNAME bash << EOF
 set -exuo pipefail
 git clone https://github.com/charlieegan3/secrets $REPO_PATH
+cd $REPO_PATH
+git-crypt unlock
 EOF
