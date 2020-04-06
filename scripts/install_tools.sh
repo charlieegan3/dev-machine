@@ -66,3 +66,4 @@ make
 sudo mv jsonnet /usr/local/bin/
 sudo mv jsonnetfmt /usr/local/bin/
 cd .. && rm -r jsonnet
+GO111MODULE="on" go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
