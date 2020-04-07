@@ -172,6 +172,8 @@ After=systemd-user-sessions.service
 Type=simple
 ExecStart=/etc/history-sync.sh
 Restart=always
+StartLimitIntervalSec=10
+StartLimitBurst=1
 User=$USERNAME
 
 [Install]
