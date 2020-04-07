@@ -69,11 +69,10 @@ sudo mv jsonnet /usr/local/bin/
 sudo mv jsonnetfmt /usr/local/bin/
 cd .. && rm -r jsonnet
 
-# Go needs the user env
-sudo -i -u charlieegan3 bash << EOF
+# Go needs the path set
+export PATH=$PATH:/usr/local/go/bin
 # install jsonnet bundler
-GO111MODULE="on" go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
+go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
 
 # install gojsontoyaml
 go get github.com/brancz/gojsontoyaml
-EOF
