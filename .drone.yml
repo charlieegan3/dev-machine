@@ -9,7 +9,7 @@ steps:
 - name: build
   image: ubuntu:18.04
   commands:
-  - make install_packer
+  - apt-get update && apt-get install -y build-essential
   - make COMMIT_SHA="$DRONE_COMMIT" build
   environment:
     B64_GPG_PRIV:
