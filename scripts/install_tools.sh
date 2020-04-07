@@ -66,7 +66,9 @@ make
 sudo mv jsonnet /usr/local/bin/
 sudo mv jsonnetfmt /usr/local/bin/
 cd .. && rm -r jsonnet
-GO111MODULE="on" go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
+
+# TODO make sure go is installed
+# GO111MODULE="on" go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
 
 # install gojsontoyaml
-go get github.com/brancz/gojsontoyaml
+# go get github.com/brancz/gojsontoyaml
