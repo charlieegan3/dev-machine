@@ -58,7 +58,10 @@
     },
     {
       "type": "shell",
-      "script": "scripts/install_tools.sh"
+      "script": "scripts/install_tools.sh",
+      "environment_vars": [
+        "USERNAME={{ user `username`}}"
+      ]
     },
     {
       "type": "shell",

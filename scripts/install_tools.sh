@@ -2,6 +2,8 @@
 
 set -exo pipefail
 
+: "${USERNAME:?Need to set USERNAME non-empty}"
+
 apt-get update
 apt-get install -y silversearcher-ag tmux direnv jq tree mosh git make curl gpg gnupg2 \
   software-properties-common unzip vim python3-pip apt-transport-https ca-certificates \
@@ -67,8 +69,11 @@ sudo mv jsonnet /usr/local/bin/
 sudo mv jsonnetfmt /usr/local/bin/
 cd .. && rm -r jsonnet
 
-# TODO make sure go is installed
-# GO111MODULE="on" go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
+# Go needs the user env
+sudo -i -u charlieegan3 bash << EOF
+# install jsonnet bundler
+GO111MODULE="on" go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
 
 # install gojsontoyaml
-# go get github.com/brancz/gojsontoyaml
+go get github.com/brancz/gojsontoyaml
+EOF
