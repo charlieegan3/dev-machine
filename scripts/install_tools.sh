@@ -76,3 +76,9 @@ go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
 
 # install gojsontoyaml
 go get github.com/brancz/gojsontoyaml
+
+# install vault
+curl -LO https://releases.hashicorp.com/vault/1.4.0/vault_1.4.0_linux_amd64.zip
+unzip vault*.zip
+mv vault /usr/bin/vault
+rm vault*.zip
