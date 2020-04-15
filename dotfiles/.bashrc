@@ -92,7 +92,7 @@ gitcd() {
   cd $(git rev-parse --show-toplevel)
 }
 pitunnel() {
-  ssh -L 6443:localhost:6443 pi@charlieegan3.co.uk -p 2200
+  ssh -L 6443:localhost:6443 pi@charlieegan3.com -p 2200
 }
 morning() {
   new_date="$(ruby -e "require 'time'; secs = ((Time.now.hour.to_f / 24) * 120 * 60).to_i;   puts (Time.parse(Time.now.strftime('%Y-%m-%d') + ' 07:00:00 +0100') + secs).strftime('%a %d %b %Y 07:19:43 %Z');")"
