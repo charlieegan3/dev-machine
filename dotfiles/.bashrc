@@ -15,15 +15,16 @@ alias ls='ls --color=always --file-type'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'"
-alias c="clear"
 alias temp="vim \$(mktemp)"
-alias exit="history -a; exit"
 
+open() {
+  xdg-open "$1"
+}
 replace_in_folder() {
   find $PWD -type f -not -iwholename '*.git*' -exec sed -i "s/$1/$2/g" {} \;
 }
 serve() {
-  ruby -run -ehttpd "$1" -p 8080
+  firefox http://localhost:8000 && ruby -run -ehttpd "$1" -p8000
 }
 j() {
   cd $(fasd -dlR | grep $1 | head -n 1) && pwd
@@ -51,11 +52,9 @@ heic_jpg() {
   for f in *.heic; do heif-convert $f $f.jpg; done
 }
 namespace_string() {
-  if [ -f ~/.kube/namespace ]; then
-    local cur_ns=$(cat ~/.kube/namespace)
-    if [ "${cur_ns}" != "" ] && [ "${cur_ns}" != "default" ]; then
-      echo -n "[$cur_ns]"
-    fi
+  local cur_ns=$(cat ~/.kube/namespace)
+  if [ "${cur_ns}" != "" ] && [ "${cur_ns}" != "default" ]; then
+    echo -n "[$cur_ns]"
   fi
 }
 last_status_string() {
