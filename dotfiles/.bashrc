@@ -36,26 +36,8 @@ kns() {
   local ns=$(kubectl get ns --output=custom-columns=name:.metadata.name --no-headers=true | fzf)
   kubens $ns && echo $ns > ~/.kube/namespace
 }
-kcs() {
-  local args=$(gcloud container clusters list "--format=get(name, location)" | awk '{ print $1 " --region=" $2 }' | fzf)
-  gcloud container clusters get-credentials $args
-  echo "" > ~/.kube/namespace
-}
-gcs() {
-  gcloud config configurations activate $(gcloud config configurations list "--format=get(name)" | fzf)
-}
-gcr() {
-  local args=$(gcloud container clusters list "--format=get(name, location)" | awk '{ print $1 " --region=" $2 }' | fzf)
-  gcloud container clusters resize $args --size=$1
-}
 heic_jpg() {
   for f in *.heic; do heif-convert $f $f.jpg; done
-}
-namespace_string() {
-  local cur_ns=$(cat ~/.kube/namespace)
-  if [ "${cur_ns}" != "" ] && [ "${cur_ns}" != "default" ]; then
-    echo -n "[$cur_ns]"
-  fi
 }
 last_status_string() {
   last_exit="$?"
@@ -137,7 +119,7 @@ export GPG_AGENT_INFO
 
 # set prompt
 COLOR_RESET="\[$(tput sgr0)\]" COLOR_CYAN="\[$(tput setaf 6)\]" COLOR_GREEN="\[$(tput setaf 2)\]" COLOR_YELLOW="\[$(tput setaf 3)\]"
-export PS1="$COLOR_YELLOW\$(last_status_string)$COLOR_GREEN\$(namespace_string)$COLOR_CYAN\$(relative_path_to_git_root)$COLOR_RESET $ "
+export PS1="$COLOR_YELLOW\$(last_status_string)$COLOR_CYAN\$(relative_path_to_git_root)$COLOR_RESET $ "
 
 # welcome
 echo "hello."
