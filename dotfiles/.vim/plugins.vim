@@ -1,4 +1,4 @@
-let $FZF_DEFAULT_COMMAND = "rg --files --glob '!vendor*'"
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!vendor*' --glob '!.git/*'"
 
 let g:UltiSnipsSnippetDirectories=["my-snippets"]
 let g:UltiSnipsExpandTrigger="<leader><Tab>"
@@ -14,19 +14,17 @@ call plug#begin()
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 
-  Plug 'w0rp/ale'               " syntax checking
-
   Plug 'Chiel92/vim-autoformat' " opa autoformat
 
   Plug 'ap/vim-buftabline'      " tabs for open buffers
   Plug 'qpkorr/vim-renamer'     " bulk renaming
   Plug 'danro/rename.vim'       " adds the :Rename file command
 
-  Plug 'tpope/vim-fugitive'     " git commands
+  Plug 'tpope/vim-fugitive'     " git commands, Gread
   Plug 'mhinz/vim-signify'      " gutter diff
 
   Plug 'dietsche/vim-lastplace' " remember last cursor position in file
-  Plug 'wellle/targets.vim'     " additional change-inside targets
+  Plug 'wellle/targets.vim'     " additional change-inside targets (', \, <>)
 
   Plug 'SirVer/ultisnips'       " snippet engine
 
