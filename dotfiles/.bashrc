@@ -14,8 +14,10 @@ alias ls='ls --color=always --file-type'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'"
-alias temp="vim \$(mktemp)"
 
+temp() {
+  vim $(mktemp --suffix=.${1:-txt})
+}
 jj() {
   cd $(j -l | awk '{ print $2 }' | fzf)
 }
