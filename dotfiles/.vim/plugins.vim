@@ -16,6 +16,8 @@ call plug#begin()
 
   Plug 'w0rp/ale'               " syntax checking
 
+  Plug 'Chiel92/vim-autoformat' " opa autoformat
+
   Plug 'ap/vim-buftabline'      " tabs for open buffers
   Plug 'qpkorr/vim-renamer'     " bulk renaming
   Plug 'danro/rename.vim'       " adds the :Rename file command
