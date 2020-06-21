@@ -80,50 +80,56 @@ bran() {
   echo "Current: " $(gitb)
   git checkout $(git b | sed -e 's/^..//' | fzf)
 }
-envrc() {
-  sudo cat .envrc
-  sudo chattr -i .envrc
-  vi .envrc
-  direnv allow
-  sudo chattr +i .envrc
-}
-gitcd() {
-  cd $(git rev-parse --show-toplevel)
-}
-pitunnel() {
-  ssh -L 6443:localhost:6443 pi@charlieegan3.com -p 2200
+permissions() {
+  sudo find . -type d -exec chmod 0755 {} \;
+  sudo find . -type f -exec chmod 0644 {} \;
+  sudo find . -type f -iname "*.sh" -exec chmod +x {} \;
 }
 morning() {
   new_date="$(ruby -e "require 'time'; secs = ((Time.now.hour.to_f / 24) * 120 * 60).to_i;   puts (Time.parse(Time.now.strftime('%Y-%m-%d') + ' 07:00:00 +0100') + secs).strftime('%a %d %b %Y 07:19:43 %Z');")"
   GIT_COMMITTER_DATE=$new_date git commit --date "$new_date"
 }
-
+envrc() {
+	sudo cat .envrc
+	sudo chattr -i .envrc
+	vi .envrc
+	direnv allow
+	sudo chattr +i .envrc
+}
+gitcd() {
+	cd $(git rev-parse --show-toplevel)
+}
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
-# PATH vars
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/Code/go
-export PATH="$PATH:$GOPATH/bin"
+# Environments
+[[ -e $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+[[ -e $HOME/.cargo/env ]]       && source $HOME/.cargo/env
+export GOROOT="/usr/local/go"
+export GOPATH="$HOME/Code/go"
+export PATH="$GOPATH/bin:$PATH"
 export PATH="$PATH:$GOROOT/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH="$PATH:$HOME/.npm-global/bin"
 export PATH="$PATH:$HOME/.tfenv/bin"
 export PATH="$PATH:$HOME/.local/bin" # python
-
+export PATH="${PATH}:${KREW_ROOT:-$HOME/.krew}/bin"
 
 # Tools
 eval "$(direnv hook bash)"
 eval "$(fasd --init auto)"
+source "$HOME/google-cloud-sdk/path.bash.inc"
+source "$HOME/google-cloud-sdk/completion.bash.inc"
 source <(kubectl completion bash)
-source $HOME/.completion/gcloud.inc
-source ~/.fzf.bash
 
+# History
 export HISTSIZE=1000000
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=100000
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 shopt -s histappend
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+alias exit="history -a; exit"
 
 # GPG
 export GPG_TTY=`tty`
