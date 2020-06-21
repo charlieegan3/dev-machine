@@ -10,13 +10,15 @@ export COLORTERM=truecolor TERM=xterm-256color
 shopt -s checkwinsize
 
 # aliases & functions
-alias env='env | sort'
 alias ls='ls --color=always --file-type'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'"
 alias temp="vim \$(mktemp)"
 
+jj() {
+  cd $(j -l | awk '{ print $2 }' | fzf)
+}
 open() {
   xdg-open "$1"
 }
@@ -25,12 +27,6 @@ replace_in_folder() {
 }
 serve() {
   firefox http://localhost:8000 && ruby -run -ehttpd "$1" -p8000
-}
-j() {
-  cd $(fasd -dlR | grep $1 | head -n 1) && pwd
-}
-jj() {
-  cd $(fasd -dlR | fzf) && pwd
 }
 kns() {
   local ns=$(kubectl get ns --output=custom-columns=name:.metadata.name --no-headers=true | fzf)
@@ -98,11 +94,18 @@ export PATH="$PATH:$HOME/.local/bin" # python
 export PATH="${PATH}:${KREW_ROOT:-$HOME/.krew}/bin"
 
 # Tools
-eval "$(direnv hook bash)"
-eval "$(fasd --init auto)"
 source "$HOME/google-cloud-sdk/path.bash.inc"
 source "$HOME/google-cloud-sdk/completion.bash.inc"
 source <(kubectl completion bash)
+_Z_INSTALL_PATH=$HOME/zed.sh
+if [ ! -f $_Z_INSTALL_PATH ]; then
+  echo "missing z.sh, installing"
+  curl -LO https://raw.githubusercontent.com/rupa/z/master/z.sh > $_Z_INSTALL_PATH
+  chmod +x $_Z_INSTALL_PATH
+fi
+export _Z_CMD=j
+. $_Z_INSTALL_PATH
+eval "$(direnv hook bash)"
 
 # History
 export HISTSIZE=1000000
