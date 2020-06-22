@@ -16,7 +16,7 @@ alias pbpaste='xsel --clipboard --output'
 alias gitb="git branch | grep '^\*' | cut -d' ' -f2 | tr -d '\n'"
 
 temp() {
-  vim $(mktemp --suffix=.${1:-txt})
+  vim $(mktemp --suffix=.${1:-md})
 }
 jj() {
   cd $(j -l | awk '{ print $2 }' | fzf)

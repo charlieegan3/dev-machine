@@ -1,6 +1,7 @@
 set spell spelllang=en_gb
 
-set tw=80
+setlocal columns=80
+setlocal wrap
 
 EnableAutocorrect
 imap kk <C-O><Plug>VimyouautocorrectUndo
