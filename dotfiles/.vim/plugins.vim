@@ -31,8 +31,9 @@ call plug#begin()
   Plug 'sedm0784/vim-you-autocorrect' " smartphone-like lazy correction
 
   " language plugins
-  Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+  Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries' }
   Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+  Plug 'dense-analysis/ale', { 'for': 'go' } " only used in go
 
   Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
   Plug 'pearofducks/ansible-vim', { 'for': 'yaml' }

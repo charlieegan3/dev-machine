@@ -1,8 +1,13 @@
-let g:go_fmt_autosave = 1
-let g:go_fmt_command = "goimports"
+let g:go_imports_autosave = 1
+let g:ale_linters = { 'go': ['golint', 'gopls'] }
+
 let g:go_doc_keywordprg_enabled = "0"
 
-highlight Type        ctermfg=220
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+highlight Type        ctermfg=198
 highlight Statement   ctermfg=197
 highlight Keyword     ctermfg=33
 highlight Conditional ctermfg=33
@@ -15,10 +20,6 @@ highlight Operator    ctermfg=196
 highlight Function    ctermfg=166
 highlight Identifier  ctermfg=70
 
-let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
 
 setlocal nolist
 setlocal syntax=on
@@ -28,7 +29,5 @@ nnoremap tr :GoAlternate<cr>
 nnoremap <tab> :GoDef<cr>
 nnoremap <leader>g :GoDeclsDir<cr>
 nnoremap <leader>d :GoDoc<cr>
-nnoremap <leader>i :GoInfo<cr>
-nnoremap <leader>e :GoIfErr<cr>
 
 set nospell
