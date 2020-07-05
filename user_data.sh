@@ -125,7 +125,9 @@ function send_message {
 }
 
 while true; do
+  echo "checking machine in use..."
   new_count="$(who | grep -v tmux | wc -l)"
+  echo $new_count sessions
 
   if [ "$new_count" == "0" ]; then
     (( inactive_seconds++ ))
@@ -157,62 +159,3 @@ sudo chmod 644 /etc/systemd/system/inactive-termination.service
 chmod +x /etc/inactive-termination.sh
 systemctl enable inactive-termination
 systemctl start inactive-termination
-
-# -----------------------------------------------------------------------------
-# install history sync unit
-# -----------------------------------------------------------------------------
-REPO_PATH=/home/$USERNAME/Code/secrets-history
-
-cat << EOF > /etc/systemd/system/history-sync.service
-[Unit]
-Description=History Sync Unit
-After=systemd-user-sessions.service
-
-[Service]
-Type=simple
-ExecStart=/etc/history-sync.sh
-Restart=always
-StartLimitIntervalSec=10
-StartLimitBurst=1
-User=$USERNAME
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-cat << EOF > /etc/history-sync.sh
-#!/usr/bin/env bash
-
-set -exuo pipefail
-
-# continue to sync the files
-while true; do
-  make -C $REPO_PATH sync
-  sleep 100
-done
-EOF
-
-[[ -d $REPO_PATH ]] || sudo -i -u $USERNAME bash << EOF
-set -exuo pipefail
-
-git clone https://github.com/charlieegan3/secrets-history $REPO_PATH
-
-# update to the latest repo data
-make -C $REPO_PATH write
-EOF
-
-sudo chmod 644 /etc/systemd/system/history-sync.service
-chmod +x /etc/history-sync.sh
-systemctl enable history-sync
-systemctl start history-sync
-
-# -----------------------------------------------------------------------------
-# configure secrets repo
-# -----------------------------------------------------------------------------
-REPO_PATH=/home/$USERNAME/.password-store
-[[ -d $REPO_PATH ]] || sudo -i -u $USERNAME bash << EOF
-set -exuo pipefail
-git clone https://github.com/charlieegan3/secrets $REPO_PATH
-cd $REPO_PATH
-git-crypt unlock
-EOF
