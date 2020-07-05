@@ -107,11 +107,11 @@ source <(kubectl completion bash)
 _Z_INSTALL_PATH=$HOME/zed.sh
 if [ ! -f $_Z_INSTALL_PATH ]; then
   echo "missing z.sh, installing"
-  curl -LO https://raw.githubusercontent.com/rupa/z/master/z.sh > $_Z_INSTALL_PATH
+  curl -L https://raw.githubusercontent.com/rupa/z/master/z.sh > $_Z_INSTALL_PATH
   chmod +x $_Z_INSTALL_PATH
 fi
 export _Z_CMD=j
-. $_Z_INSTALL_PATH
+source $_Z_INSTALL_PATH
 eval "$(direnv hook bash)"
 
 # History
