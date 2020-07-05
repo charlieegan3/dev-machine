@@ -70,14 +70,14 @@ morning() {
   GIT_COMMITTER_DATE=$new_date git commit --date "$new_date"
 }
 envrc() {
-	sudo cat .envrc
-	sudo chattr -i .envrc
-	vi .envrc
-	direnv allow
-	sudo chattr +i .envrc
+  sudo cat .envrc
+  sudo chattr -i .envrc
+  vi .envrc
+  direnv allow
+  sudo chattr +i .envrc
 }
 gitcd() {
-	cd $(git rev-parse --show-toplevel)
+  cd $(git rev-parse --show-toplevel)
 }
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
@@ -96,8 +96,13 @@ export PATH="$PATH:$HOME/.local/bin" # python
 export PATH="${PATH}:${KREW_ROOT:-$HOME/.krew}/bin"
 
 # Tools
-source "$HOME/google-cloud-sdk/path.bash.inc"
-source "$HOME/google-cloud-sdk/completion.bash.inc"
+if [ -d "/usr/share/google-cloud-sdk" ]; then
+  source /usr/share/google-cloud-sdk/completion.bash.inc
+fi
+if [ -d "$HOME/google-cloud-sdk" ]; then
+  source "$HOME/google-cloud-sdk/path.bash.inc"
+  source "$HOME/google-cloud-sdk/completion.bash.inc"
+fi
 source <(kubectl completion bash)
 _Z_INSTALL_PATH=$HOME/zed.sh
 if [ ! -f $_Z_INSTALL_PATH ]; then
