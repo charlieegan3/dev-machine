@@ -1,7 +1,7 @@
 {
   "variables": {
     "commit_sha": "{{env `COMMIT_SHA`}}",
-    "hetzner_token": "{{env `HETZNER_TOKEN`}}",
+    "hetzner_token": "{{env `HCLOUD_TOKEN`}}",
     "password": "{{env `PASSWORD`}}",
     "username": "charlieegan3"
   },

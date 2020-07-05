@@ -20,8 +20,8 @@ steps:
       from_secret: B64_ID_RSA
     B64_ID_RSA_PUB:
       from_secret: B64_ID_RSA_PUB
-    HETZNER_TOKEN:
-      from_secret: HETZNER_TOKEN
+    HCLOUD_TOKEN:
+      from_secret: HCLOUD_TOKEN
     GITHUB_ACCESS_TOKEN:
       from_secret: GITHUB_ACCESS_TOKEN
     PASSWORD:
