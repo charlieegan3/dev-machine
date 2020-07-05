@@ -99,6 +99,8 @@ ExecStart=/etc/inactive-termination.sh
 Environment=PUSHOVER_TOKEN=$PUSHOVER_TOKEN
 Environment=PUSHOVER_USER=$PUSHOVER_USER
 Restart=always
+RestartSec=3
+StartLimitIntervalSec=0
 
 [Install]
 WantedBy=multi-user.target
