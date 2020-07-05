@@ -14,9 +14,10 @@ ip = Socket.ip_address_list.
 puts "Current IP: #{ip}"
 
 JSON.parse(`hcloud server list -o json`).each do |s|
-  match = s["public_net"]["ipv4"]["ip"] == ip
-  puts "Matched instance: #{s["name"]}"
-  system("hcloud server delete #{s["id"]}")
+  if s["public_net"]["ipv4"]["ip"] == ip
+    puts "Matched instance: #{s["name"]}"
+    system("hcloud server delete #{s["id"]}")
+  end
 end
 
 puts "bye bye"
