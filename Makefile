@@ -15,3 +15,7 @@ install_requirements:
 # development commands
 import_dotfiles:
 	./hack/import_dotfiles.rb
+
+# operator commands
+delete_vm:
+	./hack/delete_vm.rb
