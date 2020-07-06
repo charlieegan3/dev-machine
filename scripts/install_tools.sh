@@ -71,6 +71,10 @@ rm vault*.zip
 sudo -i -u $USERNAME bash << EOF
 set -exo pipefail
 
+export PATH=$PATH:/usr/local/go/bin/
+export GOPATH=/home/$USERNAME/Code/go
+export GOROOT=/usr/local/go
+
 # install jsonnet bundler
 go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
 # install gojsontoyaml
