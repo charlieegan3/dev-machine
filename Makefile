@@ -19,3 +19,5 @@ import_dotfiles:
 # operator commands
 delete_vm:
 	./hack/delete_vm.rb
+delete_images:
+	./hack/delete_images.rb
