@@ -29,8 +29,17 @@
     },
     {
       "type": "file",
-      "source": "sshd_config",
+      "source": "files/sshd_config",
       "destination": "/etc/ssh/sshd_config"
+    },
+    {
+      "type": "shell",
+      "inline": "mkdir -p /etc/scripts"
+    },
+    {
+      "type": "file",
+      "source": "files/scripts/",
+      "destination": "/etc/scripts"
     },
     {
       "type": "shell",
