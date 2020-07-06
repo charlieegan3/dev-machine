@@ -79,6 +79,9 @@ envrc() {
 gitcd() {
   cd $(git rev-parse --show-toplevel)
 }
+dropbox() {
+  ruby /etc/scripts/dropbox_explorer.rb
+}
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 # Environments
