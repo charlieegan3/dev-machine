@@ -29,11 +29,6 @@
     },
     {
       "type": "file",
-      "source": "id_rsa.pub",
-      "destination": "/etc/id_rsa.pub"
-    },
-    {
-      "type": "file",
       "source": "sshd_config",
       "destination": "/etc/ssh/sshd_config"
     },
