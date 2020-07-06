@@ -61,19 +61,20 @@ sudo mv jsonnet /usr/local/bin/
 sudo mv jsonnetfmt /usr/local/bin/
 cd .. && rm -r jsonnet
 
-# Go needs the path set
-export PATH=$PATH:/usr/local/go/bin
-# install jsonnet bundler
-go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
-
-# install gojsontoyaml
-go get github.com/brancz/gojsontoyaml
-
-# install hcloud cli
-go get -u github.com/hetznercloud/cli/cmd/hcloud
-
 # install vault
 curl -LO https://releases.hashicorp.com/vault/1.4.0/vault_1.4.0_linux_amd64.zip
 unzip vault*.zip
 mv vault /usr/bin/vault
 rm vault*.zip
+
+# install go-based tools
+sudo -i -u $USERNAME bash << EOF
+set -exo pipefail
+
+# install jsonnet bundler
+go get github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb
+# install gojsontoyaml
+go get github.com/brancz/gojsontoyaml
+# install hcloud cli
+go get github.com/hetznercloud/cli/cmd/hcloud
+EOF
