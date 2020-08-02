@@ -40,6 +40,11 @@ unzip *.zip && \
 sudo mv packer /usr/local/bin/packer
 rm *.zip
 
+# Terraform
+git clone https://github.com/tfutils/tfenv.git /home/$USERNAME/.tfenv
+ln -s /home/$USERNAME/.tfenv/bin/* /usr/local/bin
+/home/$USERNAME/.tfenv/bin/tfenv install # installs latest
+
 # hugo
 HUGO_VERSION=0.68.3
 curl -o hugo.tar.gz -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
