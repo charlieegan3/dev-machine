@@ -8,7 +8,7 @@ apt-get update
 apt-get install -y silversearcher-ag tmux direnv jq tree mosh git make curl gpg gnupg2 \
   software-properties-common unzip vim python3-pip apt-transport-https ca-certificates \
   build-essential postgresql-client libpq5 libpq-dev git-crypt python3-setuptools \
-  libmagick++-dev
+  libmagick++-dev exiftool
 
 # rg
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb && \
