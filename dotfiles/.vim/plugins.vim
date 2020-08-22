@@ -23,6 +23,8 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'     " git commands, Gread
   Plug 'mhinz/vim-signify'      " gutter diff
 
+  Plug 'tpope/vim-surround'     " brackets etc
+
   Plug 'dietsche/vim-lastplace' " remember last cursor position in file
   Plug 'wellle/targets.vim'     " additional change-inside targets (', \, <>)
 
