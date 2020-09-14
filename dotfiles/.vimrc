@@ -20,6 +20,7 @@ set complete-=i
 set autowrite " write when closing files, and running build commands
 set completeopt=longest,menuone
 set encoding=utf-8
+set cursorline " show underline for current cursor line
 
 set undofile " maintain undo history
 set undodir=~/.vim/.undo/

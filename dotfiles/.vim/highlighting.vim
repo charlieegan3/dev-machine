@@ -1,9 +1,10 @@
 highlight StatusLine ctermfg=white ctermbg=black
+highlight StatusLine ctermfg=white ctermbg=black
 highlight WildMenu ctermfg=white ctermbg=black
 highlight LineNr ctermfg=darkgrey ctermbg=white
-highlight SpellBad ctermbg=240 ctermfg=white cterm=none
-highlight SpellLocal ctermbg=240 ctermfg=white cterm=none
-highlight SpellRare ctermbg=240 ctermfg=white cterm=none
+highlight SpellBad ctermbg=255 ctermfg=88 cterm=none
+highlight SpellLocal ctermbg=255 ctermfg=88 cterm=none
+highlight SpellRare ctermbg=255 ctermfg=88 cterm=none
 highlight MatchParen ctermbg=248 ctermfg=white cterm=underline
 highlight Search ctermbg=240 ctermfg=148
 
