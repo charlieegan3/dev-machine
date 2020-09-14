@@ -22,3 +22,5 @@ delete_vm:
 	./hack/delete_vm.rb
 delete_images:
 	./hack/delete_images.rb
+assert_no_instances:
+	./hack/assert_no_instances.rb
