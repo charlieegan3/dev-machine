@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  Hetzner:
+  images:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -14,5 +14,9 @@ jobs:
       env:
         HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
         PASSWORD: ${{ secrets.PASSWORD }}
+        GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
+        GOOGLE_JSON: ${{ secrets.GOOGLE_JSON }}
+        GOOGLE_APPLICATION_CREDENTIALS: google.json
       run: |
+        echo "$GOOGLE_JSON" | base64 -d > google.json
         make COMMIT_SHA="$GITHUB_SHA" build

@@ -1,6 +1,8 @@
-build: install_requirements archive_dotfiles
-	packer validate packer.json
+build: validate
 	packer build packer.json
+
+validate: install_requirements archive_dotfiles
+	packer validate packer.json
 
 archive_dotfiles:
 	tar -cvf dotfiles.tar dotfiles
