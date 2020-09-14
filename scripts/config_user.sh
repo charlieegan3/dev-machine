@@ -7,6 +7,8 @@ set -exuo pipefail
 
 HOME=/home/$USERNAME
 
+# sometimes user appears present when not, https://askubuntu.com/questions/104851/adduser-says-user-exists-when-the-user-does-not-exist
+userdel -r $USERNAME || true
 adduser --disabled-password --gecos "" $USERNAME
 echo $USERNAME:$PASSWORD | chpasswd
 usermod -aG sudo $USERNAME

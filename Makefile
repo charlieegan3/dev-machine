@@ -1,6 +1,4 @@
 build: install_requirements archive_dotfiles
-	which packer
-	packer version
 	packer validate packer.json
 	packer build packer.json
 
