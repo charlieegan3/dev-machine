@@ -1,10 +1,11 @@
-let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!vendor*' --glob '!.git/*'"
+" let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!vendor*' --glob '!.git/*'"
 
 let g:UltiSnipsSnippetDirectories=["my-snippets"]
 let g:UltiSnipsExpandTrigger="<leader><Tab>"
 
 call plug#begin()
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 
   Plug 'Shougo/deoplete.nvim'
   Plug 'Shougo/context_filetype.vim'
