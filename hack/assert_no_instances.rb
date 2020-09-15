@@ -2,6 +2,6 @@
 
 require "json"
 
-count = JSON.parse(`./hcloud server list -o json`).size
-
-fail "unexpected instance running" if count > 0
+unless JSON.parse(`hcloud server list -o json`).nil?
+  fail "unexpected instance running"
+end
